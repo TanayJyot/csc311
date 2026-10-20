@@ -253,14 +253,18 @@ def structured_features(df):
     return out
 
 
-def respondent_split(ids, seed=311, fractions=(0.70, 0.15, 0.15)):
-    """Assign each respondent id to train / val / test (all rows of an id together)."""
-    unique = np.array(sorted(set(ids), key=int))
-    rng = np.random.default_rng(seed)
-    rng.shuffle(unique)
-    n_train = int(round(fractions[0] * len(unique)))
-    n_val = int(round(fractions[1] * len(unique)))
-    split = {}
-    for i, rid in enumerate(unique):
-        split[rid] = "train" if i < n_train else ("val" if i < n_train + n_val else "test")
-    return pd.Series(ids).map(split).to_numpy()
+def respondent_split(ids, val_frac=0.2, test_frac=0.3, seed=42):
+    """Assign each respondent id to train / val / test (all rows of an id together).
+
+    Same procedure as split_by_student in the instructors' project_baseline.py:
+    permute the unique ids (in order of first appearance) with seed 42, then take
+    the first 30% as test, the next 20% as validation and the rest as training.
+    """
+    ids = pd.Series(ids).reset_index(drop=True)
+    students = np.random.default_rng(seed).permutation(ids.unique())
+    n_test = int(len(students) * test_frac)
+    n_val = int(len(students) * val_frac)
+    split = {rid: "test" for rid in students[:n_test]}
+    split.update({rid: "val" for rid in students[n_test:n_test + n_val]})
+    split.update({rid: "train" for rid in students[n_test + n_val:]})
+    return ids.map(split).to_numpy()

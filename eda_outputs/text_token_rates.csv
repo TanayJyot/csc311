@@ -1,61 +1,61 @@
 question,item,token,rank,sport,pct,mi_bits
-Food,hot dog,hotdog,0,Soccer,20.792,0.145
-Food,hot dog,hotdog,0,Baseball,64.0,0.145
-Food,hot dog,hotdog,0,Basketball,17.0,0.145
-Food,beer,beer,1,Soccer,50.495,0.066
-Food,beer,beer,1,Baseball,29.5,0.066
-Food,beer,beer,1,Basketball,16.5,0.066
-Food,wings,wing,2,Soccer,7.921,0.036
-Food,wings,wing,2,Baseball,2.0,0.036
-Food,wings,wing,2,Basketball,17.0,0.036
-Food,pizza,pizza,3,Soccer,14.356,0.021
-Food,pizza,pizza,3,Baseball,5.0,0.021
-Food,pizza,pizza,3,Basketball,17.5,0.021
-Food,gatorade,gatorade,4,Soccer,0.99,0.019
-Food,gatorade,gatorade,4,Baseball,0.0,0.019
-Food,gatorade,gatorade,4,Basketball,5.0,0.019
-Colour,orange,orange,0,Soccer,0.99,0.306
-Colour,orange,orange,0,Baseball,1.5,0.306
-Colour,orange,orange,0,Basketball,54.5,0.306
-Colour,green,green,1,Soccer,49.505,0.255
-Colour,green,green,1,Baseball,5.0,0.255
-Colour,green,green,1,Basketball,0.0,0.255
-Colour,blue,blue,2,Soccer,22.772,0.148
-Colour,blue,blue,2,Baseball,50.0,0.148
-Colour,blue,blue,2,Basketball,4.0,0.148
-Colour,white,white,3,Soccer,24.752,0.102
-Colour,white,white,3,Baseball,27.0,0.102
-Colour,white,white,3,Basketball,0.5,0.102
-Colour,brown,brown,4,Soccer,0.0,0.039
-Colour,brown,brown,4,Baseball,10.0,0.039
-Colour,brown,brown,4,Basketball,9.0,0.039
-Song,waka waka,wakawaka,0,Soccer,49.505,0.313
-Song,waka waka,wakawaka,0,Baseball,0.0,0.313
-Song,waka waka,wakawaka,0,Basketball,0.0,0.313
-Song,take (me out...),take,1,Soccer,0.0,0.159
-Song,take (me out...),take,1,Baseball,27.5,0.159
-Song,take (me out...),take,1,Basketball,0.0,0.159
-Song,[a competition],ph_competition,2,Soccer,8.911,0.038
-Song,[a competition],ph_competition,2,Baseball,0.0,0.038
-Song,[a competition],ph_competition,2,Basketball,1.0,0.038
-Song,drake,drake,3,Soccer,0.0,0.036
-Song,drake,drake,3,Baseball,1.5,0.036
-Song,drake,drake,3,Basketball,9.0,0.036
-Song,flag,flag,4,Soccer,6.436,0.035
-Song,flag,flag,4,Baseball,0.0,0.035
-Song,flag,flag,4,Basketball,0.0,0.035
-Feeling,bored,bored,0,Soccer,10.891,0.07
-Feeling,bored,bored,0,Baseball,31.0,0.07
-Feeling,bored,bored,0,Basketball,4.5,0.07
-Feeling,excited,excited,1,Soccer,50.99,0.069
-Feeling,excited,excited,1,Baseball,17.5,0.069
-Feeling,excited,excited,1,Basketball,44.5,0.069
-Feeling,relaxed,relaxed,2,Soccer,0.0,0.036
-Feeling,relaxed,relaxed,2,Baseball,8.5,0.036
-Feeling,relaxed,relaxed,2,Basketball,1.0,0.036
-Feeling,fast,fast,3,Soccer,0.0,0.032
-Feeling,fast,fast,3,Baseball,0.0,0.032
-Feeling,fast,fast,3,Basketball,6.0,0.032
-Feeling,energetic,energetic,4,Soccer,7.921,0.027
-Feeling,energetic,energetic,4,Baseball,0.5,0.027
-Feeling,energetic,energetic,4,Basketball,9.5,0.027
+Food,hot dog,hotdog,0,Soccer,19.178,0.148
+Food,hot dog,hotdog,0,Baseball,63.699,0.148
+Food,hot dog,hotdog,0,Basketball,17.123,0.148
+Food,beer,beer,1,Soccer,51.37,0.072
+Food,beer,beer,1,Baseball,26.712,0.072
+Food,beer,beer,1,Basketball,16.438,0.072
+Food,pizza,pizza,2,Soccer,19.178,0.04
+Food,pizza,pizza,2,Baseball,3.425,0.04
+Food,pizza,pizza,2,Basketball,19.178,0.04
+Food,wings,wing,3,Soccer,6.164,0.038
+Food,wings,wing,3,Baseball,2.055,0.038
+Food,wings,wing,3,Basketball,17.123,0.038
+Food,chips,chip,4,Soccer,21.233,0.028
+Food,chips,chip,4,Baseball,6.164,0.028
+Food,chips,chip,4,Basketball,8.904,0.028
+Colour,orange,orange,0,Soccer,0.685,0.326
+Colour,orange,orange,0,Baseball,1.37,0.326
+Colour,orange,orange,0,Basketball,56.164,0.326
+Colour,green,green,1,Soccer,51.37,0.275
+Colour,green,green,1,Baseball,4.11,0.275
+Colour,green,green,1,Basketball,0.0,0.275
+Colour,blue,blue,2,Soccer,21.233,0.186
+Colour,blue,blue,2,Baseball,55.479,0.186
+Colour,blue,blue,2,Basketball,3.425,0.186
+Colour,white,white,3,Soccer,21.918,0.083
+Colour,white,white,3,Baseball,26.712,0.083
+Colour,white,white,3,Basketball,1.37,0.083
+Colour,black,black,4,Soccer,15.068,0.043
+Colour,black,black,4,Baseball,0.685,0.043
+Colour,black,black,4,Basketball,10.959,0.043
+Song,waka waka,wakawaka,0,Soccer,48.63,0.306
+Song,waka waka,wakawaka,0,Baseball,0.0,0.306
+Song,waka waka,wakawaka,0,Basketball,0.0,0.306
+Song,out,out,1,Soccer,0.0,0.154
+Song,out,out,1,Baseball,26.712,0.154
+Song,out,out,1,Basketball,0.0,0.154
+Song,[a competition],ph_competition,2,Soccer,8.904,0.04
+Song,[a competition],ph_competition,2,Baseball,0.0,0.04
+Song,[a competition],ph_competition,2,Basketball,0.685,0.04
+Song,drake,drake,3,Soccer,0.0,0.034
+Song,drake,drake,3,Baseball,2.055,0.034
+Song,drake,drake,3,Basketball,8.904,0.034
+Song,[a team],ph_team,4,Soccer,0.0,0.026
+Song,[a team],ph_team,4,Baseball,6.164,0.026
+Song,[a team],ph_team,4,Basketball,0.685,0.026
+Feeling,bored,bored,0,Soccer,10.959,0.088
+Feeling,bored,bored,0,Baseball,32.192,0.088
+Feeling,bored,bored,0,Basketball,2.74,0.088
+Feeling,excited,excited,1,Soccer,52.055,0.077
+Feeling,excited,excited,1,Baseball,17.123,0.077
+Feeling,excited,excited,1,Basketball,46.575,0.077
+Feeling,energetic,energetic,2,Soccer,8.219,0.049
+Feeling,energetic,energetic,2,Baseball,0.0,0.049
+Feeling,energetic,energetic,2,Basketball,13.699,0.049
+Feeling,relaxed,relaxed,3,Soccer,0.0,0.036
+Feeling,relaxed,relaxed,3,Baseball,8.219,0.036
+Feeling,relaxed,relaxed,3,Basketball,0.685,0.036
+Feeling,confused,confused,4,Soccer,0.685,0.025
+Feeling,confused,confused,4,Baseball,7.534,0.025
+Feeling,confused,confused,4,Basketball,0.685,0.025
