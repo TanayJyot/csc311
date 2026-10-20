@@ -1,0 +1,5 @@
+question,distinct_answers,vocab_min_df_1,vocab_min_df_3,mean_tokens
+food,415,387,82,3.57
+colour,138,107,26,1.58
+song,322,482,98,2.83
+feeling,321,525,131,2.86

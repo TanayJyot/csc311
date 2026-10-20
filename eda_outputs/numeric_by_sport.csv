@@ -1,0 +1,6 @@
+feature,Soccer_mean,Soccer_sd,Baseball_mean,Baseball_sd,Basketball_mean,Basketball_sd,separation
+ease,6.19,2.31,4.07,1.97,6.07,2.06,1.0
+strategy,3.86,0.87,3.46,1.01,3.87,0.79,0.46
+injury,3.76,0.93,2.92,0.96,3.73,0.91,0.89
+individual,2.96,1.11,3.8,1.03,3.57,1.04,0.79
+log_price,4.76,1.94,3.69,1.75,4.61,1.79,0.58
