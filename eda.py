@@ -1,8 +1,8 @@
 """eda.py - data exploration for the CSC311 sport-survey project.
 
 Everything is computed on the TRAINING split only. Respondents are assigned to
-train / validation / test by id first (50/20/30, seed 42, as in the instructors'
-project_baseline.py), and the validation and test rows are never inspected here.
+train / validation / test by id first (70/15/15, seed 311), and the validation
+and test rows are never inspected here.
 
 Run:    python eda.py
 Needs:  csc311_project_training_202609.csv and features.py in this folder,
@@ -27,7 +27,7 @@ from features import (LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,  # noqa: E4
 
 DATA = "csc311_project_training_202609.csv"
 OUT_DIR, FIG_DIR = "eda_outputs", "figures"
-SEED = 42
+SEED = 311
 SPORT_COLOURS = {"Soccer": "#1baf7a", "Baseball": "#2a78d6", "Basketball": "#eb6834"}
 QUESTION_NAMES = {"places": "Where", "seasons": "Season", "music": "Music",
                   "food": "Food", "colour": "Colour", "song": "Song", "feeling": "Feeling"}
@@ -214,7 +214,7 @@ def main():
     print(f"all-blank rows dropped: {int(blank.sum())} "
           f"(respondents {sorted(raw.loc[blank, 'id'].astype(int).unique().tolist())})")
     df = raw.loc[~blank].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
+    df["split"] = respondent_split(df["id"], seed=SEED)
     df.drop_duplicates("id")[["id", "split"]].to_csv("split_ids.csv", index=False)
     summary = df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size"))
     print(summary.loc[["train", "val", "test"]])
