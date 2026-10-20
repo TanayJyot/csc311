@@ -1,12 +1,12 @@
 stat,value
-parsed,582.0
-zero,66.0
+parsed,428.0
+zero,43.0
 median,100.0
 q1,50.0
 q3,200.0
 p95,1000.0
-p99,3000.0
+p99,2730.0
 max,10000.0
-skew_raw,9.73
-skew_log1p,-1.05
+skew_raw,9.49
+skew_log1p,-1.07
 log_iqr_upper_fence,1571.66
