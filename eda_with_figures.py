@@ -80,7 +80,7 @@ def tokenize(x):
     if pd.isna(s):
         return []
     # Preserve common multiword entities as token bigrams later; strip punctuation.
-    return re.findall(r"[a-z]+(?:'[a-z]+)?|\\d+", s)
+    return re.findall(r"[a-z]+(?:'[a-z]+)?|\d+", s)
 
 def parse_price(x):
     s = clean_cell(x)
@@ -89,21 +89,19 @@ def parse_price(x):
     z = s.casefold().replace(",", "")
     if z in {"free", "zero", "$0", "0 dollars"}:
         return 0.0
-    m = re.search(r"-?\d+(?:\\.\d+)?", z)
+    m = re.search(r"-?\d+(?:\.\d+)?", z)
     return float(m.group()) if m else np.nan
 
-def respondent_split(ids, seed=42):
-    """Deterministic group split with approximately 50/20/30 of unique IDs."""
-    unique = np.array(pd.Series(ids).drop_duplicates().to_list())
-    rng = np.random.default_rng(seed)
-    perm = rng.permutation(unique)
-    n = len(perm)
-    n_train = int(round(0.50 * n))
-    n_val = int(round(0.20 * n))
-    split = {}
-    for x in perm[:n_train]: split[x] = "train"
-    for x in perm[n_train:n_train+n_val]: split[x] = "val"
-    for x in perm[n_train+n_val:]: split[x] = "test"
+def respondent_split(ids, seed=42, val_frac=0.2, test_frac=0.3):
+    """Same split as split_by_student in the instructors' project_baseline.py:
+    permute the unique IDs, then take the first 30% as test, the next 20% as
+    validation and the rest as training (50/20/30)."""
+    students = np.random.default_rng(seed).permutation(pd.Series(ids).unique())
+    n_test = int(len(students) * test_frac)
+    n_val = int(len(students) * val_frac)
+    split = {x: "test" for x in students[:n_test]}
+    split.update({x: "val" for x in students[n_test:n_test + n_val]})
+    split.update({x: "train" for x in students[n_test + n_val:]})
     return pd.Series(ids).map(split).to_numpy()
 
 def mutual_info_bits(x, y):
@@ -518,8 +516,8 @@ def main(input_path=DATA, out_dir=OUT_DIR, fig_dir=FIG_DIR, seed=SEED):
     say(f"- Tables: `{OUT_DIR}/`")
     say(f"- Figures: `{FIG_DIR}/`")
     say("- Main plots: label balance; numeric boxplots/distributions; Likert distributions; multi-select option rates; missingness; free-text response lengths and token rates; correlation heatmap; mutual-information ranking.")
-    (OUT_DIR/"eda_report.md").write_text("\\n".join(report)+"\\n",encoding="utf-8")
-    print(f"\\nWrote report: {OUT_DIR / 'eda_report.md'}")
+    (OUT_DIR/"eda_report.md").write_text("\n".join(report)+"\n",encoding="utf-8")
+    print(f"\nWrote report: {OUT_DIR / 'eda_report.md'}")
     print(f"Wrote figures to: {FIG_DIR.resolve()}")
 
 if __name__ == "__main__":
