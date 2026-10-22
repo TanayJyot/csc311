@@ -1,0 +1,64 @@
+question,item,option,sport,pct,overall_pct,spread
+Where,Indoor facility,Indoor facility,Soccer,63.7,61.2,70.5
+Where,Indoor facility,Indoor facility,Baseball,24.7,61.2,70.5
+Where,Indoor facility,Indoor facility,Basketball,95.2,61.2,70.5
+Where,At home / nearby,At home or nearby,Soccer,44.5,40.4,53.4
+Where,At home / nearby,At home or nearby,Baseball,11.6,40.4,53.4
+Where,At home / nearby,At home or nearby,Basketball,65.1,40.4,53.4
+Where,Community facility,Community recreation facility,Soccer,74.7,70.1,41.1
+Where,Community facility,Community recreation facility,Baseball,47.3,70.1,41.1
+Where,Community facility,Community recreation facility,Basketball,88.4,70.1,41.1
+Where,Private facility,Private sports facility,Soccer,69.9,69.4,26.0
+Where,Private facility,Private sports facility,Baseball,56.2,69.4,26.0
+Where,Private facility,Private sports facility,Basketball,82.2,69.4,26.0
+Where,School / university,School or university facility,Soccer,86.3,84.7,22.6
+Where,School / university,School or university facility,Baseball,72.6,84.7,22.6
+Where,School / university,School or university facility,Basketball,95.2,84.7,22.6
+Where,Other place,Others,Soccer,13.7,8.4,10.3
+Where,Other place,Others,Baseball,3.4,8.4,10.3
+Where,Other place,Others,Basketball,8.2,8.4,10.3
+Where,Outdoor public space,Outdoor public space,Soccer,93.2,90.2,6.2
+Where,Outdoor public space,Outdoor public space,Baseball,87.0,90.2,6.2
+Where,Outdoor public space,Outdoor public space,Basketball,90.4,90.2,6.2
+Season,Winter,Winter,Soccer,5.5,23.1,52.7
+Season,Winter,Winter,Baseball,5.5,23.1,52.7
+Season,Winter,Winter,Basketball,58.2,23.1,52.7
+Season,Fall,Fall,Soccer,69.9,76.5,17.8
+Season,Fall,Fall,Baseball,71.9,76.5,17.8
+Season,Fall,Fall,Basketball,87.7,76.5,17.8
+Season,Spring,Spring,Soccer,73.3,78.3,11.6
+Season,Spring,Spring,Baseball,76.7,78.3,11.6
+Season,Spring,Spring,Basketball,84.9,78.3,11.6
+Season,Summer,Summer,Soccer,89.0,91.1,3.4
+Season,Summer,Summer,Baseball,91.8,91.1,3.4
+Season,Summer,Summer,Basketball,92.5,91.1,3.4
+Music,Hip-hop / rap,Hip-hop or rap,Soccer,41.1,50.9,55.5
+Music,Hip-hop / rap,Hip-hop or rap,Baseball,28.1,50.9,55.5
+Music,Hip-hop / rap,Hip-hop or rap,Basketball,83.6,50.9,55.5
+Music,Latin,Latin,Soccer,39.7,15.1,39.0
+Music,Latin,Latin,Baseball,4.8,15.1,39.0
+Music,Latin,Latin,Basketball,0.7,15.1,39.0
+Music,Country,Country,Soccer,4.1,12.3,26.0
+Music,Country,Country,Baseball,29.5,12.3,26.0
+Music,Country,Country,Basketball,3.4,12.3,26.0
+Music,No particular type,No particular type,Soccer,17.8,19.6,21.9
+Music,No particular type,No particular type,Baseball,31.5,19.6,21.9
+Music,No particular type,No particular type,Basketball,9.6,19.6,21.9
+Music,Electronic / dance,Electronic or dance,Soccer,34.2,22.4,19.2
+Music,Electronic / dance,Electronic or dance,Baseball,15.1,22.4,19.2
+Music,Electronic / dance,Electronic or dance,Basketball,17.8,22.4,19.2
+Music,Pop,Pop,Soccer,40.4,42.0,14.4
+Music,Pop,Pop,Baseball,35.6,42.0,14.4
+Music,Pop,Pop,Basketball,50.0,42.0,14.4
+Music,Folk / traditional,Folk or traditional,Soccer,3.4,5.5,10.3
+Music,Folk / traditional,Folk or traditional,Baseball,11.6,5.5,10.3
+Music,Folk / traditional,Folk or traditional,Basketball,1.4,5.5,10.3
+Music,Rock,Rock,Soccer,21.9,24.9,7.5
+Music,Rock,Rock,Baseball,23.3,24.9,7.5
+Music,Rock,Rock,Basketball,29.5,24.9,7.5
+Music,Classical / jazz,Classical or jazz,Soccer,2.1,3.2,4.8
+Music,Classical / jazz,Classical or jazz,Baseball,6.2,3.2,4.8
+Music,Classical / jazz,Classical or jazz,Basketball,1.4,3.2,4.8
+Music,Other music,Other,Soccer,3.4,2.7,1.4
+Music,Other music,Other,Baseball,2.1,2.7,1.4
+Music,Other music,Other,Basketball,2.7,2.7,1.4

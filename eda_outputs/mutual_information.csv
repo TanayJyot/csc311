@@ -1,0 +1,96 @@
+,mi_bits
+colour: 'orange',0.326
+song: 'wakawaka',0.306
+where: Indoor facility,0.287
+colour: 'green',0.275
+season: Winter,0.248
+colour: 'blue',0.186
+song: 'shakira',0.185
+ease (binned),0.184
+music: Latin,0.176
+music: Hip-hop or rap,0.174
+where: At home or nearby,0.159
+song: 'take',0.154
+song: 'out',0.154
+song: 'ballgame',0.15
+food: 'hotdog',0.148
+injury,0.147
+price (quartiles),0.134
+individual,0.103
+where: Community recreation facility,0.102
+music: Country,0.093
+feeling: 'bored',0.088
+song: 'time',0.084
+colour: 'white',0.083
+song: 'africa',0.08
+feeling: 'excited',0.077
+food: 'beer',0.072
+where: School or university facility,0.05
+strategy,0.05
+feeling: 'energetic',0.049
+song: missing,0.048
+colour: 'black',0.043
+food: 'pizza',0.04
+song: 'ph_competition',0.04
+where: Private sports facility,0.039
+food: 'wing',0.038
+music: No particular type,0.038
+food: 'peanut',0.037
+feeling: 'relaxed',0.036
+song: 'drake',0.034
+music: Electronic or dance,0.029
+food: 'chip',0.028
+season: Fall,0.027
+music: Folk or traditional,0.027
+song: 'ph_team',0.026
+feeling: 'confused',0.025
+colour: 'brown',0.021
+song: 'rock',0.018
+where: Others,0.017
+food: 'nacho',0.016
+colour: 'red',0.014
+music: Pop,0.011
+food: 'popcorn',0.011
+season: Spring,0.011
+colour: 'yellow',0.01
+music: Classical or jazz,0.01
+food: 'watching',0.009
+feeling: 'interested',0.008
+feeling: 'neutral',0.007
+food: 'friend',0.007
+feeling: 'game',0.006
+feeling: missing,0.005
+colour: missing,0.005
+feeling: 'anticipation',0.005
+where: Outdoor public space,0.005
+food: missing,0.005
+food: 'coke',0.004
+food: 'fries',0.004
+food: 'chicken',0.004
+music: Rock,0.004
+feeling: 'tense',0.004
+feeling: 'moment',0.004
+feeling: 'entertained',0.004
+food: 'food',0.004
+food: 'fried',0.003
+food: 'drink',0.003
+feeling: 'nervous',0.003
+food: 'cold',0.002
+season: Summer,0.002
+food: 'snack',0.002
+food: 'burger',0.002
+food: 'soft',0.002
+feeling: 'watching',0.001
+food: 'soda',0.001
+food: 'pop',0.001
+feeling: 'sport',0.001
+music: Other,0.001
+feeling: 'close',0.001
+food: 'water',0.001
+song: 'song',0.001
+feeling: 'not',0.001
+feeling: 'don',0.001
+food: 'associate',0.0
+food: 'cola',0.0
+feeling: 'watch',0.0
+feeling: 'happy',0.0
