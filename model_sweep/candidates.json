@@ -1,5 +1,0 @@
-[["RandomForest", {"n": 500, "f": "log2", "d": null, "l": 1}, {"min_df": 1}],
- ["BernoulliNB", {"a": 0.5}, {"min_df": 1}],
- ["SoftmaxRegression", {"C": 0.5, "pen": "l1"}, {"min_df": 2}],
- ["LeastSquares(Ridge)", {"a": 5}, {"min_df": 1}],
- ["LDA", {"s": 0.4}, {"min_df": 1}]]
