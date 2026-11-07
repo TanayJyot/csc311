@@ -1,13 +1,12 @@
 """check_pred.py - check pred.py against the MarkUs rules and against scikit-learn.
 
-1. Fits the three models on the instructors' train+val respondents only, writes a
+1. Fits the three final models (train_final.py: train+val respondents), writes a
    held-out test CSV without the label column, and runs pred.predict_all on it
    from a clean folder holding only the files we would submit.
 2. Checks the numpy predictions equal the scikit-learn ones, reports held-out
    accuracy, the time for 60 rows and the size of the submitted files.
 
-Run: python check_pred.py   (needs scikit-learn; run train_final.py afterwards
-     to re-export the models fit on all rows)
+Run: python check_pred.py   (needs scikit-learn)
 """
 import ast
 import importlib.util
@@ -44,7 +43,7 @@ def check_imports():
 def main():
     check_imports()
     folder = tempfile.mkdtemp()
-    models, preps = fit_and_export(folder, holdout=True)
+    models, preps = fit_and_export(folder)
     for name in ("pred.py", "features.py"):
         shutil.copy(name, folder)
 
