@@ -18,18 +18,27 @@ import time
 
 import pandas as pd
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(HERE))                                   # train_final.py
+
 from features import (TEXT_COLS, blank_rows, design_matrix, load_survey,
                       respondent_split, structured_features, tokenize)
 from train_final import DATA, fit_and_export
 
 SUBMITTED = ["pred.py", "features.py", "model_params.npz", "model_meta.json"]
+SUB = ROOT / "methodology" / "submission"
 ALLOWED_IMPORTS = {"json", "os", "sys", "re", "numpy", "pandas", "features"}
 
 
 def check_imports():
     """pred.py and features.py may import only the standard library, numpy and pandas."""
     for name in ("pred.py", "features.py"):
-        for node in ast.walk(ast.parse(open(name).read())):
+        for node in ast.walk(ast.parse(open(SUB / name).read())):
             if isinstance(node, ast.Import):
                 modules = [a.name for a in node.names]
             elif isinstance(node, ast.ImportFrom):
@@ -45,7 +54,7 @@ def main():
     folder = tempfile.mkdtemp()
     models, preps = fit_and_export(folder)
     for name in ("pred.py", "features.py"):
-        shutil.copy(name, folder)
+        shutil.copy(SUB / name, folder)
 
     raw = pd.read_csv(DATA, dtype=str, keep_default_na=False)
     short = load_survey(DATA)

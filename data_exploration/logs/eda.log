@@ -226,4 +226,4 @@ places=Community recreation facility    0.96
 music=Country                           0.85
 places=School or university facility    0.65
 
-wrote eda_outputs/*.csv, figures/*.png and split_ids.csv
+wrote data_exploration/eda_outputs/*.csv, data_exploration/figures/*.png and data_exploration/split_ids.csv

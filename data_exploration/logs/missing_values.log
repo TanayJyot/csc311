@@ -7,7 +7,7 @@ raw respondents: 290  (rows per respondent: [3])
 entirely blank rows (all 12 answers empty): 7 from 3 respondents [119, 258, 267]
   blank rows per respondent: {119: 2, 258: 3, 267: 2}
 cleaned rows: 870 - 7 = 863; respondents: 289
-ids in split_ids.csv: 289
+ids in data_exploration/split_ids.csv: 289
        respondents  rows
 split                   
 train          146   438
@@ -177,4 +177,4 @@ individual   863        1          0.1         0.0           0.0             0.3
 
 price: blank 0, present but unparseable 23
 
-wrote eda_outputs/missing_by_feature.csv and eda_outputs/missing_by_feature_full.csv
+wrote data_exploration/eda_outputs/missing_by_feature.csv and data_exploration/eda_outputs/missing_by_feature_full.csv

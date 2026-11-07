@@ -2,11 +2,11 @@
 import itertools, sys
 from collections import Counter
 import numpy as np, pandas as pd
-sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent.parent / "submission"))
 from features import (LIKERT_COLS, TEXT_COLS, blank_rows, load_survey,
                       respondent_split, structured_features, tokenize)
 
-DATA = str(__import__("pathlib").Path(__file__).resolve().parent.parent / "csc311_project_training_202609.csv")
+DATA = str(__import__("pathlib").Path(__file__).resolve().parents[2] / "csc311_project_training_202609.csv")
 
 def load_all():
     df = load_survey(DATA)

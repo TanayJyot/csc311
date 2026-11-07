@@ -17,6 +17,14 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold
 from sklearn.neighbors import KNeighborsClassifier
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(ROOT / "methodology"))                # baseline.py
+
 from baseline import DATA, design_matrix
 from features import (LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS, blank_rows, load_survey,
                       parse_price, respondent_split, structured_features, tokenize)

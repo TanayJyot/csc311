@@ -31,9 +31,10 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-DATA = "csc311_project_training_202609.csv"
-OUT_DIR = Path("eda_outputs")
-FIG_DIR = Path("figures")
+HERE = Path(__file__).resolve().parent
+DATA = str(HERE.parent / "csc311_project_training_202609.csv")
+OUT_DIR = HERE / "eda_outputs"
+FIG_DIR = HERE / "figures"
 SEED = 42
 LABELS = ["Soccer", "Baseball", "Basketball"]
 COLORS = {"Soccer": "#1baf7a", "Baseball": "#2a78d6", "Basketball": "#eb6834"}
@@ -173,7 +174,7 @@ def main(input_path=DATA, out_dir=OUT_DIR, fig_dir=FIG_DIR, seed=SEED):
     y = tr["label"]
     # Use clean, split files with the helper columns explicitly named.
     df.drop(columns=["split"]).to_csv(OUT_DIR / "cleaned_survey.csv", index=False)
-    df[["id", "split"]].drop_duplicates().sort_values("id").to_csv("split_ids.csv", index=False)
+    df[["id", "split"]].drop_duplicates().sort_values("id").to_csv(HERE / "split_ids.csv", index=False)
     for name in ["train", "val", "test"]:
         df[df["split"] == name].drop(columns=["split"]).to_csv(OUT_DIR / f"{name}.csv", index=False)
 
@@ -513,12 +514,12 @@ def main(input_path=DATA, out_dir=OUT_DIR, fig_dir=FIG_DIR, seed=SEED):
     say("6. Treat all rankings here as exploratory. They describe association, not causation, and small samples/rare words can create unstable apparent signals.")
     say("")
     say("## Output inventory")
-    say(f"- Tables: `{OUT_DIR}/`")
-    say(f"- Figures: `{FIG_DIR}/`")
+    say("- Tables: `data_exploration/eda_outputs/`")
+    say("- Figures: `data_exploration/figures/`")
     say("- Main plots: label balance; numeric boxplots/distributions; Likert distributions; multi-select option rates; missingness; free-text response lengths and token rates; correlation heatmap; mutual-information ranking.")
     (OUT_DIR/"eda_report.md").write_text("\n".join(report)+"\n",encoding="utf-8")
-    print(f"\nWrote report: {OUT_DIR / 'eda_report.md'}")
-    print(f"Wrote figures to: {FIG_DIR.resolve()}")
+    print("\nWrote report: data_exploration/eda_outputs/eda_report.md")
+    print("Wrote figures to: data_exploration/figures/")
 
 if __name__ == "__main__":
     parser=argparse.ArgumentParser()
