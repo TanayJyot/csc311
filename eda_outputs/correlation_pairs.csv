@@ -1,0 +1,11 @@
+feature_1,feature_2,spearman_rho,abs_rho
+Success in this sport depends heavily on strategy and planning. [ordinal],Players must be comfortable with a high risk of injury. [ordinal],0.3168817260061323,0.3168817260061323
+Players must be comfortable with a high risk of injury. [ordinal],log_price,0.220589783344319,0.220589783344319
+Success in this sport depends heavily on strategy and planning. [ordinal],log_price,0.20745273614717166,0.20745273614717166
+ease_numeric,log_price,0.18642383907599078,0.18642383907599078
+Success in this sport depends heavily on strategy and planning. [ordinal],Individual brilliance can outweigh teamwork in this sport. [ordinal],-0.18127021517122927,0.18127021517122927
+Players must be comfortable with a high risk of injury. [ordinal],Individual brilliance can outweigh teamwork in this sport. [ordinal],-0.14087434294797554,0.14087434294797554
+ease_numeric,Players must be comfortable with a high risk of injury. [ordinal],0.11147510514187656,0.11147510514187656
+Individual brilliance can outweigh teamwork in this sport. [ordinal],log_price,-0.09887133159325553,0.09887133159325553
+ease_numeric,Individual brilliance can outweigh teamwork in this sport. [ordinal],-0.08132178654891514,0.08132178654891514
+ease_numeric,Success in this sport depends heavily on strategy and planning. [ordinal],0.0005802770562207515,0.0005802770562207515

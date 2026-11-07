@@ -1,0 +1,61 @@
+
+==============================================================================
+A1. Feature ranges before scaling (training split)
+==============================================================================
+            min    max  mean   std
+ease        0.0  10.00  5.55  2.34
+strategy    1.0   5.00  3.78  0.93
+injury      1.0   5.00  3.49  1.03
+individual  1.0   5.00  3.43  1.11
+log_price   0.0   9.21  4.44  1.84
+ease values that are not whole numbers: 0
+multi-hot columns: 21 (places 7, seasons 4, music 10), values 0/1
+
+==============================================================================
+A2. Price outliers (Q6)
+==============================================================================
+raw $: median 100, mean 267, max 10000, skewness 9.52; log1p skewness -1.07
+log1p range 0.00-9.21; upper fence 7.361 (= $1,572), lower fence 1.875 (= $5.52)
+above upper fence: 10 -> [2000, 2000, 2000, 2000, 2000, 3000, 3000, 3000, 5000, 10000]
+below lower fence: 46 (these are the $0 refusals: 43 zeros)
+largest price after log1p is 2.59 SD above the mean (raw scale: 14.92 SD)
+99th percentile $2,730; values above it: [3000, 3000, 3000, 5000, 10000]
+rows above the upper fence by sport: {'Soccer': 5, 'Basketball': 3, 'Baseball': 2}
+
+==============================================================================
+A3. Price parsing: what counts as unparseable (Q7c)
+==============================================================================
+unparseable: 10 of 438 (2.3%); '1 to 10 scale' answers: 3; no amount found: 7
+answers naming a currency: 63 (amounts are used as-is, not converted)
+
+==============================================================================
+A4. Free text: words per answer, repeats, unseen words, feature count (Q7d-g)
+==============================================================================
+food     mean tokens per answered row 3.43; answers with a repeated word 2.2%
+colour   mean tokens per answered row 1.58; answers with a repeated word 1.4%
+song     mean tokens per answered row 2.87; answers with a repeated word 3.2%
+feeling  mean tokens per answered row 3.01; answers with a repeated word 3.5%
+over all four questions: 2.3% of answers repeat a word
+(baseline.py folds) held-out tokens never seen in the training folds: 20.8%; held-out rows with at least one: 59.1%
+structured columns: 26; words (min_df 1): 1137; words (min_df 3): 245
+all words: 1163 features for 438 rows; min_df 3: 271
+baseline.py design matrix width per fold (min_df 3, + 5 flags + 4 text indicators): [213, 252, 237, 237, 247]
+
+==============================================================================
+B. One change at a time: untuned softmax regression (C = 1), grouped 5-fold CV
+==============================================================================
+baseline.py design_matrix (reference)                87.4% +/- 4.9
+as baseline (variant_matrix defaults)                87.4% +/- 4.9
+Likert one-hot instead of ordinal                    86.3% +/- 5.2
+word counts instead of binary                        88.3% +/- 4.9
+TF-IDF (L2-normalised) instead of binary             88.6% +/- 5.3
+clip log price at training 99th percentile           87.4% +/- 4.9
+no missing flags for numeric/Likert/price            87.6% +/- 5.1
+min-max scaling instead of z-score                   89.9% +/- 4.2
+no scaling                                           89.7% +/- 3.9
+z-score the word columns too                         87.7% +/- 2.3
+
+kNN (k = 15), same folds: does scaling matter?
+z-score (baseline)                                   77.2% +/- 4.9
+min-max                                              83.6% +/- 3.4
+no scaling                                           76.5% +/- 6.4

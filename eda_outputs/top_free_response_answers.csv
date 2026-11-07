@@ -1,0 +1,121 @@
+question,sport,rank,normalized_answer,count,within_sport_pct
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,1,beer,14,9.58904109589041
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,2,cola,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,3,beers,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,4,"hot dogs, beer",2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,5,unsure,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,6,coke,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,7,"french fries, soda, beer",1,0.684931506849315
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,8,"hot dogs, soda, burger, and fries",1,0.684931506849315
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,9,"beer, fries, skewers",1,0.684931506849315
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Soccer,10,beer and fried chicken,1,0.684931506849315
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,1,hot dogs,9,6.164383561643835
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,2,hotdog,6,4.109589041095891
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,3,hot dog,5,3.4246575342465753
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,4,hot dog and beer,3,2.0547945205479454
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,5,beer,3,2.0547945205479454
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,6,hotdogs,3,2.0547945205479454
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,7,hot dogs and soda.,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,8,hot dogs and beer.,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,9,chips,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Baseball,10,"beer, hot dogs",2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,1,popcorn,7,4.794520547945205
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,2,chicken wings,4,2.73972602739726
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,3,hot dogs,4,2.73972602739726
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,4,gatorade,4,2.73972602739726
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,5,coke,4,2.73972602739726
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,6,beer,3,2.0547945205479454
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,7,pizza,3,2.0547945205479454
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,8,pizza and soda,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,9,cola,2,1.36986301369863
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,Basketball,10,"nachos, coke",1,0.684931506849315
+What colour do you associate with this sport?,Soccer,1,green,50,34.24657534246575
+What colour do you associate with this sport?,Soccer,2,blue,17,11.643835616438356
+What colour do you associate with this sport?,Soccer,3,red,15,10.273972602739725
+What colour do you associate with this sport?,Soccer,4,white,8,5.47945205479452
+What colour do you associate with this sport?,Soccer,5,black and white,4,2.73972602739726
+What colour do you associate with this sport?,Soccer,6,yellow,4,2.73972602739726
+What colour do you associate with this sport?,Soccer,7,green.,3,2.0547945205479454
+What colour do you associate with this sport?,Soccer,8,"black, white, green",3,2.0547945205479454
+What colour do you associate with this sport?,Soccer,9,blue and red,2,1.36986301369863
+What colour do you associate with this sport?,Soccer,10,"green, because it reminds me of the surface on which the game is usually played.",1,0.684931506849315
+What colour do you associate with this sport?,Baseball,1,blue,64,43.83561643835616
+What colour do you associate with this sport?,Baseball,2,white,22,15.068493150684931
+What colour do you associate with this sport?,Baseball,3,red,9,6.164383561643835
+What colour do you associate with this sport?,Baseball,4,brown,7,4.794520547945205
+What colour do you associate with this sport?,Baseball,5,blue.,5,3.4246575342465753
+What colour do you associate with this sport?,Baseball,6,green,5,3.4246575342465753
+What colour do you associate with this sport?,Baseball,7,yellow,3,2.0547945205479454
+What colour do you associate with this sport?,Baseball,8,orange,2,1.36986301369863
+What colour do you associate with this sport?,Baseball,9,"white, red",2,1.36986301369863
+What colour do you associate with this sport?,Baseball,10,"blue, white",2,1.36986301369863
+What colour do you associate with this sport?,Basketball,1,orange,60,41.0958904109589
+What colour do you associate with this sport?,Basketball,2,red,26,17.80821917808219
+What colour do you associate with this sport?,Basketball,3,brown,9,6.164383561643835
+What colour do you associate with this sport?,Basketball,4,orange.,6,4.109589041095891
+What colour do you associate with this sport?,Basketball,5,black,5,3.4246575342465753
+What colour do you associate with this sport?,Basketball,6,purple,3,2.0547945205479454
+What colour do you associate with this sport?,Basketball,7,yellow,3,2.0547945205479454
+What colour do you associate with this sport?,Basketball,8,black.,2,1.36986301369863
+What colour do you associate with this sport?,Basketball,9,blue,2,1.36986301369863
+What colour do you associate with this sport?,Basketball,10,red and black,2,1.36986301369863
+Which song do you associate with this sport?,Soccer,1,waka waka,23,15.753424657534246
+Which song do you associate with this sport?,Soccer,2,waka waka by shakira,12,8.219178082191782
+Which song do you associate with this sport?,Soccer,3,waka waka (this time for africa) by shakira,5,3.4246575342465753
+Which song do you associate with this sport?,Soccer,4,waka waka - shakira,5,3.4246575342465753
+Which song do you associate with this sport?,Soccer,5,waka waka (this time for africa) - shakira,3,2.0547945205479454
+Which song do you associate with this sport?,Soccer,6,waka waka (this time for africa),3,2.0547945205479454
+Which song do you associate with this sport?,Soccer,7,waving flag,2,1.36986301369863
+Which song do you associate with this sport?,Soccer,8,"""waka waka"" by shakira",2,1.36986301369863
+Which song do you associate with this sport?,Soccer,9,love me again - john newman,2,1.36986301369863
+Which song do you associate with this sport?,Soccer,10,we are the champions,2,1.36986301369863
+Which song do you associate with this sport?,Baseball,1,take me out to the ball game,26,17.80821917808219
+Which song do you associate with this sport?,Baseball,2,ok [a team in this sport],4,2.73972602739726
+Which song do you associate with this sport?,Baseball,3,centerfield,3,2.0547945205479454
+Which song do you associate with this sport?,Baseball,4,no particular song,3,2.0547945205479454
+Which song do you associate with this sport?,Baseball,5,no idea,3,2.0547945205479454
+Which song do you associate with this sport?,Baseball,6,“take me out to the ball game.”,2,1.36986301369863
+Which song do you associate with this sport?,Baseball,7,take me out to the ball game - jack norworth & albert von tilzer,2,1.36986301369863
+Which song do you associate with this sport?,Baseball,8,sweet caroline,2,1.36986301369863
+Which song do you associate with this sport?,Baseball,9,take me out to the ball game by jack norworth and albert von tilzer,2,1.36986301369863
+Which song do you associate with this sport?,Baseball,10,none in particular.,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,1,we will rock you,5,3.4246575342465753
+Which song do you associate with this sport?,Basketball,2,no particular song,3,2.0547945205479454
+Which song do you associate with this sport?,Basketball,3,forever by drake,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,4,we are the champions,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,5,see you again,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,6,forever,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,7,roundball rock,2,1.36986301369863
+Which song do you associate with this sport?,Basketball,8,wnba,1,0.684931506849315
+Which song do you associate with this sport?,Basketball,9,"""touch the sky"" - kanye west",1,0.684931506849315
+Which song do you associate with this sport?,Basketball,10,no song in particular,1,0.684931506849315
+How do you feel when you watch this sport?,Soccer,1,excited,31,21.232876712328768
+How do you feel when you watch this sport?,Soccer,2,energized,3,2.0547945205479454
+How do you feel when you watch this sport?,Soccer,3,bored,3,2.0547945205479454
+How do you feel when you watch this sport?,Soccer,4,exciting,3,2.0547945205479454
+How do you feel when you watch this sport?,Soccer,5,anticipation,2,1.36986301369863
+How do you feel when you watch this sport?,Soccer,6,neutral,2,1.36986301369863
+How do you feel when you watch this sport?,Soccer,7,interested,2,1.36986301369863
+How do you feel when you watch this sport?,Soccer,8,"excited, on-edge, anxious",1,0.684931506849315
+How do you feel when you watch this sport?,Soccer,9,"intense, excited",1,0.684931506849315
+How do you feel when you watch this sport?,Soccer,10,feeling passionate,1,0.684931506849315
+How do you feel when you watch this sport?,Baseball,1,bored,29,19.863013698630137
+How do you feel when you watch this sport?,Baseball,2,excited,8,5.47945205479452
+How do you feel when you watch this sport?,Baseball,3,neutral,6,4.109589041095891
+How do you feel when you watch this sport?,Baseball,4,boring,6,4.109589041095891
+How do you feel when you watch this sport?,Baseball,5,confused,6,4.109589041095891
+How do you feel when you watch this sport?,Baseball,6,happy,3,2.0547945205479454
+How do you feel when you watch this sport?,Baseball,7,nervous,3,2.0547945205479454
+How do you feel when you watch this sport?,Baseball,8,interesting,3,2.0547945205479454
+How do you feel when you watch this sport?,Baseball,9,intrigued,2,1.36986301369863
+How do you feel when you watch this sport?,Baseball,10,uninterested,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,1,excited,31,21.232876712328768
+How do you feel when you watch this sport?,Basketball,2,neutral,7,4.794520547945205
+How do you feel when you watch this sport?,Basketball,3,energized,4,2.73972602739726
+How do you feel when you watch this sport?,Basketball,4,energetic,4,2.73972602739726
+How do you feel when you watch this sport?,Basketball,5,excitement,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,6,exciting,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,7,bored,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,8,happy,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,9,intrigued,2,1.36986301369863
+How do you feel when you watch this sport?,Basketball,10,don't watch,2,1.36986301369863

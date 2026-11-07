@@ -1,0 +1,401 @@
+family,params,cv_acc,cv_sd,train_acc
+kNN,"{""k"": 1, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7419157088122605,0.0587243217897969,1.0
+kNN,"{""k"": 1, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8079693486590038,0.07298399036726344,1.0
+kNN,"{""k"": 1, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7419157088122605,0.0587243217897969,1.0
+kNN,"{""k"": 1, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8079693486590038,0.07298399036726344,1.0
+kNN,"{""k"": 1, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7443678160919539,0.056579751955550026,1.0
+kNN,"{""k"": 1, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.7987739463601532,0.050032153018214745,1.0
+kNN,"{""k"": 1, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7443678160919539,0.056579751955550026,1.0
+kNN,"{""k"": 1, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.7987739463601532,0.050032153018214745,1.0
+kNN,"{""k"": 1, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7420689655172413,0.06612383039391927,1.0
+kNN,"{""k"": 1, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8148659003831419,0.05367399022797863,1.0
+kNN,"{""k"": 1, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7420689655172413,0.06612383039391927,1.0
+kNN,"{""k"": 1, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8148659003831419,0.05367399022797863,1.0
+kNN,"{""k"": 1, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7511111111111111,0.0675988902183303,1.0
+kNN,"{""k"": 1, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8172413793103448,0.050154998228210186,1.0
+kNN,"{""k"": 1, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7511111111111111,0.0675988902183303,1.0
+kNN,"{""k"": 1, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8172413793103448,0.050154998228210186,1.0
+kNN,"{""k"": 3, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7671264367816092,0.037334918713860764,0.8526819923371647
+kNN,"{""k"": 3, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8285057471264368,0.04316945138135359,0.8772620100206308
+kNN,"{""k"": 3, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7626819923371648,0.053394952733179624,1.0
+kNN,"{""k"": 3, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8377011494252873,0.05054544607746873,1.0
+kNN,"{""k"": 3, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.746360153256705,0.04713733792867339,0.850997150997151
+kNN,"{""k"": 3, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8242145593869731,0.04897888640422747,0.8972394144807936
+kNN,"{""k"": 3, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7465900383141763,0.06296575550968911,1.0
+kNN,"{""k"": 3, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8196934865900385,0.04037637987111525,1.0
+kNN,"{""k"": 3, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7510344827586207,0.03717888896467867,0.8538363296983986
+kNN,"{""k"": 3, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8357854406130268,0.051019523079842165,0.893835347283623
+kNN,"{""k"": 3, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7443678160919539,0.05271139548677339,1.0
+kNN,"{""k"": 3, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8426053639846742,0.0444222431006708,1.0
+kNN,"{""k"": 3, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7511111111111111,0.040126925354805665,0.8549759308379998
+kNN,"{""k"": 3, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.840153256704981,0.04244297728841712,0.8995038805383633
+kNN,"{""k"": 3, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7534865900383141,0.059841591999689935,1.0
+kNN,"{""k"": 3, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8493486590038314,0.04661271881903427,1.0
+kNN,"{""k"": 5, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7763218390804598,0.044704221645725926,0.8361479516651931
+kNN,"{""k"": 5, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8308045977011493,0.04961684344442743,0.8692946261911778
+kNN,"{""k"": 5, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.787816091954023,0.04183402773582682,1.0
+kNN,"{""k"": 5, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8399233716475095,0.05044590586785274,1.0
+kNN,"{""k"": 5, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7720306513409961,0.06424911514560792,0.8201886236368996
+kNN,"{""k"": 5, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8401532567049808,0.05681794691482955,0.874987719815306
+kNN,"{""k"": 5, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7789272030651342,0.06827667908915977,1.0
+kNN,"{""k"": 5, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8357854406130268,0.05255029166655734,1.0
+kNN,"{""k"": 5, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7809961685823754,0.04686599059301866,0.8241772276255034
+kNN,"{""k"": 5, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8471264367816091,0.039080459770114935,0.8892474702819531
+kNN,"{""k"": 5, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7902681992337165,0.06753631923939962,1.0
+kNN,"{""k"": 5, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8563984674329502,0.04871201143289258,1.0
+kNN,"{""k"": 5, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7788505747126436,0.048861256438651315,0.8258817172610275
+kNN,"{""k"": 5, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8470498084291188,0.03805768553462844,0.878411435307987
+kNN,"{""k"": 5, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7859003831417624,0.06561212908746256,1.0
+kNN,"{""k"": 5, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8448275862068966,0.04047544106128507,1.0
+kNN,"{""k"": 7, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7673563218390804,0.0340788606164716,0.8190490224972983
+kNN,"{""k"": 7, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8334099616858237,0.04359769424687958,0.8595687199135476
+kNN,"{""k"": 7, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7879693486590038,0.032070224321504054,1.0
+kNN,"{""k"": 7, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8425287356321839,0.05186443297783206,1.0
+kNN,"{""k"": 7, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7582375478927202,0.057934277920109745,0.815065330582572
+kNN,"{""k"": 7, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8472030651340997,0.051056799051147385,0.8670006876903429
+kNN,"{""k"": 7, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7744061302681993,0.060090701299552254,1.0
+kNN,"{""k"": 7, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8404597701149423,0.06284907800351928,1.0
+kNN,"{""k"": 7, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7651340996168582,0.051512266508071426,0.8236221632773356
+kNN,"{""k"": 7, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8583908045977011,0.03765065303461745,0.8783917870124768
+kNN,"{""k"": 7, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7790804597701149,0.06626274783437149,1.0
+kNN,"{""k"": 7, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8607662835249043,0.04184188726498044,1.0
+kNN,"{""k"": 7, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7652107279693487,0.04610352962933495,0.8213282247765006
+kNN,"{""k"": 7, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8310344827586207,0.042637326416072194,0.8744179192455054
+kNN,"{""k"": 7, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7857471264367817,0.05165819551333571,1.0
+kNN,"{""k"": 7, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8380076628352491,0.045138197551541887,1.0
+kNN,"{""k"": 11, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7832950191570881,0.036359002602014495,0.8030651340996169
+kNN,"{""k"": 11, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8286590038314177,0.02867006568330448,0.8521662245800178
+kNN,"{""k"": 11, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7947892720306514,0.04497868891172368,1.0
+kNN,"{""k"": 11, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8310344827586207,0.02943965166635792,1.0
+kNN,"{""k"": 11, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7719540229885057,0.044845855398975815,0.807063562235976
+kNN,"{""k"": 11, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8288122605363984,0.04907948769903048,0.8572895176343452
+kNN,"{""k"": 11, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7741762452107279,0.0477706336622782,1.0
+kNN,"{""k"": 11, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8357088122605363,0.04589673707366878,1.0
+kNN,"{""k"": 11, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7855172413793104,0.0529514668464845,0.8059239610963749
+kNN,"{""k"": 11, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8469731800766283,0.0416646892559363,0.8681353767560666
+kNN,"{""k"": 11, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7900383141762453,0.05021350168706784,1.0
+kNN,"{""k"": 11, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.856168582375479,0.04270035442881043,1.0
+kNN,"{""k"": 11, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.774176245210728,0.04665125037122215,0.7962177031142549
+kNN,"{""k"": 11, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8491954022988505,0.02810244926884806,0.8670252480597307
+kNN,"{""k"": 11, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7763984674329503,0.04986710366632197,1.0
+kNN,"{""k"": 11, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8422988505747127,0.029245138195474498,1.0
+kNN,"{""k"": 15, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7718773946360153,0.049270064254690264,0.7990765301110129
+kNN,"{""k"": 15, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.835632183908046,0.03362928468581102,0.8436044798113764
+kNN,"{""k"": 15, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7878927203065135,0.043812122323695094,1.0
+kNN,"{""k"": 15, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8333333333333334,0.029529270295781906,1.0
+kNN,"{""k"": 15, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7832950191570881,0.039158212788731335,0.7910796738382946
+kNN,"{""k"": 15, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8355555555555556,0.04977092605204465,0.8567295412122997
+kNN,"{""k"": 15, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7832950191570882,0.045407455613513815,1.0
+kNN,"{""k"": 15, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8379310344827585,0.04882013926803518,1.0
+kNN,"{""k"": 15, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7787739463601533,0.04052444615887562,0.7979271048236566
+kNN,"{""k"": 15, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.835632183908046,0.03874091849736256,0.8669957756164652
+kNN,"{""k"": 15, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7877394636015327,0.04412622237207038,1.0
+kNN,"{""k"": 15, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.849272030651341,0.04335133488571616,1.0
+kNN,"{""k"": 15, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.76727969348659,0.04530647695882796,0.7968022399056881
+kNN,"{""k"": 15, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8469731800766283,0.04037637987111525,0.8527556734453287
+kNN,"{""k"": 15, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7762452107279694,0.040155011514402754,1.0
+kNN,"{""k"": 15, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8379310344827587,0.04182392045669023,1.0
+kNN,"{""k"": 21, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7580842911877395,0.05689602280544175,0.7808232635818844
+kNN,"{""k"": 21, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8469731800766283,0.03904558582220874,0.8441595441595442
+kNN,"{""k"": 21, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7695785440613027,0.06481309222682465,1.0
+kNN,"{""k"": 21, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8469731800766283,0.03904558582220874,1.0
+kNN,"{""k"": 21, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.764904214559387,0.0552625912677734,0.7813881520778073
+kNN,"{""k"": 21, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8242911877394636,0.04866932041357508,0.8436044798113762
+kNN,"{""k"": 21, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7718007662835248,0.05178716183093135,1.0
+kNN,"{""k"": 21, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8266666666666668,0.047036078219251945,1.0
+kNN,"{""k"": 21, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7786206896551724,0.052258289184389885,0.7871008939974458
+kNN,"{""k"": 21, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8355555555555556,0.03906272604931584,0.8504469987228609
+kNN,"{""k"": 21, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7854406130268199,0.05850914687761249,1.0
+kNN,"{""k"": 21, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8447509578544061,0.046263729242080824,1.0
+kNN,"{""k"": 21, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7786973180076628,0.05237568913623391,0.7882552313586796
+kNN,"{""k"": 21, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.835478927203065,0.04130374823579832,0.8527360251498182
+kNN,"{""k"": 21, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7901149425287357,0.06336492943213531,1.0
+kNN,"{""k"": 21, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.835478927203065,0.04193860701042393,1.0
+kNN,"{""k"": 31, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7375478927203065,0.04458295236103865,0.7614303959131545
+kNN,"{""k"": 31, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8311877394636016,0.042563997669666155,0.8384615384615385
+kNN,"{""k"": 31, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7535632183908045,0.0487312945369604,1.0
+kNN,"{""k"": 31, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8380842911877394,0.03702632513434599,1.0
+kNN,"{""k"": 31, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7420689655172413,0.04752341906914042,0.76482463896257
+kNN,"{""k"": 31, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8244444444444445,0.04848364940045108,0.82763041556145
+kNN,"{""k"": 31, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.758007662835249,0.0524361942674451,1.0
+kNN,"{""k"": 31, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8244444444444445,0.04848364940045108,1.0
+kNN,"{""k"": 31, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7603065134099617,0.0660221631627157,0.7694076038903624
+kNN,"{""k"": 31, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8289655172413793,0.051580387730875296,0.8396011396011396
+kNN,"{""k"": 31, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7786206896551724,0.05709115680177614,1.0
+kNN,"{""k"": 31, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8289655172413793,0.051580387730875296,1.0
+kNN,"{""k"": 31, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7581609195402299,0.053130808496274856,0.7693977797426074
+kNN,"{""k"": 31, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.831111111111111,0.03476799862679041,0.8396158758227724
+kNN,"{""k"": 31, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7740996168582376,0.045399695998592095,1.0
+kNN,"{""k"": 31, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8333333333333333,0.032914531179945646,1.0
+kNN,"{""k"": 51, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7308812260536397,0.044124625495562855,0.7243344139895863
+kNN,"{""k"": 51, ""words"": ""all"", ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8013793103448277,0.048973611116708,0.8104823656547794
+kNN,"{""k"": 51, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7354789272030651,0.0478185479278888,1.0
+kNN,"{""k"": 51, ""words"": ""all"", ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8104980842911879,0.04957303646266618,1.0
+kNN,"{""k"": 51, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.719616858237548,0.04386757343817972,0.7317467334708714
+kNN,"{""k"": 51, ""words"": 25, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.790191570881226,0.05592168953642523,0.8167649081442185
+kNN,"{""k"": 51, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7378544061302683,0.04743313588188386,1.0
+kNN,"{""k"": 51, ""words"": 25, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.797088122605364,0.057945223180828974,1.0
+kNN,"{""k"": 51, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7332567049808428,0.044552912955471036,0.7328814225365949
+kNN,"{""k"": 51, ""words"": 50, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8265134099616859,0.05492622809753205,0.833903133903134
+kNN,"{""k"": 51, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7537931034482759,0.0519479194868707,1.0
+kNN,"{""k"": 51, ""words"": 50, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8288122605363984,0.053212528881719325,1.0
+kNN,"{""k"": 51, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""z-score""}",0.7377011494252873,0.035408269387568074,0.7345957363198742
+kNN,"{""k"": 51, ""words"": 100, ""weights"": ""uniform"", ""scaling"": ""min-max""}",0.8106513409961685,0.048352672580429364,0.8235877787601927
+kNN,"{""k"": 51, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""z-score""}",0.7537164750957854,0.04988405693742701,1.0
+kNN,"{""k"": 51, ""words"": 100, ""weights"": ""distance"", ""scaling"": ""min-max""}",0.8129501915708811,0.046042354588506744,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9016858237547893,0.04175760103991679,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9016091954022988,0.047188632913361686,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.906360153256705,0.0366965811584126,0.9748845662638767
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8947892720306513,0.0384225287817852,0.9794577070439139
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.883448275862069,0.04527977064656783,0.9366293349051968
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.892567049808429,0.04112423153354496,0.9320709303467923
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9016858237547893,0.04539581569374273,0.9931476569407603
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9061302681992336,0.03773508736320346,0.9937223695844386
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9062835249042147,0.040931018522998505,0.971455938697318
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8993869731800765,0.04166046106957308,0.9714608507711956
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.883448275862069,0.0434938640598888,0.935489733765596
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8879693486590037,0.04534534151447143,0.9343550446998723
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9039846743295019,0.04172806063979721,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9016091954022988,0.047188632913361686,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.906360153256705,0.0366965811584126,0.9748845662638767
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8947892720306513,0.0384225287817852,0.9794577070439139
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.883448275862069,0.04527977064656783,0.9366293349051968
+Random forest,"{""n_trees"": 100, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.892567049808429,0.04112423153354496,0.9320709303467923
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9039846743295019,0.03911320091943804,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9085057471264367,0.03033786057254916,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9039846743295019,0.03843169715893068,0.9640387071421553
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8971647509578544,0.046146303904466654,0.9583308772963945
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.899463601532567,0.038905475578707854,0.9252431476569409
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8857471264367816,0.05309100715089087,0.9240986344434621
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8902681992337165,0.0487958374123303,0.9840210236761961
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9039846743295019,0.03164444800717276,0.9880194518125552
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8924904214559387,0.039270516744953306,0.9560565870910699
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8994636015325671,0.03681160973198174,0.9509234698889871
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8971647509578544,0.041947006883726864,0.922959033303861
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8902681992337165,0.05295102327584522,0.9258080361528638
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9064367816091954,0.031850489677458384,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.913103448275862,0.03245859787535226,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9039846743295019,0.03843169715893068,0.9651832203556342
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.897088122605364,0.04793996137518765,0.9577610767265939
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.899463601532567,0.038905475578707854,0.9252431476569409
+Random forest,"{""n_trees"": 100, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8857471264367816,0.05309100715089087,0.9240986344434621
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9062835249042147,0.03685465288723593,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8971647509578544,0.03866931197035444,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9062835249042145,0.03463703250125429,0.9788928185479909
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039846743295019,0.03079811601429691,0.9817418213969938
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9017624521072797,0.036193899834451246,0.9366342469790746
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8879693486590039,0.03840418546109026,0.9400579624717557
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9040613026819923,0.03310273874647582,0.9942872580803617
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8948659003831418,0.04031088361139887,0.9948668827979172
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9062835249042147,0.028806145923274414,0.9743196777679536
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039080459770116,0.0477231634564875,0.9748993024855095
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9041379310344828,0.032065463492713005,0.9372040475488751
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.892567049808429,0.04238981833555963,0.9383436486884762
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9085823754789273,0.035056612848816726,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8971647509578544,0.03866931197035444,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9062835249042145,0.03463703250125429,0.9788928185479909
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039846743295019,0.03079811601429691,0.9817418213969938
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9017624521072797,0.036193899834451246,0.9366342469790746
+Random forest,"{""n_trees"": 100, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8879693486590039,0.03840418546109026,0.9400579624717557
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8904214559386971,0.04270612963400087,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8834482758620691,0.02889244568894709,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8813026819923371,0.03876395006908518,0.9863002259553983
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8789272030651339,0.041662152395611295,0.9897239414480794
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8675862068965519,0.04451942413576166,0.9354897337655957
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.869808429118774,0.0428847752400282,0.9366342469790745
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8790804597701148,0.03921814825220435,0.9988554867865214
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8767816091954023,0.028140034479263193,0.9994301994301995
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8744061302681994,0.033356137881237216,0.9851606248157971
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8788505747126436,0.03643224889316328,0.9868651144513214
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8675862068965519,0.04451942413576166,0.9343501326259946
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.869808429118774,0.0428847752400282,0.9366342469790745
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8904214559386971,0.04270612963400087,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8834482758620691,0.02889244568894709,1.0
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8813026819923371,0.03876395006908518,0.9863002259553983
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8789272030651339,0.041662152395611295,0.9897239414480794
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8675862068965519,0.04451942413576166,0.9354897337655957
+Random forest,"{""n_trees"": 100, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.869808429118774,0.0428847752400282,0.9366342469790745
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9108045977011494,0.03392343309553419,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.910727969348659,0.042932397939713235,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.91088122605364,0.03678767510645533,0.976033991551233
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9085823754789273,0.03931982886945492,0.9771686806169564
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.897088122605364,0.04451019050468203,0.9372138716966303
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.897088122605364,0.04330661357651911,0.9349248452696729
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.906360153256705,0.034468792403713006,0.9931476569407603
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8971647509578544,0.03727762611759849,0.9942970822281169
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.91088122605364,0.03678767510645533,0.9737400530503979
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039846743295019,0.042975869090173466,0.9737400530503979
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8947892720306513,0.04477456995296299,0.938923273406032
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8993103448275862,0.044798693901652545,0.9343550446998723
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9108045977011494,0.03899652921129199,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9130268199233716,0.040504445322306536,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.91088122605364,0.03678767510645533,0.976033991551233
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9062835249042145,0.04220239989179738,0.977738481186757
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.897088122605364,0.04451019050468203,0.9372138716966303
+Random forest,"{""n_trees"": 300, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.897088122605364,0.04330661357651911,0.9349248452696729
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9108812260536399,0.03819721611629895,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9108045977011494,0.0331353613732915,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9016858237547893,0.04300455236258124,0.966327733569113
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9086590038314176,0.03636869118819021,0.966327733569113
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9039846743295019,0.041728060639797206,0.9286521269279892
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9017624521072797,0.03545632870980474,0.9258031240789861
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9040613026819925,0.03389156904255096,0.9851655368896749
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8994636015325671,0.03681160973198174,0.9834512231063955
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8971647509578545,0.037979843978247586,0.9594852146576285
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9040613026819923,0.038968813552711146,0.9583407014441496
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9062835249042145,0.04028028224431254,0.9280823263581885
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9017624521072797,0.03545632870980474,0.926382748796542
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9062835249042147,0.03463703250125429,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9085823754789273,0.032717345330667044,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9016858237547893,0.04300455236258124,0.9657579329993122
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9086590038314176,0.03636869118819021,0.966327733569113
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9039846743295019,0.041728060639797206,0.9286521269279892
+Random forest,"{""n_trees"": 300, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9017624521072797,0.03545632870980474,0.9258031240789861
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9086590038314176,0.028181737034048793,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9062835249042147,0.03685465288723593,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9040613026819925,0.036154942554396344,0.9828765104627173
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8995402298850574,0.02941810257111976,0.983446311032518
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9062835249042145,0.03463703250125429,0.9366391590529523
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9017624521072797,0.036193899834451246,0.9412024756852343
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9108812260536399,0.03219084034079747,0.9971460850771197
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9108045977011494,0.03544705336532668,0.9965811965811966
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.906360153256705,0.02766442720501778,0.9754543668336773
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9040613026819925,0.036154942554396344,0.9771735926908341
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9062835249042147,0.03685465288723593,0.9394930739758326
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.899463601532567,0.038905475578707854,0.9406326751154337
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9086590038314176,0.028181737034048793,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9085823754789273,0.0342945908968638,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9040613026819925,0.036154942554396344,0.9828765104627173
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8995402298850574,0.02941810257111976,0.983446311032518
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9062835249042145,0.03463703250125429,0.9366391590529523
+Random forest,"{""n_trees"": 300, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9017624521072797,0.036193899834451246,0.9412024756852343
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8904980842911877,0.038563480098770725,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8857471264367817,0.026547494314026768,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8790804597701151,0.03417796329203825,0.9902937420178798
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8743295019157088,0.034388974210447315,0.9908635425876806
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8743295019157088,0.035148950011278816,0.9366342469790745
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8652873563218391,0.04007128012781778,0.9354897337655957
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8950957854406131,0.039008573355507586,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8767049808429119,0.032003141314671614,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8767816091954023,0.03408506297535749,0.9862953138815207
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8744061302681994,0.031732280962057796,0.9874300029472444
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8743295019157088,0.035148950011278816,0.936064446409274
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8629885057471263,0.03639451480857618,0.9354897337655957
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8904980842911877,0.038563480098770725,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8857471264367817,0.026547494314026768,1.0
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8790804597701151,0.03417796329203825,0.9902937420178798
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8743295019157088,0.034388974210447315,0.9908635425876806
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8743295019157088,0.035148950011278816,0.9366342469790745
+Random forest,"{""n_trees"": 300, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8652873563218391,0.04007128012781778,0.9354897337655957
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.913103448275862,0.037729173772742326,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9084291187739464,0.04452364458646422,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9086590038314176,0.031711178799447765,0.9777433932606346
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039846743295019,0.043586379336947596,0.9783082817565576
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8993869731800765,0.04291023532709353,0.9406326751154337
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8993103448275862,0.045963216321218185,0.9366440711268297
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9017624521072797,0.039004960502743186,0.9942921701542391
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.899463601532567,0.03534685745243272,0.9948668827979172
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9085823754789273,0.040641643933536364,0.9720257392671187
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9040613026819925,0.04030214273463755,0.9731702524805973
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8993103448275862,0.045963216321218185,0.939488161901955
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9016091954022988,0.044300467017732076,0.9360742705570292
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9130268199233716,0.04178880675689191,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9084291187739464,0.04452364458646422,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9109578544061303,0.03030222637527231,0.9783131938304352
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9039846743295019,0.043586379336947596,0.977738481186757
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8993869731800765,0.04291023532709353,0.9406326751154337
+Random forest,"{""n_trees"": 500, ""max_features"": ""sqrt"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8993103448275862,0.045963216321218185,0.9366440711268297
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.906360153256705,0.044506232647784964,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9154022988505746,0.03075308783115521,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8994636015325671,0.03608666611660275,0.9646134197858336
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.906360153256705,0.03810949157379424,0.9657530209254348
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9039846743295019,0.041728060639797206,0.9303566165635132
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9039846743295019,0.035575367713088966,0.9275076137145103
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9040613026819923,0.038968813552711146,0.9851606248157972
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.906360153256705,0.03208669865886116,0.984021023676196
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9040613026819925,0.03389156904255096,0.9583456135180274
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9040613026819923,0.033102738746475825,0.9589154140878279
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9039846743295019,0.041728060639797206,0.9309264171333137
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9039846743295019,0.035575367713088966,0.9275125257883878
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9108812260536399,0.03888282986980004,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9108812260536399,0.03819721611629892,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8994636015325671,0.03608666611660275,0.9646134197858336
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.906360153256705,0.03810949157379424,0.9663228214952355
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9039846743295019,0.041728060639797206,0.9303566165635132
+Random forest,"{""n_trees"": 500, ""max_features"": ""log2"", ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9039846743295019,0.035575367713088966,0.9275076137145103
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9062835249042147,0.03685465288723593,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9039846743295019,0.037031082447298615,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9040613026819925,0.036154942554396344,0.9828765104627173
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9016858237547893,0.03777054946274227,0.983446311032518
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9086590038314176,0.031711178799447765,0.9389183613321543
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9040613026819925,0.036154942554396344,0.9440563906081149
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9062835249042147,0.03685465288723593,0.99771588564692
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9016858237547891,0.03981401544259459,0.9960064839375183
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.906360153256705,0.033693478747699755,0.977173592690834
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8994636015325671,0.03681160973198174,0.9788829944002359
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9086590038314176,0.031711178799447765,0.9406375871893113
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9040613026819925,0.036154942554396344,0.9429167894685136
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.9062835249042147,0.03685465288723593,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.9039846743295019,0.037031082447298615,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.9040613026819925,0.036154942554396344,0.9828765104627173
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.9016858237547893,0.03777054946274227,0.983446311032518
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.9086590038314176,0.031711178799447765,0.9389183613321543
+Random forest,"{""n_trees"": 500, ""max_features"": 0.1, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.9040613026819925,0.036154942554396344,0.9440563906081149
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8859003831417624,0.0258935809154657,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8766283524904214,0.024877675219537064,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8767816091954023,0.03913721369200995,0.990858630513803
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8675095785440613,0.030733988193361227,0.990858630513803
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8721072796934866,0.02955352007589391,0.9389134492582768
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": null, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8675862068965516,0.03291774219709195,0.941207387759112
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8904214559386971,0.03371647509578544,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8744061302681991,0.02820547990126582,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8767816091954023,0.03330081648226542,0.9851557127419195
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8698850574712644,0.027609185831728614,0.9874398270949996
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8698084291187739,0.030670875001572843,0.9389134492582768
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 10, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8675862068965516,0.03291774219709195,0.9417771883289123
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""gini""}",0.8859003831417624,0.0258935809154657,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 1, ""criterion"": ""entropy""}",0.8766283524904214,0.024877675219537064,1.0
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""gini""}",0.8767816091954023,0.03913721369200995,0.990858630513803
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 2, ""criterion"": ""entropy""}",0.8675095785440613,0.030733988193361227,0.990858630513803
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""gini""}",0.8721072796934866,0.02955352007589391,0.9389134492582768
+Random forest,"{""n_trees"": 500, ""max_features"": 0.3, ""max_depth"": 20, ""min_leaf"": 5, ""criterion"": ""entropy""}",0.8675862068965516,0.03291774219709195,0.941207387759112
+Naive Bayes,"{""alpha"": 0.01, ""words"": ""all""}",0.9085823754789271,0.0379520047300019,0.9463306808134394
+Naive Bayes,"{""alpha"": 0.01, ""words"": 25}",0.8995402298850574,0.028505747126436744,0.9246635229393851
+Naive Bayes,"{""alpha"": 0.01, ""words"": 50}",0.9177011494252874,0.033829833819121205,0.9389281854799096
+Naive Bayes,"{""alpha"": 0.01, ""words"": 100}",0.9199999999999999,0.03426444300484912,0.9469152176048727
+Naive Bayes,"{""alpha"": 0.03, ""words"": ""all""}",0.9108812260536399,0.03379266904439256,0.9446212791040376
+Naive Bayes,"{""alpha"": 0.03, ""words"": 25}",0.8995402298850574,0.028505747126436744,0.9246635229393851
+Naive Bayes,"{""alpha"": 0.03, ""words"": 50}",0.9200000000000002,0.031867077611335094,0.9383534728362314
+Naive Bayes,"{""alpha"": 0.03, ""words"": 100}",0.9222988505747127,0.03133190811476013,0.9463454170350722
+Naive Bayes,"{""alpha"": 0.1, ""words"": ""all""}",0.9201532567049808,0.025969664079194314,0.9434816779644365
+Naive Bayes,"{""alpha"": 0.1, ""words"": 25}",0.9041379310344826,0.025656655500328623,0.9246635229393851
+Naive Bayes,"{""alpha"": 0.1, ""words"": 50}",0.9222988505747127,0.030476898242163777,0.9377836722664309
+Naive Bayes,"{""alpha"": 0.1, ""words"": 100}",0.9223754789272031,0.03589087489652786,0.945205815895471
+Naive Bayes,"{""alpha"": 0.3, ""words"": ""all""}",0.9201532567049808,0.023848043380727546,0.9412024756852343
+Naive Bayes,"{""alpha"": 0.3, ""words"": 25}",0.9064367816091954,0.02432440288075638,0.9235239217997838
+Naive Bayes,"{""alpha"": 0.3, ""words"": 50}",0.9222988505747127,0.030476898242163777,0.9372138716966303
+Naive Bayes,"{""alpha"": 0.3, ""words"": 100}",0.9223754789272031,0.02941730415333265,0.94178210040279
+Naive Bayes,"{""alpha"": 0.5, ""words"": ""all""}",0.9201532567049808,0.023848043380727546,0.9400628745456332
+Naive Bayes,"{""alpha"": 0.5, ""words"": 25}",0.9041379310344826,0.025656655500328623,0.9229541212299834
+Naive Bayes,"{""alpha"": 0.5, ""words"": 50}",0.9245977011494253,0.02883752051598478,0.9372138716966303
+Naive Bayes,"{""alpha"": 0.5, ""words"": 100}",0.9223754789272031,0.02941730415333265,0.941207387759112
+Naive Bayes,"{""alpha"": 1, ""words"": ""all""}",0.9224521072796936,0.026320026484238798,0.9394930739758326
+Naive Bayes,"{""alpha"": 1, ""words"": 25}",0.9041379310344826,0.025656655500328623,0.9206700068769035
+Naive Bayes,"{""alpha"": 1, ""words"": 50}",0.9200000000000002,0.031867077611335094,0.9355044699872288
+Naive Bayes,"{""alpha"": 1, ""words"": 100}",0.9177777777777779,0.03445856963429582,0.9400677866195108
+Naive Bayes,"{""alpha"": 2, ""words"": ""all""}",0.9177777777777777,0.026678994816231663,0.9337852441300718
+Naive Bayes,"{""alpha"": 2, ""words"": 25}",0.8995402298850574,0.028505747126436748,0.9183760683760683
+Naive Bayes,"{""alpha"": 2, ""words"": 50}",0.9086590038314176,0.037793861644969264,0.9326456429904706
+Naive Bayes,"{""alpha"": 2, ""words"": 100}",0.9154789272030651,0.0346472026146642,0.9372089596227529
+Naive Bayes,"{""alpha"": 3, ""words"": ""all""}",0.9131800766283525,0.028861130804802074,0.9292219274977895
+Naive Bayes,"{""alpha"": 3, ""words"": 25}",0.8995402298850574,0.028505747126436748,0.9143825523135869
+Naive Bayes,"{""alpha"": 3, ""words"": 50}",0.906360153256705,0.034468792403713006,0.9303615286373909
+Naive Bayes,"{""alpha"": 3, ""words"": 100}",0.9154789272030651,0.03308677031268632,0.9326456429904706
+Naive Bayes,"{""alpha"": 5, ""words"": ""all""}",0.9131800766283525,0.028861130804802074,0.9218096080165046
+Naive Bayes,"{""alpha"": 5, ""words"": 25}",0.8904214559386971,0.027692430650716696,0.9069751449061794
+Naive Bayes,"{""alpha"": 5, ""words"": 50}",0.9040613026819925,0.033102738746475825,0.920100206307103
+Naive Bayes,"{""alpha"": 5, ""words"": 100}",0.9131800766283525,0.03468277452672811,0.9275076137145103
+Naive Bayes,"{""alpha"": 10, ""words"": ""all""}",0.9016858237547893,0.03706436654077461,0.9160821298752333
+Naive Bayes,"{""alpha"": 10, ""words"": 25}",0.8790038314176245,0.026717263840775198,0.9018174673347087
+Naive Bayes,"{""alpha"": 10, ""words"": 50}",0.8995402298850574,0.03438760818632672,0.9160919540229886
+Naive Bayes,"{""alpha"": 10, ""words"": 100}",0.9062835249042145,0.03961885912078882,0.9200805580115926
