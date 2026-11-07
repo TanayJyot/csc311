@@ -1,5 +1,5 @@
-question,distinct_answers,vocab_min_df_1,vocab_min_df_3,mean_tokens
-food,307,251,56,3.43
-colour,98,83,18,1.58
-song,241,379,70,2.87
-feeling,252,424,101,3.01
+question,answered_n,answer_rate_pct,distinct_normalized_answers,mean_words,median_words,vocabulary_size
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,428,97.71689497716895,316,4.609813084112149,3.0,324
+What colour do you associate with this sport?,432,98.63013698630137,100,2.0393518518518516,1.0,129
+Which song do you associate with this sport?,380,86.7579908675799,257,4.502631578947368,4.0,447
+How do you feel when you watch this sport?,435,99.31506849315068,255,4.63448275862069,1.0,517

@@ -1,0 +1,4 @@
+split,respondents,rows
+test,86,254
+train,146,438
+val,57,171

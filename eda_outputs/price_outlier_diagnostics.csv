@@ -1,0 +1,5 @@
+metric,value
+raw_skewness,6.177401209262288
+log1p_skewness,-1.082185832463932
+log_iqr_upper_fence,2384.2312989752522
+n_values_above_fence,4.0

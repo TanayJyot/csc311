@@ -268,3 +268,75 @@ def respondent_split(ids, val_frac=0.2, test_frac=0.3, seed=42):
     split.update({rid: "val" for rid in students[n_test:n_test + n_val]})
     split.update({rid: "train" for rid in students[n_test + n_val:]})
     return ids.map(split).to_numpy()
+
+
+def word_mi(M, y):
+    """Mutual information (bits) between each 0/1 column of M and the label y."""
+    mi = np.zeros(M.shape[1])
+    for c in np.unique(y):
+        pc = np.mean(y == c)
+        for v in (0, 1):
+            pv = np.mean(M == v, axis=0)
+            pcv = np.mean((M == v) & (y == c)[:, None], axis=0)
+            with np.errstate(divide="ignore", invalid="ignore"):
+                mi += np.where(pcv > 0, pcv * np.log2(pcv / (pv * pc)), 0)
+    return mi
+
+
+def _word_matrix(tokens, vocab):
+    """Binary bag of words, the questions' vocabularies one after another."""
+    blocks = []
+    for col in TEXT_COLS:
+        index = {t: j for j, t in enumerate(vocab[col])}
+        M = np.zeros((len(tokens[col]), len(index)))
+        for i, toks in enumerate(tokens[col]):
+            for t in set(toks):
+                if t in index:
+                    M[i, index[t]] = 1.0
+        blocks.append(M)
+    return np.hstack(blocks)
+
+
+def fit_preprocessing(struct, tokens, y, scaling="z-score", words="all", min_df=3):
+    """Learn imputation, scaling and vocabulary from training rows only.
+
+    scaling: "z-score" or "min-max" for the structured columns.
+    words: "all" keeps every word used by at least min_df rows; a number n keeps
+    the n words with the highest mutual information with the label.
+    """
+    filled = struct.fillna(struct.median())
+    if scaling == "z-score":
+        center, scale = filled.mean(), filled.std()
+    else:
+        center, scale = filled.min(), filled.max() - filled.min()
+    vocab = {}
+    for col in TEXT_COLS:
+        counts = {}
+        for toks in tokens[col]:
+            for t in set(toks):
+                counts[t] = counts.get(t, 0) + 1
+        vocab[col] = sorted(t for t, n in counts.items() if n >= min_df)
+    if words != "all":
+        mi = word_mi(_word_matrix(tokens, vocab), np.asarray(y))
+        keep = set(np.argsort(-mi)[:words].tolist())
+        start, kept = 0, {}
+        for col in TEXT_COLS:
+            kept[col] = [t for j, t in enumerate(vocab[col]) if start + j in keep]
+            start += len(vocab[col])
+        vocab = kept
+    return {"columns": list(struct.columns), "median": struct.median().tolist(),
+            "center": center.tolist(), "scale": scale.replace(0, 1).tolist(), "vocab": vocab}
+
+
+def design_matrix(struct, tokens, prep):
+    """Model inputs from saved preprocessing statistics.
+
+    Columns: scaled structured features, missing-value flags, one no-words flag per
+    free-text question, then the binary bag of words.
+    """
+    X = struct[prep["columns"]]
+    flags = X[["ease", "log_price"] + LIKERT_COLS].isna().to_numpy(float)
+    X = X.fillna(dict(zip(prep["columns"], prep["median"]))).to_numpy(float)
+    X = (X - np.array(prep["center"])) / np.array(prep["scale"])
+    no_words = np.column_stack([tokens[col].map(len).eq(0).to_numpy(float) for col in TEXT_COLS])
+    return np.hstack([X, flags, no_words, _word_matrix(tokens, prep["vocab"])])

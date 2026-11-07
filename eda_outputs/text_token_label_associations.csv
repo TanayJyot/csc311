@@ -1,0 +1,381 @@
+question,token,n_rows,Soccer_pct,Baseball_pct,Basketball_pct,mi_bits
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,a,14,3.4246575342465753,4.794520547945205,1.36986301369863,0.00505070457898149
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,all,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,american,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,and,129,33.56164383561644,28.767123287671232,26.027397260273972,0.0033508447157624584
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,any,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,are,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,associate,11,2.73972602739726,2.73972602739726,2.054794520547945,0.00031758733723663947
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,at,9,1.36986301369863,2.73972602739726,2.054794520547945,0.0011422690739990122
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,bar,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,bbq,3,2.054794520547945,0.0,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,be,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,bear,4,1.36986301369863,0.684931506849315,0.684931506849315,0.0007835085547633262
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,beer,129,47.94520547945205,25.34246575342466,15.068493150684931,0.06549130132106006
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,beers,9,3.4246575342465753,1.36986301369863,1.36986301369863,0.003139989939801923
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,burger,14,4.10958904109589,1.36986301369863,4.10958904109589,0.00447563614886064
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,burgers,27,6.8493150684931505,6.164383561643835,5.47945205479452,0.00039077999351874596
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,can,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,chicken,58,12.32876712328767,6.164383561643835,21.232876712328768,0.024509950497346767
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,chips,54,21.91780821917808,6.164383561643835,8.904109589041095,0.030117607700824348
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,coca,11,6.164383561643835,0.684931506849315,0.684931506849315,0.01855659620048107
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,coke,42,8.904109589041095,8.21917808219178,11.643835616438356,0.0017807946255168497
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,cola,24,9.58904109589041,3.4246575342465753,3.4246575342465753,0.010974040829437627
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,cold,10,2.054794520547945,3.4246575342465753,1.36986301369863,0.0023253292674307786
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,corn,6,1.36986301369863,1.36986301369863,1.36986301369863,0.0
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,cracker,3,0.0,2.054794520547945,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,dog,27,2.73972602739726,11.643835616438356,4.10958904109589,0.018103907446172934
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,dogs,82,10.95890410958904,36.3013698630137,8.904109589041095,0.06991063696172116
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,drink,8,2.73972602739726,0.684931506849315,2.054794520547945,0.0033288759719223497
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,drinks,40,10.95890410958904,8.21917808219178,8.21917808219178,0.0014124915472364004
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,energy,3,0.684931506849315,0.0,1.36986301369863,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,especially,4,2.054794520547945,0.0,0.684931506849315,0.00711879622165184
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,fast,5,2.054794520547945,0.684931506849315,0.684931506849315,0.002473533403109116
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,finger,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,food,18,4.794520547945205,2.054794520547945,5.47945205479452,0.004449692077544518
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,foods,10,3.4246575342465753,2.054794520547945,1.36986301369863,0.002325329267430779
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,for,4,1.36986301369863,1.36986301369863,0.0,0.005372434810116331
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,french,8,2.054794520547945,2.054794520547945,1.36986301369863,0.0004402454863876085
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,fried,24,6.8493150684931505,3.4246575342465753,6.164383561643835,0.003267588570770418
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,friends,10,4.10958904109589,0.684931506849315,2.054794520547945,0.006756000633704884
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,fries,54,14.383561643835616,8.904109589041095,13.698630136986301,0.004154940409723949
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,game,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,gatorade,8,0.684931506849315,0.0,4.794520547945205,0.01935193425574711
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,gum,3,0.0,2.054794520547945,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,gums,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,hamburger,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,hot,111,13.698630136986301,47.94520547945205,14.383561643835616,0.09357131995626339
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,hotdog,18,1.36986301369863,7.534246575342466,3.4246575342465753,0.012217448966587559
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,hotdogs,19,4.10958904109589,8.21917808219178,0.684931506849315,0.01882825068308928
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,i,17,5.47945205479452,4.10958904109589,2.054794520547945,0.00408035154598324
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,ice,3,0.0,2.054794520547945,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,in,12,3.4246575342465753,2.73972602739726,2.054794520547945,0.0008554517918041515
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,is,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,it,10,2.73972602739726,2.73972602739726,1.36986301369863,0.0014698774756268852
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,jack,3,0.0,2.054794520547945,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,large,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,like,5,2.054794520547945,0.684931506849315,0.684931506849315,0.002473533403109116
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,loaded,4,0.684931506849315,0.0,2.054794520547945,0.007118796221651575
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,meat,3,2.054794520547945,0.0,0.0,0.010924213922241306
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,nachos,39,6.164383561643835,5.47945205479452,15.068493150684931,0.015956832738529762
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,none,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,nothing,4,0.684931506849315,2.054794520547945,0.0,0.007118796221651575
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,of,9,4.794520547945205,0.684931506849315,0.684931506849315,0.012576401102470668
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,on,4,2.054794520547945,0.684931506849315,0.0,0.00711879622165184
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,or,8,3.4246575342465753,0.684931506849315,1.36986301369863,0.005326596837725259
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,other,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,particular,5,1.36986301369863,0.684931506849315,1.36986301369863,0.0007271719915733414
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,peanuts,19,1.36986301369863,10.95890410958904,0.684931506849315,0.03684678263462911
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,pepsi,4,2.054794520547945,0.684931506849315,0.0,0.00711879622165184
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,pizza,60,19.17808219178082,3.4246575342465753,18.493150684931507,0.03922826123476138
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,pop,22,4.794520547945205,6.164383561643835,4.10958904109589,0.0010880554276654214
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,popcorn,58,6.8493150684931505,15.753424657534246,17.123287671232877,0.014314701808809654
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,popcorns,4,1.36986301369863,0.684931506849315,0.684931506849315,0.0007835085547633262
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,pops,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,potato,4,2.73972602739726,0.0,0.0,0.014596352962539689
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,poutine,9,3.4246575342465753,1.36986301369863,1.36986301369863,0.003139989939801923
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,pretzels,6,1.36986301369863,1.36986301369863,1.36986301369863,0.0
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,sandwiches,8,2.73972602739726,2.054794520547945,0.684931506849315,0.0033288759719223497
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,sliders,4,2.054794520547945,0.684931506849315,0.0,0.00711879622165184
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,snacks,11,3.4246575342465753,2.054794520547945,2.054794520547945,0.0011730391290405316
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,soda,55,12.32876712328767,10.95890410958904,14.383561643835616,0.0012948296244912694
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,soft,28,7.534246575342466,4.794520547945205,6.8493150684931505,0.0016967375109214018
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,sport,5,1.36986301369863,1.36986301369863,0.684931506849315,0.0007271719915733414
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,sports,6,1.36986301369863,0.684931506849315,2.054794520547945,0.001746361411535773
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,sprite,6,2.054794520547945,0.0,2.054794520547945,0.008081649078424288
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,stadium,5,0.684931506849315,1.36986301369863,1.36986301369863,0.0007271719915733414
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,stadiums,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,tacos,5,2.054794520547945,0.684931506849315,0.684931506849315,0.002473533403109116
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,tea,5,2.73972602739726,0.684931506849315,0.0,0.009951090143996645
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,tenders,6,0.684931506849315,0.684931506849315,2.73972602739726,0.004634991897070565
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,the,10,2.73972602739726,2.73972602739726,1.36986301369863,0.0014698774756268852
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,this,6,2.73972602739726,0.684931506849315,0.684931506849315,0.004634991897070565
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,to,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,unsure,4,1.36986301369863,0.684931506849315,0.684931506849315,0.0007835085547633262
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,watching,12,5.47945205479452,1.36986301369863,1.36986301369863,0.009412106259769052
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,water,12,2.73972602739726,2.054794520547945,3.4246575342465753,0.0008554517918036844
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,when,7,3.4246575342465753,0.684931506849315,0.684931506849315,0.007092736669085585
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,while,6,2.054794520547945,1.36986301369863,0.684931506849315,0.001746361411535773
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,wings,37,6.164383561643835,2.054794520547945,17.123287671232877,0.03810054172103263
+What foods and drinks do you associate with watching this sport in the place or culture you know best?,with,20,7.534246575342466,2.73972602739726,3.4246575342465753,0.007016488008023153
+What colour do you associate with this sport?,a,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+What colour do you associate with this sport?,also,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What colour do you associate with this sport?,and,39,13.698630136986301,5.47945205479452,7.534246575342466,0.010505068329952471
+What colour do you associate with this sport?,are,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+What colour do you associate with this sport?,associate,7,2.054794520547945,1.36986301369863,1.36986301369863,0.00046002390621247956
+What colour do you associate with this sport?,ball,5,1.36986301369863,0.684931506849315,1.36986301369863,0.0007271719915733414
+What colour do you associate with this sport?,because,12,3.4246575342465753,2.054794520547945,2.73972602739726,0.0008554517918041515
+What colour do you associate with this sport?,beige,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+What colour do you associate with this sport?,black,39,15.068493150684931,0.684931506849315,10.95890410958904,0.043487742172101426
+What colour do you associate with this sport?,blue,116,21.232876712328768,54.794520547945204,3.4246575342465753,0.18245348684947782
+What colour do you associate with this sport?,brown,23,0.684931506849315,6.8493150684931505,8.21917808219178,0.02056318237535739
+What colour do you associate with this sport?,colours,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+What colour do you associate with this sport?,gold,3,0.684931506849315,0.0,1.36986301369863,0.004588926255352792
+What colour do you associate with this sport?,gray,3,0.0,2.054794520547945,0.0,0.010924213922241306
+What colour do you associate with this sport?,green,81,51.369863013698634,4.10958904109589,0.0,0.27516301613915845
+What colour do you associate with this sport?,i,10,3.4246575342465753,2.054794520547945,1.36986301369863,0.002325329267430779
+What colour do you associate with this sport?,in,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+What colour do you associate with this sport?,it,7,2.054794520547945,1.36986301369863,1.36986301369863,0.00046002390621247956
+What colour do you associate with this sport?,me,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What colour do you associate with this sport?,of,11,2.054794520547945,2.73972602739726,2.73972602739726,0.00031758733723663947
+What colour do you associate with this sport?,or,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+What colour do you associate with this sport?,orange,85,0.684931506849315,1.36986301369863,56.16438356164384,0.3257226589451515
+What colour do you associate with this sport?,purple,7,0.0,0.0,4.794520547945205,0.025707000342460595
+What colour do you associate with this sport?,red,94,23.972602739726025,13.698630136986301,26.71232876712329,0.014145435474587907
+What colour do you associate with this sport?,sport,7,2.054794520547945,1.36986301369863,1.36986301369863,0.00046002390621247956
+What colour do you associate with this sport?,team,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+What colour do you associate with this sport?,the,16,3.4246575342465753,3.4246575342465753,4.10958904109589,0.00020976571550195867
+What colour do you associate with this sport?,this,5,1.36986301369863,0.684931506849315,1.36986301369863,0.0007271719915733414
+What colour do you associate with this sport?,usually,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+What colour do you associate with this sport?,white,73,21.91780821917808,26.71232876712329,1.36986301369863,0.08322598126839173
+What colour do you associate with this sport?,with,7,2.054794520547945,1.36986301369863,1.36986301369863,0.00046002390621247956
+What colour do you associate with this sport?,yellow,21,8.21917808219178,2.054794520547945,4.10958904109589,0.010384718902233844
+Which song do you associate with this sport?,a,33,9.58904109589041,8.21917808219178,4.794520547945205,0.004454857389203292
+Which song do you associate with this sport?,africa,21,14.383561643835616,0.0,0.0,0.07953788119901259
+Which song do you associate with this sport?,again,5,2.054794520547945,0.0,1.36986301369863,0.007062459658462118
+Which song do you associate with this sport?,albert,8,0.0,5.47945205479452,0.0,0.029442457125001875
+Which song do you associate with this sport?,and,12,1.36986301369863,4.10958904109589,2.73972602739726,0.0035397617465425316
+Which song do you associate with this sport?,anthem,5,2.054794520547945,1.36986301369863,0.0,0.007062459658462118
+Which song do you associate with this sport?,any,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+Which song do you associate with this sport?,anything,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+Which song do you associate with this sport?,are,16,7.534246575342466,1.36986301369863,2.054794520547945,0.014655844651764399
+Which song do you associate with this sport?,army,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,baby,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,ball,38,0.0,26.027397260273972,0.0,0.14983497906985424
+Which song do you associate with this sport?,by,84,23.28767123287671,13.013698630136986,21.232876712328768,0.009609713246854026
+Which song do you associate with this sport?,caroline,4,0.0,2.73972602739726,0.0,0.014596352962539689
+Which song do you associate with this sport?,centerfield,4,0.0,2.73972602739726,0.0,0.014596352962539689
+Which song do you associate with this sport?,champions,7,2.054794520547945,0.684931506849315,2.054794520547945,0.0022063853177481494
+Which song do you associate with this sport?,city,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,comes,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+Which song do you associate with this sport?,competition,14,8.904109589041095,0.0,0.684931506849315,0.04002698077261159
+Which song do you associate with this sport?,cup,3,2.054794520547945,0.0,0.0,0.010924213922241306
+Which song do you associate with this sport?,dai,4,2.73972602739726,0.0,0.0,0.014596352962539689
+Which song do you associate with this sport?,don't,8,1.36986301369863,2.054794520547945,2.054794520547945,0.0004402454863876085
+Which song do you associate with this sport?,drake,16,0.0,2.054794520547945,8.904109589041095,0.03355906894265369
+Which song do you associate with this sport?,dreamers,3,2.054794520547945,0.0,0.0,0.010924213922241306
+Which song do you associate with this sport?,eminem,4,0.0,0.0,2.73972602739726,0.014596352962539689
+Which song do you associate with this sport?,flag,6,4.10958904109589,0.0,0.0,0.021987598051388828
+Which song do you associate with this sport?,for,22,15.068493150684931,0.0,0.0,0.08351544805961106
+Which song do you associate with this sport?,forever,7,0.0,0.0,4.794520547945205,0.025707000342460595
+Which song do you associate with this sport?,from,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+Which song do you associate with this sport?,game,37,0.0,25.34246575342466,0.0,0.14553335365546421
+Which song do you associate with this sport?,go,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,god's,4,0.0,1.36986301369863,1.36986301369863,0.005372434810116331
+Which song do you associate with this sport?,have,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+Which song do you associate with this sport?,i,15,1.36986301369863,4.794520547945205,4.10958904109589,0.0054880083545340574
+Which song do you associate with this sport?,idea,5,0.0,2.73972602739726,0.684931506849315,0.009951090143996644
+Which song do you associate with this sport?,in,24,3.4246575342465753,8.21917808219178,4.794520547945205,0.0055183816197963195
+Which song do you associate with this sport?,is,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,ishowspeed,5,3.4246575342465753,0.0,0.0,0.018284098676688124
+Which song do you associate with this sport?,it,5,0.0,1.36986301369863,2.054794520547945,0.007062459658461855
+Which song do you associate with this sport?,jack,8,0.0,5.47945205479452,0.0,0.029442457125001875
+Which song do you associate with this sport?,jam,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+Which song do you associate with this sport?,john,6,2.054794520547945,0.684931506849315,1.36986301369863,0.001746361411535773
+Which song do you associate with this sport?,kanye,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+Which song do you associate with this sport?,kendrick,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,know,5,0.0,2.054794520547945,1.36986301369863,0.007062459658461855
+Which song do you associate with this sport?,la,3,2.054794520547945,0.0,0.0,0.010924213922241306
+Which song do you associate with this sport?,lamar,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,life,4,2.054794520547945,0.684931506849315,0.0,0.00711879622165184
+Which song do you associate with this sport?,like,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,lil,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,love,5,2.054794520547945,0.684931506849315,0.684931506849315,0.002473533403109116
+Which song do you associate with this sport?,me,44,2.054794520547945,27.397260273972602,0.684931506849315,0.12020585827133634
+Which song do you associate with this sport?,mode,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+Which song do you associate with this sport?,music,5,0.684931506849315,2.054794520547945,0.684931506849315,0.0024735334031091164
+Which song do you associate with this sport?,nation,4,2.054794520547945,0.0,0.684931506849315,0.00711879622165184
+Which song do you associate with this sport?,newman,3,2.054794520547945,0.0,0.0,0.010924213922241306
+Which song do you associate with this sport?,no,20,1.36986301369863,6.8493150684931505,5.47945205479452,0.010636298653676705
+Which song do you associate with this sport?,none,6,0.0,2.73972602739726,1.36986301369863,0.009223918152423306
+Which song do you associate with this sport?,norworth,8,0.0,5.47945205479452,0.0,0.029442457125001875
+Which song do you associate with this sport?,not,5,0.684931506849315,1.36986301369863,1.36986301369863,0.0007271719915733414
+Which song do you associate with this sport?,nothing,4,0.0,1.36986301369863,1.36986301369863,0.005372434810116331
+Which song do you associate with this sport?,of,9,2.73972602739726,1.36986301369863,2.054794520547945,0.0011422690739990122
+Which song do you associate with this sport?,ok,7,0.0,4.794520547945205,0.0,0.025707000342460595
+Which song do you associate with this sport?,one,9,4.794520547945205,0.0,1.36986301369863,0.017165327357823768
+Which song do you associate with this sport?,out,39,0.0,26.71232876712329,0.0,0.15415886872383158
+Which song do you associate with this sport?,particular,17,0.684931506849315,4.794520547945205,6.164383561643835,0.013278002048783162
+Which song do you associate with this sport?,plan,4,0.0,1.36986301369863,1.36986301369863,0.005372434810116331
+Which song do you associate with this sport?,punjabi,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+Which song do you associate with this sport?,quad,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,queen,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,rap,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+Which song do you associate with this sport?,rock,13,0.684931506849315,1.36986301369863,6.8493150684931505,0.018190676742370272
+Which song do you associate with this sport?,roundball,4,0.0,0.0,2.73972602739726,0.014596352962539689
+Which song do you associate with this sport?,scott,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+Which song do you associate with this sport?,seven,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+Which song do you associate with this sport?,shakira,43,29.45205479452055,0.0,0.0,0.17168243789552332
+Which song do you associate with this sport?,shakira's,3,2.054794520547945,0.0,0.0,0.010924213922241306
+Which song do you associate with this sport?,sicko,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+Which song do you associate with this sport?,song,24,3.4246575342465753,6.164383561643835,6.8493150684931505,0.003267588570770417
+Which song do you associate with this sport?,songs,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+Which song do you associate with this sport?,space,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+Which song do you associate with this sport?,sport,18,2.73972602739726,7.534246575342466,2.054794520547945,0.010219728100784649
+Which song do you associate with this sport?,sweet,4,0.0,2.73972602739726,0.0,0.014596352962539689
+Which song do you associate with this sport?,take,39,0.0,26.71232876712329,0.0,0.15415886872383158
+Which song do you associate with this sport?,team,10,0.0,6.164383561643835,0.684931506849315,0.026044174005759927
+Which song do you associate with this sport?,the,66,6.164383561643835,30.82191780821918,8.21917808219178,0.06658551759670264
+Which song do you associate with this sport?,theme,6,1.36986301369863,0.684931506849315,2.054794520547945,0.001746361411535773
+Which song do you associate with this sport?,this,38,16.43835616438356,7.534246575342466,2.054794520547945,0.03397089306722763
+Which song do you associate with this sport?,tilzer,8,0.0,5.47945205479452,0.0,0.029442457125001875
+Which song do you associate with this sport?,time,22,15.068493150684931,0.0,0.0,0.08351544805961106
+Which song do you associate with this sport?,to,42,0.0,27.397260273972602,1.36986301369863,0.13865593559589556
+Which song do you associate with this sport?,travis,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+Which song do you associate with this sport?,unsure,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+Which song do you associate with this sport?,us,3,0.0,0.0,2.054794520547945,0.010924213922241306
+Which song do you associate with this sport?,von,8,0.0,5.47945205479452,0.0,0.029442457125001875
+Which song do you associate with this sport?,waka,73,50.0,0.0,0.0,0.316689088315021
+Which song do you associate with this sport?,wake,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+Which song do you associate with this sport?,wavin,4,2.73972602739726,0.0,0.0,0.014596352962539689
+Which song do you associate with this sport?,we,25,8.21917808219178,2.73972602739726,6.164383561643835,0.007413975464613191
+Which song do you associate with this sport?,west,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+Which song do you associate with this sport?,will,9,0.684931506849315,1.36986301369863,4.10958904109589,0.007570661306075973
+Which song do you associate with this sport?,you,15,0.684931506849315,2.054794520547945,7.534246575342466,0.018876750302536226
+How do you feel when you watch this sport?,a,27,8.21917808219178,6.8493150684931505,3.4246575342465753,0.005472486109276245
+How do you feel when you watch this sport?,about,5,1.36986301369863,1.36986301369863,0.684931506849315,0.0007271719915733414
+How do you feel when you watch this sport?,action,5,0.0,1.36986301369863,2.054794520547945,0.007062459658461855
+How do you feel when you watch this sport?,adrenaline,3,0.684931506849315,0.0,1.36986301369863,0.004588926255352792
+How do you feel when you watch this sport?,also,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,am,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,analytical,4,1.36986301369863,0.684931506849315,0.684931506849315,0.0007835085547633262
+How do you feel when you watch this sport?,and,64,19.17808219178082,10.273972602739725,14.383561643835616,0.007708535517920282
+How do you feel when you watch this sport?,angry,4,2.73972602739726,0.0,0.0,0.014596352962539689
+How do you feel when you watch this sport?,anticipation,10,2.73972602739726,3.4246575342465753,0.684931506849315,0.00521395975296557
+How do you feel when you watch this sport?,anxious,9,4.10958904109589,0.0,2.054794520547945,0.013905948972964278
+How do you feel when you watch this sport?,are,5,1.36986301369863,1.36986301369863,0.684931506849315,0.0007271719915733414
+How do you feel when you watch this sport?,as,6,0.0,2.73972602739726,1.36986301369863,0.009223918152423306
+How do you feel when you watch this sport?,at,5,0.0,3.4246575342465753,0.0,0.018284098676688124
+How do you feel when you watch this sport?,ball,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,be,6,1.36986301369863,1.36986301369863,1.36986301369863,0.0
+How do you feel when you watch this sport?,because,15,3.4246575342465753,2.73972602739726,4.10958904109589,0.0006865890889354614
+How do you feel when you watch this sport?,big,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+How do you feel when you watch this sport?,bit,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,bored,55,9.58904109589041,25.34246575342466,2.73972602739726,0.060611684377842145
+How do you feel when you watch this sport?,boring,11,1.36986301369863,6.164383561643835,0.0,0.02314552245583381
+How do you feel when you watch this sport?,but,17,3.4246575342465753,6.164383561643835,2.054794520547945,0.005587952297650079
+How do you feel when you watch this sport?,calm,5,0.684931506849315,2.73972602739726,0.0,0.009951090143996645
+How do you feel when you watch this sport?,can,5,0.684931506849315,1.36986301369863,1.36986301369863,0.0007271719915733414
+How do you feel when you watch this sport?,captivated,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,change,3,0.684931506849315,0.0,1.36986301369863,0.004588926255352792
+How do you feel when you watch this sport?,close,12,2.054794520547945,2.73972602739726,3.4246575342465753,0.0008554517918039437
+How do you feel when you watch this sport?,confused,11,0.684931506849315,6.164383561643835,0.684931506849315,0.01855659620048107
+How do you feel when you watch this sport?,cool,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+How do you feel when you watch this sport?,deep,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,disappointed,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,do,6,2.054794520547945,1.36986301369863,0.684931506849315,0.001746361411535773
+How do you feel when you watch this sport?,don't,16,4.10958904109589,3.4246575342465753,3.4246575342465753,0.00020976571550195867
+How do you feel when you watch this sport?,during,6,0.684931506849315,1.36986301369863,2.054794520547945,0.001746361411535773
+How do you feel when you watch this sport?,edge,4,2.054794520547945,0.684931506849315,0.0,0.00711879622165184
+How do you feel when you watch this sport?,end,5,0.0,2.054794520547945,1.36986301369863,0.007062459658461855
+How do you feel when you watch this sport?,energetic,17,4.10958904109589,0.0,7.534246575342466,0.025873445853047974
+How do you feel when you watch this sport?,energized,11,3.4246575342465753,0.0,4.10958904109589,0.01507898810200508
+How do you feel when you watch this sport?,energy,4,0.684931506849315,0.0,2.054794520547945,0.007118796221651575
+How do you feel when you watch this sport?,engaged,9,0.684931506849315,0.684931506849315,4.794520547945205,0.012576401102470668
+How do you feel when you watch this sport?,enjoy,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,entertained,13,4.10958904109589,1.36986301369863,3.4246575342465753,0.003795090277081988
+How do you feel when you watch this sport?,especially,7,2.054794520547945,0.0,2.73972602739726,0.009683942058635731
+How do you feel when you watch this sport?,excited,132,43.15068493150685,7.534246575342466,39.726027397260275,0.10252628594347568
+How do you feel when you watch this sport?,excitement,19,4.10958904109589,5.47945205479452,3.4246575342465753,0.00124933884722895
+How do you feel when you watch this sport?,exciting,19,4.794520547945205,4.10958904109589,4.10958904109589,0.00017841359960107852
+How do you feel when you watch this sport?,exhilarated,4,0.684931506849315,0.684931506849315,1.36986301369863,0.0007835085547630091
+How do you feel when you watch this sport?,fairly,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+How do you feel when you watch this sport?,fast,7,0.0,0.0,4.794520547945205,0.025707000342460595
+How do you feel when you watch this sport?,favourite,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,feel,17,4.10958904109589,4.10958904109589,3.4246575342465753,0.0002057278985593187
+How do you feel when you watch this sport?,feels,5,0.684931506849315,0.684931506849315,2.054794520547945,0.0024735334031091164
+How do you feel when you watch this sport?,few,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,focused,8,1.36986301369863,3.4246575342465753,0.684931506849315,0.005326596837725259
+How do you feel when you watch this sport?,for,9,2.73972602739726,2.73972602739726,0.684931506849315,0.004030899559533752
+How do you feel when you watch this sport?,fun,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,game,20,2.73972602739726,4.794520547945205,6.164383561643835,0.003440641825384976
+How do you feel when you watch this sport?,games,6,0.684931506849315,0.684931506849315,2.73972602739726,0.004634991897070565
+How do you feel when you watch this sport?,get,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,good,5,1.36986301369863,1.36986301369863,0.684931506849315,0.0007271719915733414
+How do you feel when you watch this sport?,happy,18,4.10958904109589,4.10958904109589,4.10958904109589,0.0
+How do you feel when you watch this sport?,hard,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,have,6,2.054794520547945,2.054794520547945,0.0,0.008081649078424288
+How do you feel when you watch this sport?,high,7,0.684931506849315,2.054794520547945,2.054794520547945,0.0022063853177479386
+How do you feel when you watch this sport?,how,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,hyped,4,0.684931506849315,0.0,2.054794520547945,0.007118796221651575
+How do you feel when you watch this sport?,i,40,10.95890410958904,10.273972602739725,6.164383561643835,0.00413050399955582
+How do you feel when you watch this sport?,if,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,important,4,0.684931506849315,2.054794520547945,0.0,0.007118796221651575
+How do you feel when you watch this sport?,in,14,3.4246575342465753,3.4246575342465753,2.73972602739726,0.00024928531338289355
+How do you feel when you watch this sport?,intense,6,1.36986301369863,0.0,2.73972602739726,0.009223918152423306
+How do you feel when you watch this sport?,interested,17,6.164383561643835,1.36986301369863,4.10958904109589,0.008272262252388406
+How do you feel when you watch this sport?,interesting,5,0.684931506849315,2.054794520547945,0.684931506849315,0.0024735334031091164
+How do you feel when you watch this sport?,into,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,intrigued,6,0.0,2.054794520547945,2.054794520547945,0.008081649078424288
+How do you feel when you watch this sport?,invested,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,is,21,5.47945205479452,3.4246575342465753,5.47945205479452,0.001566782065134771
+How do you feel when you watch this sport?,it,21,3.4246575342465753,6.164383561643835,4.794520547945205,0.002003457569173639
+How do you feel when you watch this sport?,it's,4,1.36986301369863,0.0,1.36986301369863,0.005372434810116331
+How do you feel when you watch this sport?,joy,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,kind,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+How do you feel when you watch this sport?,know,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,like,5,1.36986301369863,1.36986301369863,0.684931506849315,0.0007271719915733414
+How do you feel when you watch this sport?,little,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,lot,5,0.684931506849315,1.36986301369863,1.36986301369863,0.0007271719915733414
+How do you feel when you watch this sport?,match,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,me,8,1.36986301369863,1.36986301369863,2.73972602739726,0.001582514560386628
+How do you feel when you watch this sport?,moments,9,1.36986301369863,4.10958904109589,0.684931506849315,0.007570661306075972
+How do you feel when you watch this sport?,more,8,1.36986301369863,2.73972602739726,1.36986301369863,0.001582514560386628
+How do you feel when you watch this sport?,most,6,2.054794520547945,2.054794520547945,0.0,0.008081649078424288
+How do you feel when you watch this sport?,mostly,5,2.73972602739726,0.684931506849315,0.0,0.009951090143996645
+How do you feel when you watch this sport?,motivated,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,much,3,0.0,2.054794520547945,0.0,0.010924213922241306
+How do you feel when you watch this sport?,my,11,3.4246575342465753,1.36986301369863,2.73972602739726,0.002315308203039498
+How do you feel when you watch this sport?,nervous,15,4.794520547945205,3.4246575342465753,2.054794520547945,0.002803698399795421
+How do you feel when you watch this sport?,neutral,21,2.054794520547945,6.8493150684931505,5.47945205479452,0.007201393531662159
+How do you feel when you watch this sport?,never,4,0.684931506849315,2.054794520547945,0.0,0.007118796221651575
+How do you feel when you watch this sport?,not,16,3.4246575342465753,4.10958904109589,3.4246575342465753,0.00020976571550195867
+How do you feel when you watch this sport?,nothing,7,1.36986301369863,2.73972602739726,0.684931506849315,0.0033486543917472175
+How do you feel when you watch this sport?,of,25,7.534246575342466,5.47945205479452,4.10958904109589,0.0026430004432631826
+How do you feel when you watch this sport?,on,6,2.73972602739726,0.684931506849315,0.684931506849315,0.004634991897070565
+How do you feel when you watch this sport?,or,6,0.684931506849315,2.054794520547945,1.36986301369863,0.001746361411535773
+How do you feel when you watch this sport?,pace,3,0.0,0.0,2.054794520547945,0.010924213922241306
+How do you feel when you watch this sport?,paced,5,0.0,0.0,3.4246575342465753,0.018284098676688124
+How do you feel when you watch this sport?,passion,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,play,4,0.684931506849315,2.054794520547945,0.0,0.007118796221651575
+How do you feel when you watch this sport?,plays,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,pretty,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,quickly,3,0.0,0.0,2.054794520547945,0.010924213922241306
+How do you feel when you watch this sport?,quite,3,0.0,1.36986301369863,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,really,12,2.73972602739726,2.73972602739726,2.73972602739726,3.115661394121358e-16
+How do you feel when you watch this sport?,relaxed,11,0.0,6.8493150684931505,0.684931506849315,0.02947457456729352
+How do you feel when you watch this sport?,rules,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,score,5,1.36986301369863,0.684931506849315,1.36986301369863,0.0007271719915733414
+How do you feel when you watch this sport?,scoring,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,since,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+How do you feel when you watch this sport?,slow,3,1.36986301369863,0.684931506849315,0.0,0.004588926255352792
+How do you feel when you watch this sport?,so,6,1.36986301369863,2.054794520547945,0.684931506849315,0.001746361411535773
+How do you feel when you watch this sport?,sometimes,9,4.794520547945205,1.36986301369863,0.0,0.017165327357823768
+How do you feel when you watch this sport?,somewhat,6,1.36986301369863,0.684931506849315,2.054794520547945,0.001746361411535773
+How do you feel when you watch this sport?,sport,17,4.794520547945205,4.794520547945205,2.054794520547945,0.003584494728475965
+How do you feel when you watch this sport?,sports,3,0.0,0.684931506849315,1.36986301369863,0.004588926255352792
+How do you feel when you watch this sport?,stressed,5,0.684931506849315,1.36986301369863,1.36986301369863,0.0007271719915733414
+How do you feel when you watch this sport?,sudden,5,0.0,2.73972602739726,0.684931506849315,0.009951090143996644
+How do you feel when you watch this sport?,team,5,2.73972602739726,0.684931506849315,0.0,0.009951090143996645
+How do you feel when you watch this sport?,tense,11,2.73972602739726,2.054794520547945,2.73972602739726,0.00031758733723663947
+How do you feel when you watch this sport?,tension,6,2.73972602739726,0.0,1.36986301369863,0.009223918152423306
+How do you feel when you watch this sport?,that,8,2.73972602739726,2.054794520547945,0.684931506849315,0.0033288759719223497
+How do you feel when you watch this sport?,the,46,10.273972602739725,11.643835616438356,9.58904109589041,0.0005557431383418953
+How do you feel when you watch this sport?,there,8,0.684931506849315,2.054794520547945,2.73972602739726,0.0033288759719223493
+How do you feel when you watch this sport?,they,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,think,3,0.684931506849315,1.36986301369863,0.0,0.004588926255352792
+How do you feel when you watch this sport?,this,10,2.054794520547945,4.10958904109589,0.684931506849315,0.006756000633704884
+How do you feel when you watch this sport?,thrilled,3,1.36986301369863,0.0,0.684931506849315,0.004588926255352792
+How do you feel when you watch this sport?,throughout,4,0.0,0.684931506849315,2.054794520547945,0.007118796221652157
+How do you feel when you watch this sport?,time,8,2.054794520547945,2.054794520547945,1.36986301369863,0.0004402454863876085
+How do you feel when you watch this sport?,to,17,4.10958904109589,4.794520547945205,2.73972602739726,0.0014673854176156453
+How do you feel when you watch this sport?,type,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,understand,7,2.054794520547945,1.36986301369863,1.36986301369863,0.00046002390621247956
+How do you feel when you watch this sport?,up,3,0.684931506849315,0.684931506849315,0.684931506849315,-2.1941277423389847e-18
+How do you feel when you watch this sport?,usually,7,2.054794520547945,2.054794520547945,0.684931506849315,0.0022063853177481494
+How do you feel when you watch this sport?,very,16,4.10958904109589,4.10958904109589,2.73972602739726,0.0008963548044376838
+How do you feel when you watch this sport?,watch,14,2.73972602739726,3.4246575342465753,3.4246575342465753,0.00024928531338289355
+How do you feel when you watch this sport?,watching,10,2.73972602739726,1.36986301369863,2.73972602739726,0.0014698774756268852
+How do you feel when you watch this sport?,well,4,0.684931506849315,1.36986301369863,0.684931506849315,0.0007835085547630091
+How do you feel when you watch this sport?,when,21,6.8493150684931505,4.794520547945205,2.73972602739726,0.004588427403294566
+How do you feel when you watch this sport?,with,10,2.73972602739726,1.36986301369863,2.73972602739726,0.0014698774756268852
