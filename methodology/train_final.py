@@ -1,8 +1,8 @@
 """train_final.py - fit the three final models and export their parameters for pred.py.
 
 The settings are the tuned ones from model_selection.py. Following the report, each
-model is fit on the instructors' training + validation respondents (609 rows); the
-254 test rows are kept out so the reported test accuracy is that of this exact model.
+model is fit on the 70% development set (training + validation respondents, 609
+rows); the 252 test rows are kept out so the reported test accuracy is that of this exact model.
 
 Writes model_params.npz (arrays) and model_meta.json (preprocessing, vocabularies),
 which pred.py reads with numpy and pandas only.
@@ -45,10 +45,10 @@ def fit_and_export(out_dir=str(HERE.parent / "methodology" / "submission")):
     preps = {m: fit_preprocessing(struct, tokens, y, **s) for m, s in SETTINGS.items()}
     X = {m: design_matrix(struct, tokens, p) for m, p in preps.items()}
 
-    nb = BernoulliNB(alpha=0.5, binarize=0.0).fit(X["naive_bayes"], y)
-    rf = RandomForestClassifier(500, criterion="entropy", max_features="log2",
+    nb = BernoulliNB(alpha=0.1, binarize=0.0).fit(X["naive_bayes"], y)
+    rf = RandomForestClassifier(500, criterion="gini", max_features="log2", min_samples_leaf=2,
                                 random_state=0).fit(X["random_forest"], y)
-    knn = KNeighborsClassifier(7, weights="distance").fit(X["knn"], y)
+    knn = KNeighborsClassifier(15, weights="uniform").fit(X["knn"], y)
     assert list(nb.classes_) == list(rf.classes_) == list(knn.classes_)
 
     # Random forest: all trees in flat arrays; node ids are offset per tree.
@@ -81,7 +81,7 @@ def fit_and_export(out_dir=str(HERE.parent / "methodology" / "submission")):
         knn_y=np.array([classes.index(c) for c in y], dtype=np.int8),
     )
     with open(os.path.join(out_dir, "model_meta.json"), "w") as f:
-        json.dump({"classes": classes, "knn_k": 7, "preprocessing": preps}, f)
+        json.dump({"classes": classes, "knn_k": 15, "knn_weights": "uniform", "preprocessing": preps}, f)
     print(f"trained on {len(df)} rows; random forest has {offset} nodes")
     return {"naive_bayes": nb, "random_forest": rf, "knn": knn}, preps
 

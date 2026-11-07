@@ -1,6 +1,6 @@
 """check_pred.py - check pred.py against the MarkUs rules and against scikit-learn.
 
-1. Fits the three final models (train_final.py: train+val respondents), writes a
+1. Fits the three final models (train_final.py: the 70% development set), writes a
    held-out test CSV without the label column, and runs pred.predict_all on it
    from a clean folder holding only the files we would submit.
 2. Checks the numpy predictions equal the scikit-learn ones, reports held-out
@@ -61,7 +61,9 @@ def main():
     keep = ~blank_rows(short)
     split = pd.Series("dropped", index=short.index)
     split[keep] = respondent_split(short.loc[keep, "id"])
-    test_mask = split == "test"
+    answered = short["id"].where(keep).map(short.loc[keep, "id"].value_counts())
+    full = answered == 3                    # respondents with all three rows answered
+    test_mask = (split == "test") & full
     test_csv = os.path.join(folder, "test.csv")
     raw.loc[test_mask].drop(columns=["label"]).to_csv(test_csv, index=False)
     labels = short.loc[test_mask, "label"].tolist()

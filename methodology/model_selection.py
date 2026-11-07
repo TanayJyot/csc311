@@ -1,19 +1,25 @@
 """model_selection.py - the model selection reported in the final report.
 
 Protocol (Methodology section):
-1. Tune kNN, random forest and Bernoulli naive Bayes with grouped 5-fold CV on the
-   instructors' training split (146 respondents, 438 rows); preprocessing is fit on
-   the four training folds each time.
-2. Compare the three tuned models on the validation split (171 rows): accuracy,
-   per-sport F1 and the confusion matrix.
-3. Retrain the chosen model on train + validation (609 rows) and score it once on
-   the test split (254 rows).
+0. Split respondents with the instructors' split_by_student (seed 42): 50% train,
+   20% validation, 30% test. Drop the two respondents who answered only one sport
+   (both fall in the test split), so every respondent has one row per sport.
+1. Merge train and validation (203 respondents, 609 rows) into one development set.
+   Tune kNN, random forest and Bernoulli naive Bayes with grouped 5-fold CV on it;
+   preprocessing is fit on the four training folds each time.
+2. Choose the final model from the CV results: accuracy, per-sport F1 and the
+   confusion matrix of the held-out (out-of-fold) predictions. Models within one
+   standard error of the best are tied, and the simplest of the tied models wins.
+3. Retrain the chosen model on all 609 development rows and score it once on the
+   test split (252 rows).
 
 Run: python model_selection.py   (needs scikit-learn; writes model_selection_results/)
 """
 import itertools
 import json
 import os
+import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -24,20 +30,18 @@ from sklearn.model_selection import GroupKFold
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.neighbors import KNeighborsClassifier
 
-import sys  # noqa: E402
-from pathlib import Path  # noqa: E402
-
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 
-from features import (LABELS, TEXT_COLS, blank_rows, design_matrix,
+from features import (LABELS, TEXT_COLS, blank_rows, design_matrix,  # noqa: E402
                       fit_preprocessing, load_survey, respondent_split,
                       structured_features, tokenize)
 
 DATA = str(ROOT / "csc311_project_training_202609.csv")
 OUT = str(HERE / "model_selection_results")
 MIN_DF = 3                      # keep words used by at least 3 training rows
+SIMPLEST_FIRST = ["Naive Bayes", "kNN", "Random forest"]   # tie-break order for pred.py
 
 
 def grid(**values):
@@ -76,30 +80,38 @@ def per_sport_f1(y_true, y_pred):
     return dict(zip(LABELS, f1_score(y_true, y_pred, labels=LABELS, average=None)))
 
 
-def main():
-    os.makedirs(OUT, exist_ok=True)
+def load_data():
+    """Rows with answers, the instructors' split, and only respondents with all three rows."""
     df = load_survey(DATA)
     df = df.loc[~blank_rows(df)].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
-    y, ids = df["label"].to_numpy(), df["id"].to_numpy()
+    df["split"] = respondent_split(df["id"])              # split computed on all 289 respondents
+    rows = df.groupby("id")["id"].transform("size")
+    partial = df.loc[rows < 3, ["id", "split"]].drop_duplicates()
+    print("dropped respondents with fewer than 3 rows:", partial.to_dict("records"))
+    df = df.loc[rows == 3].reset_index(drop=True)
+    print(df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size")), "\n")
     struct = structured_features(df).drop(columns=["price"])
     tokens = {c: df[c].map(tokenize) for c in TEXT_COLS}
-    train = np.where(df.split == "train")[0]
-    val = np.where(df.split == "val")[0]
-    test = np.where(df.split == "test")[0]
-    folds = [(train[a], train[b]) for a, b in
-             GroupKFold(5, shuffle=True, random_state=0).split(train, groups=ids[train])]
+    return df, struct, tokens
 
-    # 1. Grouped 5-fold CV on the training split. Design matrices are cached per
+
+def main():
+    os.makedirs(OUT, exist_ok=True)
+    df, struct, tokens = load_data()
+    y, ids = df["label"].to_numpy(), df["id"].to_numpy()
+    dev = np.where(df.split != "test")[0]                  # train + validation, 609 rows
+    test = np.where(df.split == "test")[0]
+    folds = [(dev[a], dev[b]) for a, b in
+             GroupKFold(5, shuffle=True, random_state=0).split(dev, groups=ids[dev])]
+
+    # 1. Grouped 5-fold CV on the development set. Design matrices are cached per
     #    (fold, scaling, words) because they do not depend on the model.
     cache = {}
 
-    def X_for(fold_i, scaling, words):
-        key = (fold_i, scaling, words)
-        if key not in cache:
-            fit = folds[fold_i][0] if fold_i is not None else None
-            cache[key] = design(struct, tokens, fit, y, scaling, words)
-        return cache[key]
+    def X_for(i, scaling, words):
+        if (i, scaling, words) not in cache:
+            cache[(i, scaling, words)] = design(struct, tokens, folds[i][0], y, scaling, words)
+        return cache[(i, scaling, words)]
 
     for i in range(len(folds)):
         for s in ("z-score", "min-max"):
@@ -120,79 +132,73 @@ def main():
     cv = pd.DataFrame(Parallel(n_jobs=4)(delayed(run)(f, p) for f, p in jobs))
     cv.to_csv(f"{OUT}/cv_all.csv", index=False)
     best = cv.sort_values("cv_acc", ascending=False).groupby("family").head(1)
-    print(f"{len(jobs)} settings tuned\n")
-    print(best.round(4).to_string(index=False), "\n")
+    print(f"{len(jobs)} settings tuned with grouped 5-fold CV on {len(dev)} rows\n")
 
-    # 2. Validation: fit each tuned model on the training split, score on validation.
-    summary, val_conf = [], {}
+    # 2. Held-out (out-of-fold) predictions of each family's best setting:
+    #    per-sport F1 and confusion matrix, all from the same five folds.
+    summary, cv_conf = [], {}
     for _, r in best.iterrows():
         p = json.loads(r.params)
-        X = design(struct, tokens, train, y, p.get("scaling", "z-score"), p.get("words", "all"))
-        m = make_model(r.family, p).fit(X[train], y[train])
-        pred = m.predict(X[val])
-        f1 = per_sport_f1(y[val], pred)
-        val_conf[r.family] = confusion_matrix(y[val], pred, labels=LABELS).tolist()
+        pred = np.empty(len(y), dtype=object)
+        for i, (fit, held) in enumerate(folds):
+            X = X_for(i, p.get("scaling", "z-score"), p.get("words", "all"))
+            pred[held] = make_model(r.family, p).fit(X[fit], y[fit]).predict(X[held])
+        f1 = per_sport_f1(y[dev], pred[dev])
+        cv_conf[r.family] = confusion_matrix(y[dev], pred[dev], labels=LABELS).tolist()
         summary.append(dict(family=r.family, params=r.params, cv_acc=r.cv_acc, cv_sd=r.cv_sd,
                             cv_se=r.cv_sd / np.sqrt(len(folds) - 1), train_acc=r.train_acc,
-                            val_acc=np.mean(pred == y[val]),
-                            **{f"val_f1_{k}": v for k, v in f1.items()},
-                            val_macro_f1=np.mean(list(f1.values()))))
-    S = pd.DataFrame(summary)
+                            **{f"cv_f1_{k}": v for k, v in f1.items()},
+                            cv_macro_f1=np.mean(list(f1.values()))))
+    S = pd.DataFrame(summary).sort_values("cv_acc", ascending=False)
+    top = S.iloc[0]
+    tied = S[S.cv_acc >= top.cv_acc - top.cv_se].family.tolist()
+    chosen = min(tied, key=SIMPLEST_FIRST.index)
+    S["tied_with_best"] = S.family.isin(tied)
+    S["chosen"] = S.family == chosen
     S.to_csv(f"{OUT}/summary.csv", index=False)
+    json.dump(cv_conf, open(f"{OUT}/cv_confusion.json", "w"))
     print(S.round(4).to_string(index=False), "\n")
-    for fam, cm in val_conf.items():
-        print(fam, "validation confusion (rows = true", LABELS, ")\n", np.array(cm))
-    json.dump(val_conf, open(f"{OUT}/val_confusion.json", "w"))
+    for fam, cm in cv_conf.items():
+        print(fam, "CV confusion (rows = true", LABELS, ")\n", np.array(cm))
+    print(f"\nbest CV accuracy: {top.family}; within one SE ({100 * top.cv_se:.1f} points): {tied}; "
+          f"chosen (simplest of the tied): {chosen}")
 
-    # Sensitivity curves for the report: best CV accuracy per value of each key setting.
-    for fam, key in [("kNN", "k"), ("Random forest", "max_depth"), ("Naive Bayes", "alpha")]:
+    # Sensitivity: best CV accuracy per value of each key setting.
+    for fam, key in [("kNN", "k"), ("kNN", "scaling"), ("Random forest", "max_depth"),
+                     ("Random forest", "max_features"), ("Naive Bayes", "alpha"),
+                     ("Naive Bayes", "words")]:
         sub = cv[cv.family == fam].copy()
-        sub[key] = sub.params.map(lambda s: json.loads(s)[key])
+        sub[key] = sub.params.map(lambda s: str(json.loads(s)[key]))
         print(f"\n{fam}: best CV accuracy by {key}")
-        print(sub.groupby(key, dropna=False)[["cv_acc", "train_acc"]].max().round(3).to_string())
+        print(sub.groupby(key)[["cv_acc", "train_acc"]].max().round(3).to_string())
 
-
-def final_test(chosen="Naive Bayes"):
-    """Retrain the chosen model on train + validation and score it once on test."""
-    df = load_survey(DATA)
-    df = df.loc[~blank_rows(df)].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
-    y, ids = df["label"].to_numpy(), df["id"].to_numpy()
-    struct = structured_features(df).drop(columns=["price"])
-    tokens = {c: df[c].map(tokenize) for c in TEXT_COLS}
-    trval = np.where(df.split != "test")[0]
-    test = np.where(df.split == "test")[0]
-    S = pd.read_csv(f"{OUT}/summary.csv").set_index("family")
-    p = json.loads(S.loc[chosen, "params"])
-
-    # Stability on train + validation: grouped 5-fold CV repeated with 3 seeds.
+    # 3. Stability of the chosen setting: grouped 5-fold CV repeated with 3 seeds.
+    p = json.loads(S.loc[S.chosen, "params"].iloc[0])
     accs = []
     for seed in range(3):
-        for a, b in GroupKFold(5, shuffle=True, random_state=seed).split(trval, groups=ids[trval]):
-            fit, held = trval[a], trval[b]
+        for a, b in GroupKFold(5, shuffle=True, random_state=seed).split(dev, groups=ids[dev]):
+            fit, held = dev[a], dev[b]
             X = design(struct, tokens, fit, y, p.get("scaling", "z-score"), p.get("words", "all"))
-            m = make_model(chosen, p).fit(X[fit], y[fit])
-            accs.append(np.mean(m.predict(X[held]) == y[held]))
-    print(f"{chosen} on train+val, grouped 5-fold x 3: {100 * np.mean(accs):.1f}% "
+            accs.append(np.mean(make_model(chosen, p).fit(X[fit], y[fit]).predict(X[held]) == y[held]))
+    print(f"\n{chosen}, grouped 5-fold CV x 3 seeds: {100 * np.mean(accs):.1f}% "
           f"(SD {100 * np.std(accs):.1f}, min {100 * min(accs):.1f}, max {100 * max(accs):.1f})")
 
-    X = design(struct, tokens, trval, y, p.get("scaling", "z-score"), p.get("words", "all"))
-    m = make_model(chosen, p).fit(X[trval], y[trval])
+    # 4. Retrain on all development rows and score the test split once.
+    X = design(struct, tokens, dev, y, p.get("scaling", "z-score"), p.get("words", "all"))
+    m = make_model(chosen, p).fit(X[dev], y[dev])
     pred = m.predict(X[test])
     f1 = per_sport_f1(y[test], pred)
-    cm = confusion_matrix(y[test], pred, labels=LABELS)
-    result = dict(model=chosen, params=p, train_rows=len(trval), test_rows=len(test),
-                  train_acc=float(np.mean(m.predict(X[trval]) == y[trval])),
+    result = dict(model=chosen, params=p, train_rows=len(dev), test_rows=len(test),
+                  train_acc=float(np.mean(m.predict(X[dev]) == y[dev])),
                   test_acc=float(np.mean(pred == y[test])), test_f1=f1,
-                  test_macro_f1=float(np.mean(list(f1.values()))), test_confusion=cm.tolist(),
+                  test_macro_f1=float(np.mean(list(f1.values()))),
+                  test_confusion=confusion_matrix(y[test], pred, labels=LABELS).tolist(),
                   repeated_cv=[float(a) for a in accs])
     json.dump(result, open(f"{OUT}/final_test.json", "w"), indent=1)
-    print(json.dumps({k: v for k, v in result.items() if k != "repeated_cv"}, indent=1))
-    wrong = df.iloc[test][pred != y[test]]
-    print(wrong.assign(pred=pred[pred != y[test]])[["label", "pred", "colour", "song", "food", "places", "seasons", "music"]].to_string())
+    print("\nfinal test:", json.dumps({k: v for k, v in result.items() if k != "repeated_cv"}, indent=1))
+    wrong = df.iloc[test][pred != y[test]].assign(pred=pred[pred != y[test]])
+    print(wrong[["label", "pred", "colour", "song", "food", "places", "seasons", "music"]].to_string())
 
 
 if __name__ == "__main__":
-    if not os.path.exists(f"{OUT}/summary.csv"):
-        main()
-    final_test()
+    main()

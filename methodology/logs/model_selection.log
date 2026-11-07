@@ -1,83 +1,111 @@
-400 settings tuned
+dropped respondents with fewer than 3 rows: [{'id': '119', 'split': 'test'}, {'id': '267', 'split': 'test'}]
+       respondents  rows
+split                   
+test            84   252
+train          146   438
+val             57   171 
 
-       family                                                                                             params  cv_acc  cv_sd  train_acc
-  Naive Bayes                                                                        {"alpha": 0.5, "words": 50}  0.9246 0.0288     0.9372
-Random forest {"n_trees": 500, "max_features": "log2", "max_depth": null, "min_leaf": 1, "criterion": "entropy"}  0.9154 0.0308     1.0000
-          kNN                                 {"k": 7, "words": 50, "weights": "distance", "scaling": "min-max"}  0.8608 0.0418     1.0000 
+400 settings tuned with grouped 5-fold CV on 609 rows
 
-       family                                                                                             params  cv_acc  cv_sd  cv_se  train_acc  val_acc  val_f1_Soccer  val_f1_Baseball  val_f1_Basketball  val_macro_f1
-  Naive Bayes                                                                        {"alpha": 0.5, "words": 50}  0.9246 0.0288 0.0144     0.9372   0.9181         0.9381           0.8833             0.9358        0.9191
-Random forest {"n_trees": 500, "max_features": "log2", "max_depth": null, "min_leaf": 1, "criterion": "entropy"}  0.9154 0.0308 0.0154     1.0000   0.9298         0.9474           0.9231             0.9189        0.9298
-          kNN                                 {"k": 7, "words": 50, "weights": "distance", "scaling": "min-max"}  0.8608 0.0418 0.0209     1.0000   0.8538         0.8333           0.8621             0.8644        0.8533 
+       family                                                                                          params  cv_acc  cv_sd  cv_se  train_acc  cv_f1_Soccer  cv_f1_Baseball  cv_f1_Basketball  cv_macro_f1  tied_with_best  chosen
+  Naive Bayes                                                                     {"alpha": 0.1, "words": 50}  0.9263 0.0188 0.0094     0.9335        0.9188          0.9138            0.9468       0.9265            True    True
+Random forest {"n_trees": 500, "max_features": "log2", "max_depth": null, "min_leaf": 2, "criterion": "gini"}  0.9229 0.0187 0.0094     0.9606        0.9147          0.9091            0.9453       0.9230            True   False
+          kNN                              {"k": 15, "words": 50, "weights": "uniform", "scaling": "min-max"}  0.8670 0.0246 0.0123     0.8711        0.8438          0.8852            0.8690       0.8660           False   False 
 
-Naive Bayes validation confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
- [[53  4  0]
- [ 3 53  1]
- [ 0  6 51]]
-Random forest validation confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
- [[54  1  2]
- [ 2 54  1]
- [ 1  5 51]]
-kNN validation confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
- [[45  4  8]
- [ 5 50  2]
- [ 1  5 51]]
+Naive Bayes CV confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
+ [[181  19   3]
+ [  5 196   2]
+ [  5  11 187]]
+Random forest CV confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
+ [[177  20   6]
+ [  5 195   3]
+ [  2  11 190]]
+kNN CV confusion (rows = true ['Soccer', 'Baseball', 'Basketball'] )
+ [[154  19  30]
+ [  5 185  13]
+ [  3  11 189]]
+
+best CV accuracy: Naive Bayes; within one SE (0.9 points): ['Naive Bayes', 'Random forest']; chosen (simplest of the tied): Naive Bayes
 
 kNN: best CV accuracy by k
     cv_acc  train_acc
 k                    
-1    0.817        1.0
-3    0.849        1.0
-5    0.856        1.0
-7    0.861        1.0
-11   0.856        1.0
-15   0.849        1.0
-21   0.847        1.0
-31   0.838        1.0
-51   0.829        1.0
+1    0.836        1.0
+11   0.862        1.0
+15   0.867        1.0
+21   0.862        1.0
+3    0.864        1.0
+31   0.846        1.0
+5    0.864        1.0
+51   0.839        1.0
+7    0.865        1.0
+
+kNN: best CV accuracy by scaling
+         cv_acc  train_acc
+scaling                   
+min-max   0.867        1.0
+z-score   0.814        1.0
 
 Random forest: best CV accuracy by max_depth
            cv_acc  train_acc
 max_depth                   
-10.0        0.911        1.0
-20.0        0.913        1.0
-NaN         0.915        1.0
+10          0.918      0.998
+20          0.920      1.000
+None        0.923      1.000
+
+Random forest: best CV accuracy by max_features
+              cv_acc  train_acc
+max_features                   
+0.1            0.911        1.0
+0.3            0.893        1.0
+log2           0.923        1.0
+sqrt           0.920        1.0
 
 Naive Bayes: best CV accuracy by alpha
        cv_acc  train_acc
 alpha                   
-0.01    0.920      0.947
-0.03    0.922      0.946
-0.10    0.922      0.945
-0.30    0.922      0.942
-0.50    0.925      0.941
-1.00    0.922      0.940
-2.00    0.918      0.937
-3.00    0.915      0.933
-5.00    0.913      0.928
-10.00   0.906      0.920
-Naive Bayes on train+val, grouped 5-fold x 3: 91.9% (SD 2.5, min 85.8, max 95.9)
-{
+0.01    0.925      0.948
+0.03    0.925      0.945
+0.1     0.926      0.945
+0.3     0.923      0.945
+0.5     0.923      0.940
+1       0.923      0.938
+10      0.913      0.917
+2       0.925      0.935
+3       0.925      0.931
+5       0.915      0.925
+
+Naive Bayes: best CV accuracy by words
+       cv_acc  train_acc
+words                   
+100     0.925      0.945
+25      0.915      0.921
+50      0.926      0.936
+all     0.921      0.948
+
+Naive Bayes, grouped 5-fold CV x 3 seeds: 92.1% (SD 2.6, min 85.0, max 95.1)
+
+final test: {
  "model": "Naive Bayes",
  "params": {
-  "alpha": 0.5,
+  "alpha": 0.1,
   "words": 50
  },
  "train_rows": 609,
- "test_rows": 254,
- "train_acc": 0.9293924466338259,
- "test_acc": 0.9212598425196851,
+ "test_rows": 252,
+ "train_acc": 0.9343185550082101,
+ "test_acc": 0.9246031746031746,
  "test_f1": {
-  "Soccer": 0.9182389937106918,
+  "Soccer": 0.9230769230769231,
   "Baseball": 0.9248554913294798,
-  "Basketball": 0.9204545454545454
+  "Basketball": 0.9257142857142857
  },
- "test_macro_f1": 0.9211830101649058,
+ "test_macro_f1": 0.9245489000402296,
  "test_confusion": [
   [
-   73,
+   72,
    6,
-   7
+   6
   ],
   [
    0,
@@ -103,12 +131,11 @@ Naive Bayes on train+val, grouped 5-fold x 3: 91.9% (SD 2.5, min 85.8, max 95.9)
 248  Basketball    Baseball                                                     Red                                      No particular song                                                                                                                                                                                                                                                                                                                                                                                                                                Also chips and soda                                                                                                                                     Indoor facility                       Fall                       No particular type
 267      Soccer  Basketball                                                   Black                                              Heat Waves                                                                                                                                                                                                                                                                                                                                                                                                                                Beer, fish and chips  Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility,At home or nearby,Others  Winter,Spring,Summer,Fall  Rock,Hip-hop or rap,Electronic or dance
 336      Soccer    Baseball                                                    Blue                                            I don't know                                                                                                                                                                                                                                                                                                                                                                                                                                      Pizza\n\nBeer                            Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility                     Summer              Electronic or dance,Country
-484      Soccer    Baseball                                                     Red                                                    None                                                                                                                                                                                                                                                                                                                                                                                                                                               Fries                                                                                                                               Outdoor public space         Spring,Summer,Fall                       No particular type
-486  Basketball    Baseball                                                     Red                                                  Iceman                                                                                                                                                                                                                                                                                                                                                                                                                                                 n/a                                                         Indoor facility,Outdoor public space,School or university facility,Private sports facility         Spring,Summer,Fall                       No particular type
-535      Soccer  Basketball                                                  Yellow                                                 Dai Dai                                                                                                                                                                                                                                                                                                                                                                                                                                               Pizza                           Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility         Spring,Summer,Fall  Rock,Hip-hop or rap,Electronic or dance
-553      Soccer  Basketball                                                     绿色的   鉴于我过去对英国乐队 Oasis 的喜爱，答案一定是《Don't Look Back in Anger》。  Usually, people gather in public squares outdoors to drink beer, have barbecue, and watch the matches together. Because of the time difference, it's always at night.\n\n今年在中国，每当我想起[this sport]，我就会想到东鹏补水水，这是东鹏饮料旗下的一个电解质饮料品牌。在2026年美国、加拿大和墨西哥[a competition]期间，姆巴佩代言了这款饮料，并发表了一句滑稽又略显生硬的中文广告语：“我是姆巴佩，该补水啦！”（Wǒ shì Mǔbāpèi, bù shuǐ la! ）。他那冰冷酷帅的[this sport]形象与他口中“不睡觉啦”的谐音形成了鲜明的对比，这段广告语迅速在网络上走红。现在，整个夏天，每当我和朋友们看到[this sport]场，我们都会脱口而出这句广告语。                                                 Outdoor public space,School or university facility,Community recreation facility,At home or nearby  Winter,Spring,Summer,Fall                                 Pop,Rock
-607      Soccer  Basketball                                                    Blue                                Y Que Fue? - Don Miguelo                                                                                                                                                                                                                                                                                                                                                                                                                                       Chicken Wings         Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility,At home or nearby  Winter,Spring,Summer,Fall                       No particular type
-646      Soccer    Baseball                                      Blue red and white                                        When I get older                                                                                                                                                                                                                                                                                                                                                                                                                      Power drinks, protein, carbs..  Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility,At home or nearby,Others  Winter,Spring,Summer,Fall                       No particular type
-664      Soccer  Basketball                                                     Red                                              Wonderwall                                                                                                                                                                                                                                                                                                                                                                                                                                                Beer                           Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility  Winter,Spring,Summer,Fall             Pop,Rock,Electronic or dance
-760      Soccer  Basketball                                                     Red                                           Lose yourself                                                                                                                                                                                                                                                                                                                                                                                                                               Fish and chips, pizza                           Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility         Spring,Summer,Fall  Rock,Hip-hop or rap,Electronic or dance
-779    Baseball  Basketball                                                  orange                                                      no                                                                                                                                                                                                                                                                                                                                                                                                                                             popcorn                                           Outdoor public space,School or university facility,Community recreation facility,Private sports facility         Spring,Summer,Fall                           Hip-hop or rap
+483      Soccer    Baseball                                                     Red                                                    None                                                                                                                                                                                                                                                                                                                                                                                                                                               Fries                                                                                                                               Outdoor public space         Spring,Summer,Fall                       No particular type
+485  Basketball    Baseball                                                     Red                                                  Iceman                                                                                                                                                                                                                                                                                                                                                                                                                                                 n/a                                                         Indoor facility,Outdoor public space,School or university facility,Private sports facility         Spring,Summer,Fall                       No particular type
+552      Soccer  Basketball                                                     绿色的   鉴于我过去对英国乐队 Oasis 的喜爱，答案一定是《Don't Look Back in Anger》。  Usually, people gather in public squares outdoors to drink beer, have barbecue, and watch the matches together. Because of the time difference, it's always at night.\n\n今年在中国，每当我想起[this sport]，我就会想到东鹏补水水，这是东鹏饮料旗下的一个电解质饮料品牌。在2026年美国、加拿大和墨西哥[a competition]期间，姆巴佩代言了这款饮料，并发表了一句滑稽又略显生硬的中文广告语：“我是姆巴佩，该补水啦！”（Wǒ shì Mǔbāpèi, bù shuǐ la! ）。他那冰冷酷帅的[this sport]形象与他口中“不睡觉啦”的谐音形成了鲜明的对比，这段广告语迅速在网络上走红。现在，整个夏天，每当我和朋友们看到[this sport]场，我们都会脱口而出这句广告语。                                                 Outdoor public space,School or university facility,Community recreation facility,At home or nearby  Winter,Spring,Summer,Fall                                 Pop,Rock
+606      Soccer  Basketball                                                    Blue                                Y Que Fue? - Don Miguelo                                                                                                                                                                                                                                                                                                                                                                                                                                       Chicken Wings         Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility,At home or nearby  Winter,Spring,Summer,Fall                       No particular type
+645      Soccer    Baseball                                      Blue red and white                                        When I get older                                                                                                                                                                                                                                                                                                                                                                                                                      Power drinks, protein, carbs..  Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility,At home or nearby,Others  Winter,Spring,Summer,Fall                       No particular type
+663      Soccer  Basketball                                                     Red                                              Wonderwall                                                                                                                                                                                                                                                                                                                                                                                                                                                Beer                           Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility  Winter,Spring,Summer,Fall             Pop,Rock,Electronic or dance
+759      Soccer  Basketball                                                     Red                                           Lose yourself                                                                                                                                                                                                                                                                                                                                                                                                                               Fish and chips, pizza                           Indoor facility,Outdoor public space,School or university facility,Community recreation facility,Private sports facility         Spring,Summer,Fall  Rock,Hip-hop or rap,Electronic or dance
+778    Baseball  Basketball                                                  orange                                                      no                                                                                                                                                                                                                                                                                                                                                                                                                                             popcorn                                           Outdoor public space,School or university facility,Community recreation facility,Private sports facility         Spring,Summer,Fall                           Hip-hop or rap
