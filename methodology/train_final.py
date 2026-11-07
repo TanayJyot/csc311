@@ -16,10 +16,17 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.neighbors import KNeighborsClassifier
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+
 from features import (TEXT_COLS, blank_rows, design_matrix, fit_preprocessing,
                       load_survey, respondent_split, structured_features, tokenize)
 
-DATA = "csc311_project_training_202609.csv"
+DATA = str(ROOT / "csc311_project_training_202609.csv")
 SETTINGS = {
     "naive_bayes": dict(scaling="z-score", words=50),
     "random_forest": dict(scaling="z-score", words="all"),
@@ -27,7 +34,7 @@ SETTINGS = {
 }
 
 
-def fit_and_export(out_dir="."):
+def fit_and_export(out_dir=str(HERE.parent / "methodology" / "submission")):
     df = load_survey(DATA)
     df = df.loc[~blank_rows(df)].reset_index(drop=True)
     df = df[respondent_split(df["id"]) != "test"].reset_index(drop=True)

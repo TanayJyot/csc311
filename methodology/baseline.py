@@ -22,10 +22,17 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.tree import DecisionTreeClassifier
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+
 from features import (LABELS, LIKERT_COLS, TEXT_COLS, blank_rows, load_survey,
                       respondent_split, structured_features, tokenize)
 
-DATA = "csc311_project_training_202609.csv"
+DATA = str(ROOT / "csc311_project_training_202609.csv")
 
 
 def design_matrix(struct, tokens, fit_idx, min_df=2):

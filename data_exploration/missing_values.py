@@ -17,14 +17,21 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+
 from features import (FEATURE_COLS, LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,
                       _RANGE, _SINGLE, _ZERO, _word_number, blank_rows,
                       is_non_answer, load_survey, norm_text, parse_price,
                       structured_features)
 
-DATA = "csc311_project_training_202609.csv"
-SPLITS = "split_ids.csv"
-OUT_DIR = "eda_outputs"                      # same output folder as eda.py
+DATA = str(ROOT / "csc311_project_training_202609.csv")
+SPLITS = str(HERE / "split_ids.csv")
+OUT_DIR = str(HERE / "eda_outputs")                      # same output folder as eda.py
 pd.set_option("display.width", 200, "display.max_columns", 30, "display.max_rows", 200)
 
 
@@ -142,7 +149,7 @@ def main():
     df["split"] = df["id"].map(split)
     if df["split"].isna().any():
         raise SystemExit(f"ids missing from {SPLITS}: {sorted(df.loc[df.split.isna(), 'id'])}")
-    print(f"ids in {SPLITS}: {len(split)}")
+    print(f"ids in data_exploration/split_ids.csv: {len(split)}")
     summary = (df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size"))
                .loc[["train", "val", "test"]])
     summary.loc["total"] = summary.sum()
@@ -264,7 +271,7 @@ def main():
           f"{int((miss_all['price'] & ~pb).sum())}")
     full.round(4).to_csv(f"{OUT_DIR}/missing_by_feature_full.csv", index=False)
 
-    print(f"\nwrote {OUT_DIR}/missing_by_feature.csv and {OUT_DIR}/missing_by_feature_full.csv")
+    print("\nwrote data_exploration/eda_outputs/missing_by_feature.csv and data_exploration/eda_outputs/missing_by_feature_full.csv")
 
 
 if __name__ == "__main__":

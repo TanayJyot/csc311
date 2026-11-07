@@ -5,7 +5,7 @@ train / validation / test by id first (50/20/30, seed 42, as in the instructors'
 project_baseline.py), and the validation and test rows are never inspected here.
 
 Run:    python eda.py
-Needs:  csc311_project_training_202609.csv and features.py in this folder,
+Needs:  csc311_project_training_202609.csv (repository root) and methodology/submission/features.py,
         plus numpy, pandas and matplotlib.
 Writes: split_ids.csv          respondent id -> split (shared by the whole team)
         eda_outputs/*.csv      every table quoted in the proposal
@@ -21,12 +21,19 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+
 from features import (LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,  # noqa: E402
                       blank_rows, is_non_answer, load_survey, norm_text,
                       respondent_split, structured_features, tokenize)
 
-DATA = "csc311_project_training_202609.csv"
-OUT_DIR, FIG_DIR = "eda_outputs", "figures"
+DATA = str(ROOT / "csc311_project_training_202609.csv")
+OUT_DIR, FIG_DIR = str(HERE / "eda_outputs"), str(HERE / "figures")
 SEED = 42
 SPORT_COLOURS = {"Soccer": "#1baf7a", "Baseball": "#2a78d6", "Basketball": "#eb6834"}
 QUESTION_NAMES = {"places": "Where", "seasons": "Season", "music": "Music",
@@ -215,7 +222,7 @@ def main():
           f"(respondents {sorted(raw.loc[blank, 'id'].astype(int).unique().tolist())})")
     df = raw.loc[~blank].reset_index(drop=True)
     df["split"] = respondent_split(df["id"])
-    df.drop_duplicates("id")[["id", "split"]].to_csv("split_ids.csv", index=False)
+    df.drop_duplicates("id")[["id", "split"]].to_csv(HERE / "split_ids.csv", index=False)
     summary = df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size"))
     print(summary.loc[["train", "val", "test"]])
 
@@ -451,7 +458,7 @@ def main():
     # ---- 11. Figures --------------------------------------------------------------
     answers_figure(ms, token_long, f"{FIG_DIR}/fig1_answers_by_sport.png")
     numeric_figure(tr, X, f"{FIG_DIR}/fig2_numeric_likert.png")
-    print(f"\nwrote {OUT_DIR}/*.csv, {FIG_DIR}/*.png and split_ids.csv")
+    print("\nwrote data_exploration/eda_outputs/*.csv, data_exploration/figures/*.png and data_exploration/split_ids.csv")
 
 
 if __name__ == "__main__":

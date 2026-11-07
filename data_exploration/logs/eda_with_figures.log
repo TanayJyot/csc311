@@ -182,9 +182,9 @@ Strongest absolute pooled Spearman association: Success in this sport depends he
 6. Treat all rankings here as exploratory. They describe association, not causation, and small samples/rare words can create unstable apparent signals.
 
 ## Output inventory
-- Tables: `eda_outputs/`
-- Figures: `figures/`
+- Tables: `data_exploration/eda_outputs/`
+- Figures: `data_exploration/figures/`
 - Main plots: label balance; numeric boxplots/distributions; Likert distributions; multi-select option rates; missingness; free-text response lengths and token rates; correlation heatmap; mutual-information ranking.
 
-Wrote report: eda_outputs/eda_report.md
-Wrote figures to: /home/user/csc311/figures
+Wrote report: data_exploration/eda_outputs/eda_report.md
+Wrote figures to: data_exploration/figures/

@@ -2,5 +2,5 @@ trained on 609 rows; random forest has 191698 nodes
 naive_bayes: matches sklearn on 254/254 rows; held-out accuracy 92.1% on 254 rows
 random_forest: matches sklearn on 254/254 rows; held-out accuracy 91.3% on 254 rows
 knn: matches sklearn on 254/254 rows; held-out accuracy 85.8% on 254 rows
-60 predictions in 0.04 s
+60 predictions in 0.06 s
 submitted files: 1.30 MB (limit 10 MB)

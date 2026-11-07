@@ -24,12 +24,19 @@ from sklearn.model_selection import GroupKFold
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.neighbors import KNeighborsClassifier
 
+import sys  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+
 from features import (LABELS, TEXT_COLS, blank_rows, design_matrix,
                       fit_preprocessing, load_survey, respondent_split,
                       structured_features, tokenize)
 
-DATA = "csc311_project_training_202609.csv"
-OUT = "model_selection_results"
+DATA = str(ROOT / "csc311_project_training_202609.csv")
+OUT = str(HERE / "model_selection_results")
 MIN_DF = 3                      # keep words used by at least 3 training rows
 
 
