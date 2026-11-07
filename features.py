@@ -268,3 +268,25 @@ def respondent_split(ids, val_frac=0.2, test_frac=0.3, seed=42):
     split.update({rid: "val" for rid in students[n_test:n_test + n_val]})
     split.update({rid: "train" for rid in students[n_test + n_val:]})
     return ids.map(split).to_numpy()
+
+
+def design_matrix(struct, tokens, prep):
+    """Model inputs from saved preprocessing statistics (see train_final.py).
+
+    Columns: standardised structured features, missing-value flags, then for each
+    free-text question a binary bag of words plus a non-answer indicator.
+    """
+    X = struct[prep["columns"]]
+    flags = X[["ease", "log_price"] + LIKERT_COLS].isna().to_numpy(float)
+    X = X.fillna(dict(zip(prep["columns"], prep["median"]))).to_numpy(float)
+    parts = [(X - np.array(prep["mean"])) / np.array(prep["std"]), flags]
+    for col in TEXT_COLS:
+        index = {t: j for j, t in enumerate(prep["vocab"][col])}
+        M = np.zeros((len(X), len(index) + 1))
+        for i, toks in enumerate(tokens[col]):
+            for t in set(toks):
+                if t in index:
+                    M[i, index[t]] = 1.0
+            M[i, -1] = float(len(toks) == 0)
+        parts.append(M)
+    return np.hstack(parts)
