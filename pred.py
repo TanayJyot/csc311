@@ -19,8 +19,9 @@ import numpy as np
 from features import (TEXT_COLS, design_matrix, load_survey,
                       structured_features, tokenize)
 
-# Final model; "bernoulli_nb" and "softmax" are the two runner-up models.
-MODEL = "random_forest"
+# Final model (Bernoulli naive Bayes); "random_forest" and "knn" are the other two
+# model families compared in the report.
+MODEL = "naive_bayes"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -49,16 +50,29 @@ def _random_forest_proba(X, p):
     return proba / len(p["rf_roots"])
 
 
-def _bernoulli_nb_scores(X, p):
-    """Joint log-likelihood of each class with features binarised at 0."""
+def _naive_bayes_scores(X, p):
+    """Bernoulli naive Bayes log-likelihood of each class, features binarised at 0."""
     B = (X > 0).astype(float)
     log_p = p["nb_feature_log_prob"]
     log_not_p = np.log1p(-np.exp(log_p))
     return B @ (log_p - log_not_p).T + log_not_p.sum(axis=1) + p["nb_class_log_prior"]
 
 
-def _softmax_scores(X, p):
-    return X @ p["sm_coef"].T + p["sm_intercept"]
+def _knn_scores(X, p, k):
+    """Distance-weighted vote of the k nearest training rows (Euclidean distance)."""
+    train = p["knn_X"]
+    d2 = (X ** 2).sum(1)[:, None] - 2 * X @ train.T + (train ** 2).sum(1)[None, :]
+    dist = np.sqrt(np.maximum(d2, 0))
+    nearest = np.argsort(dist, axis=1, kind="stable")[:, :k]
+    nd = np.take_along_axis(dist, nearest, axis=1)
+    with np.errstate(divide="ignore"):
+        w = 1.0 / nd
+    exact = np.isinf(w)
+    w[exact.any(axis=1)] = exact[exact.any(axis=1)]      # an exact match gets all the weight
+    votes = np.zeros((len(X), int(p["knn_y"].max()) + 1))
+    for j in range(k):
+        np.add.at(votes, (np.arange(len(X)), p["knn_y"][nearest[:, j]]), w[:, j])
+    return votes
 
 
 def predict_all(filename, model=MODEL):
@@ -70,12 +84,12 @@ def predict_all(filename, model=MODEL):
     struct = structured_features(df).drop(columns=["price"])
     tokens = {col: df[col].map(tokenize) for col in TEXT_COLS}
     X = design_matrix(struct, tokens, meta["preprocessing"][model])
-    if model == "random_forest":
+    if model == "naive_bayes":
+        scores = _naive_bayes_scores(X, params)
+    elif model == "random_forest":
         scores = _random_forest_proba(X, params)
-    elif model == "bernoulli_nb":
-        scores = _bernoulli_nb_scores(X, params)
     else:
-        scores = _softmax_scores(X, params)
+        scores = _knn_scores(X, params, meta["knn_k"])
     return [meta["classes"][i] for i in scores.argmax(axis=1)]
 
 
