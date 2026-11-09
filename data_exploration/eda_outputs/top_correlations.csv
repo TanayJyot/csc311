@@ -1,11 +1,11 @@
 level_0,level_1,r
-places=Indoor facility,places=At home or nearby,0.484
-places=Community recreation facility,places=Private sports facility,0.475
-places=Indoor facility,places=Community recreation facility,0.462
-music=Hip-hop or rap,music=No particular type,-0.457
-places=School or university facility,places=Community recreation facility,0.415
-places=Community recreation facility,places=At home or nearby,0.406
-seasons=Spring,seasons=Fall,0.4
-music=Pop,music=No particular type,-0.374
-places=Indoor facility,seasons=Winter,0.358
-places=Indoor facility,places=Private sports facility,0.356
+places=Indoor facility,places=At home or nearby,0.467
+music=Hip-hop or rap,music=No particular type,-0.463
+places=Community recreation facility,places=Private sports facility,0.434
+places=Indoor facility,places=Community recreation facility,0.43
+places=School or university facility,places=Community recreation facility,0.403
+seasons=Spring,seasons=Fall,0.399
+places=Indoor facility,places=Private sports facility,0.391
+places=Community recreation facility,places=At home or nearby,0.372
+places=Indoor facility,seasons=Winter,0.363
+seasons=Winter,music=Hip-hop or rap,0.353

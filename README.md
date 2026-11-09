@@ -26,8 +26,7 @@ Prediction (MarkUs project prediction assignment): upload the four files in
 
 `pred.py` uses Bernoulli naive Bayes, the final model (`MODEL = "naive_bayes"`); the random
 forest (`"random_forest"`) and kNN (`"knn"`) are the other two families in the report. All
-three are fit on the 70% development set (the instructors' training + validation
-respondents, 609 rows).
+three are fit on the 70% development set (201 respondents, 603 rows).
 
 Report (MarkUs project report assignment): `report.pdf` from the LaTeX template, and
 `code.zip`, built with `python methodology/make_code_zip.py`.
@@ -40,12 +39,13 @@ scikit-learn, the test rows, the 60-row time limit and the 10 MB limit:
 
 ## Where each number in the report comes from
 
-Every log in a `logs/` folder is the full output of one run of the script named. The
+Every log in a `logs/` folder is the full output of one run of the script named. All
+exploration uses the 70% development set only. The
 exploration logs were run with `PYTHONHASHSEED=0`, which fixes the order of tied words.
 
 | Report item | Code | Output / log |
 | --- | --- | --- |
-| Data split: 70% development (203 respondents, 609 rows) and 30% test (84 respondents, 252 rows; the two respondents with only one answered sport are dropped) | `methodology/submission/features.py` (`respondent_split`), `methodology/model_selection.py` (`load_data`) | `data_exploration/split_ids.csv`, `methodology/logs/model_selection.log` |
+| Cleaning (7 blank rows, then respondents without one row per sport: 861 rows, 287 respondents) and the 70/30 split (development: 201 respondents, 603 rows; test: 86 respondents, 258 rows) | `methodology/submission/features.py` (`clean_survey`, `dev_test_split`) | `data_exploration/split_ids.csv`, `data_exploration/logs/eda.log` |
 | Table 1: missing values, price parsing | `data_exploration/missing_values.py`, `data_exploration/preprocessing_checks.py` | `data_exploration/logs/missing_values.log`, `data_exploration/logs/preprocessing_checks.log`, `data_exploration/eda_outputs/` |
 | Figures 1 and 2, mutual information | `data_exploration/eda_with_figures.py`, `data_exploration/eda.py` | `data_exploration/logs/eda_with_figures.log`, `data_exploration/logs/eda.log`, `data_exploration/eda_outputs/mutual_information.csv` |
 | Preprocessing (imputation, scaling, vocabulary, top words) | `methodology/submission/features.py` (`fit_preprocessing`, `design_matrix`) | |

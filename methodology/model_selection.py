@@ -1,17 +1,16 @@
 """model_selection.py - the model selection reported in the final report.
 
 Protocol (Methodology section):
-0. Split respondents with the instructors' split_by_student (seed 42): 50% train,
-   20% validation, 30% test. Drop the two respondents who answered only one sport
-   (both fall in the test split), so every respondent has one row per sport.
-1. Merge train and validation (203 respondents, 609 rows) into one development set.
-   Tune kNN, random forest and Bernoulli naive Bayes with grouped 5-fold CV on it;
+0. Clean first: drop the 7 blank rows and the respondents left without one row per
+   sport (861 rows, 287 respondents). Then split respondents 70/30 with the
+   instructors' split_by_student shuffle (seed 42): development and test.
+1. Tune kNN, random forest and Bernoulli naive Bayes with grouped 5-fold CV on it;
    preprocessing is fit on the four training folds each time.
 2. Choose the final model from the CV results: accuracy, per-sport F1 and the
    confusion matrix of the held-out (out-of-fold) predictions. Models within one
    standard error of the best are tied, and the simplest of the tied models wins.
-3. Retrain the chosen model on all 609 development rows and score it once on the
-   test split (252 rows).
+3. Retrain the chosen model on all 603 development rows and score it once on the
+   test split.
 
 Run: python model_selection.py   (needs scikit-learn; writes model_selection_results/)
 """
@@ -34,8 +33,8 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 
-from features import (LABELS, TEXT_COLS, blank_rows, design_matrix,  # noqa: E402
-                      fit_preprocessing, load_survey, respondent_split,
+from features import (LABELS, TEXT_COLS, clean_survey, design_matrix,  # noqa: E402
+                      dev_test_split, fit_preprocessing, load_survey,
                       structured_features, tokenize)
 
 DATA = str(ROOT / "csc311_project_training_202609.csv")
@@ -81,14 +80,12 @@ def per_sport_f1(y_true, y_pred):
 
 
 def load_data():
-    """Rows with answers, the instructors' split, and only respondents with all three rows."""
-    df = load_survey(DATA)
-    df = df.loc[~blank_rows(df)].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])              # split computed on all 289 respondents
-    rows = df.groupby("id")["id"].transform("size")
-    partial = df.loc[rows < 3, ["id", "split"]].drop_duplicates()
-    print("dropped respondents with fewer than 3 rows:", partial.to_dict("records"))
-    df = df.loc[rows == 3].reset_index(drop=True)
+    """Cleaned survey (one row per sport for every respondent) split 70/30 by respondent."""
+    raw = load_survey(DATA)
+    df = clean_survey(raw)
+    print(f"cleaned: {len(raw)} rows / {raw['id'].nunique()} respondents -> "
+          f"{len(df)} rows / {df['id'].nunique()} respondents")
+    df["split"] = dev_test_split(df["id"])
     print(df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size")), "\n")
     struct = structured_features(df).drop(columns=["price"])
     tokens = {c: df[c].map(tokenize) for c in TEXT_COLS}
@@ -99,7 +96,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     df, struct, tokens = load_data()
     y, ids = df["label"].to_numpy(), df["id"].to_numpy()
-    dev = np.where(df.split != "test")[0]                  # train + validation, 609 rows
+    dev = np.where(df.split == "dev")[0]                   # 70% development set
     test = np.where(df.split == "test")[0]
     folds = [(dev[a], dev[b]) for a, b in
              GroupKFold(5, shuffle=True, random_state=0).split(dev, groups=ids[dev])]

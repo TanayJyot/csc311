@@ -30,7 +30,7 @@ ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 
 from features import (LABELS, LIKERT_COLS, TEXT_COLS, blank_rows, load_survey,
-                      respondent_split, structured_features, tokenize)
+                      clean_survey, dev_test_split, structured_features, tokenize)
 
 DATA = str(ROOT / "csc311_project_training_202609.csv")
 
@@ -57,9 +57,9 @@ def design_matrix(struct, tokens, fit_idx, min_df=2):
 
 def main():
     df = load_survey(DATA)
-    df = df.loc[~blank_rows(df)].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
-    tr = df[df["split"] == "train"].reset_index(drop=True)
+    df = clean_survey(df)
+    df["split"] = dev_test_split(df["id"])
+    tr = df[df["split"] == "dev"].reset_index(drop=True)
     y, groups = tr["label"].to_numpy(), tr["id"].to_numpy()
     struct = structured_features(tr).drop(columns=["price"])
     tokens = {col: tr[col].map(tokenize) for col in TEXT_COLS}

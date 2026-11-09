@@ -26,8 +26,8 @@ ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 sys.path.insert(0, str(HERE))                                   # train_final.py
 
-from features import (TEXT_COLS, blank_rows, design_matrix, load_survey,
-                      respondent_split, structured_features, tokenize)
+from features import (TEXT_COLS, blank_rows, clean_survey, design_matrix, dev_test_split,
+                      load_survey, structured_features, tokenize)
 from train_final import DATA, fit_and_export
 
 SUBMITTED = ["pred.py", "features.py", "model_params.npz", "model_meta.json"]
@@ -58,12 +58,15 @@ def main():
 
     raw = pd.read_csv(DATA, dtype=str, keep_default_na=False)
     short = load_survey(DATA)
+    # Same cleaning as clean_survey (blank rows, then respondents without one row per
+    # sport), kept as a mask over the raw rows so the raw CSV text can be written out.
     keep = ~blank_rows(short)
-    split = pd.Series("dropped", index=short.index)
-    split[keep] = respondent_split(short.loc[keep, "id"])
     answered = short["id"].where(keep).map(short.loc[keep, "id"].value_counts())
-    full = answered == 3                    # respondents with all three rows answered
-    test_mask = (split == "test") & full
+    full = keep & (answered == 3)
+    split = pd.Series("dropped", index=short.index)
+    split[full] = dev_test_split(short.loc[full, "id"])
+    assert full.sum() == len(clean_survey(short))
+    test_mask = split == "test"
     test_csv = os.path.join(folder, "test.csv")
     raw.loc[test_mask].drop(columns=["label"]).to_csv(test_csv, index=False)
     labels = short.loc[test_mask, "label"].tolist()
