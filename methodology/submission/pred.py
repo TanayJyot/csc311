@@ -1,9 +1,11 @@
 """pred.py - CSC311 project prediction script (final model: Bernoulli naive Bayes).
 
 Self-contained: everything needed to turn the survey CSV into predictions is in this
-file. The only other file is weights.json, which holds what was learned from the
-70% development set: the preprocessing statistics (medians, scaling, kept words)
-and the naive Bayes log-probabilities. It was written by methodology/train_final.py.
+file. The only other file is weights.json, which holds what was learned from all
+861 cleaned training rows (the 70% development and 30% test sets together, with the
+hyperparameters chosen by cross-validation on the development set): the preprocessing
+statistics (medians, scaling, kept words) and the naive Bayes log-probabilities. It was
+written by fit_submission in methodology/train_final.py.
 
 Uses only the Python standard library, numpy and pandas.
 
