@@ -43,6 +43,7 @@ def tuned_settings():
 
 
 def fit_and_export(out_dir=str(HERE / "models")):
+    os.makedirs(out_dir, exist_ok=True)
     df = load_survey(DATA)
     df = clean_survey(df)
     df = df[dev_test_split(df["id"]) == "dev"].reset_index(drop=True)
@@ -102,6 +103,7 @@ def fit_and_export(out_dir=str(HERE / "models")):
 
 def fit_submission(submission_dir=str(HERE / "prediction")):
     """Naive Bayes with its tuned settings, preprocessing and model refit on all cleaned rows."""
+    os.makedirs(submission_dir, exist_ok=True)
     df = clean_survey(load_survey(DATA)).reset_index(drop=True)
     y = df["label"].to_numpy()
     struct = structured_features(df).drop(columns=["price"])
