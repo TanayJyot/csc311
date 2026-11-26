@@ -102,7 +102,7 @@ def respondent_split(ids, seed=42, val_frac=0.2, test_frac=0.3):
     n_val = int(len(students) * val_frac)
     split = {x: "test" for x in students[:n_test]}
     split.update({x: "val" for x in students[n_test:n_test + n_val]})
-    split.update({x: "train" for x in students[n_test + n_val:]})
+    split.update({x: "dev" for x in students[n_test + n_val:]})
     return pd.Series(ids).map(split).to_numpy()
 
 def mutual_info_bits(x, y):
@@ -159,7 +159,11 @@ def main(input_path=DATA, out_dir=OUT_DIR, fig_dir=FIG_DIR, seed=SEED):
     blank = df[feature_cols].isna().all(axis=1)
     blank_count = int(blank.sum())
     df = df.loc[~blank].drop_duplicates().reset_index(drop=True)
-    df["split"] = respondent_split(df["id"], seed)
+    # Drop respondents who no longer have one row per sport, then split 70/30 by respondent.
+    rows_per_id = df.groupby("id")["id"].transform("size")
+    partial_count = int((rows_per_id < len(LABELS)).sum())
+    df = df.loc[rows_per_id == len(LABELS)].reset_index(drop=True)
+    df["split"] = respondent_split(df["id"], seed, val_frac=0.0)
 
     # Clean and engineer analysis-only columns. Original answer columns remain available.
     df["ease_numeric"] = pd.to_numeric(df[EASE_COL], errors="coerce")
@@ -170,12 +174,12 @@ def main(input_path=DATA, out_dir=OUT_DIR, fig_dir=FIG_DIR, seed=SEED):
     df.loc[df["price_numeric"] < 0, "price_numeric"] = np.nan
     df["log_price"] = np.log1p(df["price_numeric"])
 
-    tr = df[df["split"] == "train"].copy().reset_index(drop=True)
+    tr = df[df["split"] == "dev"].copy().reset_index(drop=True)
     y = tr["label"]
     # Use clean, split files with the helper columns explicitly named.
     df.drop(columns=["split"]).to_csv(OUT_DIR / "cleaned_survey.csv", index=False)
     df[["id", "split"]].drop_duplicates().sort_values("id").to_csv(HERE / "split_ids.csv", index=False)
-    for name in ["train", "val", "test"]:
+    for name in ["dev", "test"]:
         df[df["split"] == name].drop(columns=["split"]).to_csv(OUT_DIR / f"{name}.csv", index=False)
 
     report = []

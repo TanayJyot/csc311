@@ -58,17 +58,20 @@ def _naive_bayes_scores(X, p):
     return B @ (log_p - log_not_p).T + log_not_p.sum(axis=1) + p["nb_class_log_prior"]
 
 
-def _knn_scores(X, p, k):
-    """Distance-weighted vote of the k nearest training rows (Euclidean distance)."""
+def _knn_scores(X, p, k, weights="uniform"):
+    """Vote of the k nearest training rows (Euclidean distance), uniform or distance-weighted."""
     train = p["knn_X"]
     d2 = (X ** 2).sum(1)[:, None] - 2 * X @ train.T + (train ** 2).sum(1)[None, :]
     dist = np.sqrt(np.maximum(d2, 0))
     nearest = np.argsort(dist, axis=1, kind="stable")[:, :k]
     nd = np.take_along_axis(dist, nearest, axis=1)
-    with np.errstate(divide="ignore"):
-        w = 1.0 / nd
-    exact = np.isinf(w)
-    w[exact.any(axis=1)] = exact[exact.any(axis=1)]      # an exact match gets all the weight
+    if weights == "uniform":
+        w = np.ones_like(nd)
+    else:
+        with np.errstate(divide="ignore"):
+            w = 1.0 / nd
+        exact = np.isinf(w)
+        w[exact.any(axis=1)] = exact[exact.any(axis=1)]  # an exact match gets all the weight
     votes = np.zeros((len(X), int(p["knn_y"].max()) + 1))
     for j in range(k):
         np.add.at(votes, (np.arange(len(X)), p["knn_y"][nearest[:, j]]), w[:, j])
@@ -89,7 +92,7 @@ def predict_all(filename, model=MODEL):
     elif model == "random_forest":
         scores = _random_forest_proba(X, params)
     else:
-        scores = _knn_scores(X, params, meta["knn_k"])
+        scores = _knn_scores(X, params, meta["knn_k"], meta.get("knn_weights", "uniform"))
     return [meta["classes"][i] for i in scores.argmax(axis=1)]
 
 

@@ -3,90 +3,89 @@
 All label comparisons and plots below use the **training split only**. Respondent IDs are split as groups to avoid putting the same person's answers in more than one split.
 
 ## 1. Dataset and split integrity
-- Raw rows: 870; retained rows: 863; all-answer-blank rows removed: 7.
-- Unique respondents: 289; training respondents: 146; training rows: 438.
-- Most common label sequences per respondent: {('Soccer', 'Baseball', 'Basketball'): 287, ('Soccer',): 2}.
+- Raw rows: 870; retained rows: 861; all-answer-blank rows removed: 7.
+- Unique respondents: 287; training respondents: 201; training rows: 603.
+- Most common label sequences per respondent: {('Soccer', 'Baseball', 'Basketball'): 287}.
 - The ID is an identifier, not a predictor; exclude it from model inputs.
 
 Split summary:
        respondents  rows
 split                   
-test            86   254
-train          146   438
-val             57   171
+dev            201   603
+test            86   258
 
 ## 2. Label balance
             rows  percent
 label                    
-Soccer       146    33.33
-Baseball     146    33.33
-Basketball   146    33.33
+Soccer       201    33.33
+Baseball     201    33.33
+Basketball   201    33.33
 Interpretation: the class balance is approximately even, so accuracy is a reasonable baseline metric.
 
 ## 3. Numeric feature distributions and label relationships
-- **Ease rating (0–10):** n=438/438 non-missing; median=5.00; IQR=4.00–7.00; range=0.00–10.00; skewness=-0.09.
-  By sport (mean / median): Soccer: 6.37 / 7.00; Baseball: 3.97 / 4.00; Basketball: 6.29 / 6.00
-  Largest difference in sport means: 2.40. This is descriptive and does not establish causation.
-- **Willingness to pay ($):** n=414/438 non-missing; median=100.00; IQR=50.00–237.50; range=0.00–5000.00; skewness=6.18.
-  By sport (mean / median): Soccer: 342.22 / 200.00; Baseball: 152.93 / 60.00; Basketball: 280.91 / 150.00
-  Largest difference in sport means: 189.28. This is descriptive and does not establish causation.
-- **log(1 + willingness to pay):** n=414/438 non-missing; median=4.62; IQR=3.93–5.47; range=0.00–8.52; skewness=-1.08.
-  By sport (mean / median): Soccer: 4.94 / 5.30; Baseball: 3.90 / 4.11; Basketball: 4.85 / 5.02
-  Largest difference in sport means: 1.04. This is descriptive and does not establish causation.
-- Price is typically right-skewed: raw-price skewness=6.18, log-price skewness=-1.08. The log transform reduces the absolute skewness.
-- On the log-IQR rule, 4 values exceed approximately $2,384. Inspect extreme values; do not automatically delete genuine high bids.
+- **Ease rating (0–10):** n=603/603 non-missing; median=6.00; IQR=4.00–7.00; range=0.00–10.00; skewness=-0.08.
+  By sport (mean / median): Soccer: 6.36 / 7.00; Baseball: 4.11 / 4.00; Basketball: 6.15 / 6.00
+  Largest difference in sport means: 2.25. This is descriptive and does not establish causation.
+- **Willingness to pay ($):** n=563/603 non-missing; median=100.00; IQR=50.00–200.00; range=0.00–10000.00; skewness=9.78.
+  By sport (mean / median): Soccer: 364.30 / 200.00; Baseball: 128.83 / 50.00; Basketball: 255.27 / 150.00
+  Largest difference in sport means: 235.48. This is descriptive and does not establish causation.
+- **log(1 + willingness to pay):** n=563/603 non-missing; median=4.62; IQR=3.93–5.30; range=0.00–9.21; skewness=-1.13.
+  By sport (mean / median): Soccer: 4.85 / 5.30; Baseball: 3.80 / 3.93; Basketball: 4.70 / 5.02
+  Largest difference in sport means: 1.05. This is descriptive and does not establish causation.
+- Price is typically right-skewed: raw-price skewness=9.78, log-price skewness=-1.13. The log transform reduces the absolute skewness.
+- On the log-IQR rule, 10 values exceed approximately $1,572. Inspect extreme values; do not automatically delete genuine high bids.
 
 ## 4. Ordinal (Likert) responses
-- **Success in this sport depends heavily on strategy and planning.** Mean ordinal score: Soccer 3.88; Baseball 3.55; Basketball 3.92.
+- **Success in this sport depends heavily on strategy and planning.** Mean ordinal score: Soccer 3.94; Baseball 3.57; Basketball 3.88.
   Within-sport response percentages (columns 1=strongly disagree to 5=strongly agree):
 Success in this sport depends heavily on strategy and planning. [ordinal]    1     2     3     4     5
 label                                                                                                 
-Soccer                                                                     2.1   7.5  13.7  54.1  22.6
-Baseball                                                                   2.7  13.7  28.8  35.6  19.2
-Basketball                                                                 0.0   6.2  16.6  55.9  21.4
-- **Players must be comfortable with a high risk of injury.** Mean ordinal score: Soccer 3.78; Baseball 2.88; Basketball 3.82.
+Soccer                                                                     1.0   7.0  11.4  58.2  22.4
+Baseball                                                                   1.0  16.9  27.4  33.3  21.4
+Basketball                                                                 0.5   5.0  19.5  55.5  19.5
+- **Players must be comfortable with a high risk of injury.** Mean ordinal score: Soccer 3.75; Baseball 2.87; Basketball 3.76.
   Within-sport response percentages (columns 1=strongly disagree to 5=strongly agree):
 Players must be comfortable with a high risk of injury. [ordinal]    1     2     3     4     5
 label                                                                                         
-Soccer                                                             1.4  11.0  17.8  47.9  21.9
-Baseball                                                           3.4  34.2  37.0  21.2   4.1
-Basketball                                                         1.4   8.9  19.2  47.9  22.6
-- **Individual brilliance can outweigh teamwork in this sport.** Mean ordinal score: Soccer 2.94; Baseball 3.82; Basketball 3.53.
+Soccer                                                             1.0  12.4  19.4  45.3  21.9
+Baseball                                                           5.5  34.3  34.3  19.4   6.5
+Basketball                                                         1.5  10.4  21.9  42.8  23.4
+- **Individual brilliance can outweigh teamwork in this sport.** Mean ordinal score: Soccer 2.89; Baseball 3.75; Basketball 3.62.
   Within-sport response percentages (columns 1=strongly disagree to 5=strongly agree):
 Individual brilliance can outweigh teamwork in this sport. [ordinal]    1     2     3     4     5
 label                                                                                            
-Soccer                                                                6.2  32.9  30.1  22.6   8.2
-Baseball                                                              2.7  11.0  14.4  45.2  26.7
-Basketball                                                            3.4  15.9  19.3  46.9  14.5
+Soccer                                                                9.0  32.3  27.4  23.4   8.0
+Baseball                                                              2.0  13.4  17.9  41.3  25.4
+Basketball                                                            2.5  14.0  21.5  42.5  19.5
 
 ## 5. Multi-select answer choices
 Options with the largest between-sport differences (percentage-point spread):
                                                                                    question                        option  Soccer_pct  Baseball_pct  Basketball_pct  spread_percentage_points
-                                                           Where might you play this sport?               Indoor facility        63.7          24.7            95.2                      70.5
-                                 What types of music do you most associate with this sport?                Hip-hop or rap        41.1          28.1            83.6                      55.5
-                                                           Where might you play this sport?             At home or nearby        44.5          11.6            65.1                      53.4
-During which seasons would you be most likely to play this sport recreationally in Toronto?                        Winter         5.5           5.5            58.2                      52.7
-                                                           Where might you play this sport? Community recreation facility        74.7          47.3            88.4                      41.1
-                                 What types of music do you most associate with this sport?                         Latin        39.7           4.8             0.7                      39.0
-                                 What types of music do you most associate with this sport?                       Country         4.1          29.5             3.4                      26.0
-                                                           Where might you play this sport?       Private sports facility        69.9          56.2            82.2                      26.0
-                                                           Where might you play this sport? School or university facility        86.3          72.6            95.2                      22.6
-                                 What types of music do you most associate with this sport?            No particular type        17.8          31.5             9.6                      21.9
-                                 What types of music do you most associate with this sport?           Electronic or dance        34.2          15.1            17.8                      19.2
-During which seasons would you be most likely to play this sport recreationally in Toronto?                          Fall        69.9          71.9            87.7                      17.8
-                                 What types of music do you most associate with this sport?                           Pop        40.4          35.6            50.0                      14.4
-During which seasons would you be most likely to play this sport recreationally in Toronto?                        Spring        73.3          76.7            84.9                      11.6
-                                                           Where might you play this sport?                        Others        13.7           3.4             8.2                      10.3
+                                                           Where might you play this sport?               Indoor facility        66.2          23.4            96.0                      72.6
+                                 What types of music do you most associate with this sport?                Hip-hop or rap        41.8          25.4            84.6                      59.2
+                                                           Where might you play this sport?             At home or nearby        47.3          12.4            67.7                      55.2
+During which seasons would you be most likely to play this sport recreationally in Toronto?                        Winter         6.5           5.0            59.2                      54.2
+                                                           Where might you play this sport? Community recreation facility        77.6          48.8            89.6                      40.8
+                                 What types of music do you most associate with this sport?                         Latin        41.3           4.5             0.5                      40.8
+                                 What types of music do you most associate with this sport?                       Country         4.0          33.8             3.0                      30.8
+                                                           Where might you play this sport?       Private sports facility        69.2          56.2            84.1                      27.9
+                                 What types of music do you most associate with this sport?            No particular type        17.4          31.3             9.5                      21.9
+                                 What types of music do you most associate with this sport?           Electronic or dance        36.3          14.4            20.4                      21.9
+During which seasons would you be most likely to play this sport recreationally in Toronto?                          Fall        69.2          74.1            88.1                      18.9
+                                                           Where might you play this sport? School or university facility        89.6          76.6            94.5                      17.9
+During which seasons would you be most likely to play this sport recreationally in Toronto?                        Spring        69.7          74.6            84.1                      14.4
+                                                           Where might you play this sport?                        Others        15.9           4.0            11.4                      11.9
+                                 What types of music do you most associate with this sport?                           Pop        39.8          36.3            46.8                      10.4
 
 ## 6. Missing answers and response patterns
                                                                                                                                                                                                           question  overall_missing_pct  Soccer_missing_pct  Baseball_missing_pct  Basketball_missing_pct  max_min_gap_pp
-                                                                                                                                                                      Which song do you associate with this sport?                 12.6                 5.5                  18.5                    13.7            13.0
-                                                                                                            What foods and drinks do you associate with watching this sport in the place or culture you know best?                  2.3                 0.0                   2.7                     4.1             4.1
-                                                                                                                                                                     What colour do you associate with this sport?                  1.4                 1.4                   2.1                     0.7             1.4
-                                                                                                               How much would you be willing to pay for a decent seat at a professional competition of this sport?                  1.1                 1.4                   1.4                     0.7             0.7
-                                                                                                                                                                        How do you feel when you watch this sport?                  0.7                 0.0                   1.4                     0.7             1.4
-                                                                                                                                                        Individual brilliance can outweigh teamwork in this sport.                  0.2                 0.0                   0.0                     0.7             0.7
-                                                                                                                                                   Success in this sport depends heavily on strategy and planning.                  0.2                 0.0                   0.0                     0.7             0.7
+                                                                                                                                                                      Which song do you associate with this sport?                 10.1                 4.0                  14.9                    11.4            10.9
+                                                                                                            What foods and drinks do you associate with watching this sport in the place or culture you know best?                  1.8                 0.0                   2.0                     3.5             3.5
+                                                                                                                                                                     What colour do you associate with this sport?                  1.0                 1.0                   1.5                     0.5             1.0
+                                                                                                                                                                        How do you feel when you watch this sport?                  0.7                 0.0                   1.5                     0.5             1.5
+                                                                                                               How much would you be willing to pay for a decent seat at a professional competition of this sport?                  0.5                 0.5                   0.5                     0.5             0.0
+                                                                                                                                                        Individual brilliance can outweigh teamwork in this sport.                  0.2                 0.0                   0.0                     0.5             0.5
+                                                                                                                                                   Success in this sport depends heavily on strategy and planning.                  0.2                 0.0                   0.0                     0.5             0.5
 How easy do you think it would be for someone with no prior experience to start playing this sport recreationally? Rate it on a scale from 0 to 10, where 0 means extremely difficult and 10 means extremely easy.                  0.0                 0.0                   0.0                     0.0             0.0
                                                                                                                                                            Players must be comfortable with a high risk of injury.                  0.0                 0.0                   0.0                     0.0             0.0
                                                                                                                                                         What types of music do you most associate with this sport?                  0.0                 0.0                   0.0                     0.0             0.0
@@ -95,80 +94,80 @@ How easy do you think it would be for someone with no prior experience to start 
 Interpretation: label-dependent missingness can itself become predictive, but may also reflect survey-taking behaviour. Compare a model with and without missingness indicators.
 
 ## 7. Free-response answers: vocabulary and label associations
-- **What foods and drinks do you associate with watching this sport in the place or culture you know best?** Answer rate=97.7%; distinct normalized answers=316; mean words=4.61; median words=3.0; vocabulary size=324.
-- **What colour do you associate with this sport?** Answer rate=98.6%; distinct normalized answers=100; mean words=2.04; median words=1.0; vocabulary size=129.
-- **Which song do you associate with this sport?** Answer rate=86.8%; distinct normalized answers=257; mean words=4.50; median words=4.0; vocabulary size=447.
-- **How do you feel when you watch this sport?** Answer rate=99.3%; distinct normalized answers=255; mean words=4.63; median words=1.0; vocabulary size=517.
+- **What foods and drinks do you associate with watching this sport in the place or culture you know best?** Answer rate=98.0%; distinct normalized answers=439; mean words=4.72; median words=3.0; vocabulary size=399.
+- **What colour do you associate with this sport?** Answer rate=99.0%; distinct normalized answers=138; mean words=2.04; median words=1.0; vocabulary size=150.
+- **Which song do you associate with this sport?** Answer rate=89.6%; distinct normalized answers=340; mean words=4.49; median words=4.0; vocabulary size=553.
+- **How do you feel when you watch this sport?** Answer rate=99.3%; distinct normalized answers=338; mean words=4.83; median words=1.0; vocabulary size=640.
 
 Highest-MI tokens for **What foods and drinks do you associate with watching this sport in the place or culture you know best?** (exploratory; not causal):
-   token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
-     hot     111      13.699        47.945          14.384    0.094
-    dogs      82      10.959        36.301           8.904    0.070
-    beer     129      47.945        25.342          15.068    0.065
-   pizza      60      19.178         3.425          18.493    0.039
-   wings      37       6.164         2.055          17.123    0.038
- peanuts      19       1.370        10.959           0.685    0.037
-   chips      54      21.918         6.164           8.904    0.030
- chicken      58      12.329         6.164          21.233    0.025
-gatorade       8       0.685         0.000           4.795    0.019
- hotdogs      19       4.110         8.219           0.685    0.019
-    coca      11       6.164         0.685           0.685    0.019
-     dog      27       2.740        11.644           4.110    0.018
+  token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
+    hot     136      11.940        44.279          11.443    0.093
+   dogs     101       8.458        34.826           6.965    0.080
+   beer     195      47.264        30.846          18.905    0.045
+  wings      55       7.960         1.493          17.910    0.044
+peanuts      26       0.995        11.443           0.498    0.043
+  pizza      77      16.418         3.980          17.910    0.030
+  chips      75      20.896         6.468           9.950    0.024
+   fish       8       3.980         0.000           0.000    0.021
+   coca      14       5.970         0.498           0.498    0.020
+chicken      69      11.940         4.975          17.413    0.020
+popcorn      91       7.463        18.408          19.403    0.018
+hotdogs      39       5.970        10.448           2.985    0.011
 
 Highest-MI tokens for **What colour do you associate with this sport?** (exploratory; not causal):
-  token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
- orange      85       0.685         1.370          56.164    0.326
-  green      81      51.370         4.110           0.000    0.275
-   blue     116      21.233        54.795           3.425    0.182
-  white      73      21.918        26.712           1.370    0.083
-  black      39      15.068         0.685          10.959    0.043
- purple       7       0.000         0.000           4.795    0.026
-  brown      23       0.685         6.849           8.219    0.021
-    red      94      23.973        13.699          26.712    0.014
-   gray       3       0.000         2.055           0.000    0.011
-    and      39      13.699         5.479           7.534    0.011
- yellow      21       8.219         2.055           4.110    0.010
-usually       3       0.685         1.370           0.000    0.005
+ token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
+orange     119       0.498         1.493          57.214    0.336
+ green     118      55.224         3.483           0.000    0.310
+  blue     153      19.900        53.731           2.488    0.189
+ white      99      19.403        28.358           1.493    0.084
+ black      46      12.438         0.995           9.453    0.031
+ brown      40       0.995         9.453           9.453    0.024
+purple       7       0.000         0.000           3.483    0.019
+   and      50      13.930         4.478           6.468    0.015
+   red     127      22.388        13.433          27.363    0.015
+yellow      27       7.463         1.493           4.478    0.011
+  gray       3       0.000         1.493           0.000    0.008
+ which       3       1.493         0.000           0.000    0.008
 
 Highest-MI tokens for **Which song do you associate with this sport?** (exploratory; not causal):
   token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
-   waka      73      50.000         0.000           0.000    0.317
-shakira      43      29.452         0.000           0.000    0.172
-   take      39       0.000        26.712           0.000    0.154
-    out      39       0.000        26.712           0.000    0.154
-   ball      38       0.000        26.027           0.000    0.150
-   game      37       0.000        25.342           0.000    0.146
-     to      42       0.000        27.397           1.370    0.139
-     me      44       2.055        27.397           0.685    0.120
-    for      22      15.068         0.000           0.000    0.084
-   time      22      15.068         0.000           0.000    0.084
- africa      21      14.384         0.000           0.000    0.080
-    the      66       6.164        30.822           8.219    0.067
+   waka     102      50.746         0.000           0.000    0.322
+   take      61       0.000        30.348           0.000    0.177
+    out      57       0.000        28.358           0.000    0.165
+     to      64       0.000        30.348           1.493    0.156
+shakira      53      26.368         0.000           0.000    0.152
+   ball      57       0.000        27.861           0.498    0.152
+     me      66       1.493        30.846           0.498    0.149
+   game      56       0.000        27.363           0.498    0.149
+   time      30      14.925         0.000           0.000    0.083
+ africa      29      14.428         0.000           0.000    0.080
+    for      31      14.925         0.000           0.498    0.075
+    the     102       5.970        33.831          10.945    0.073
 
 Highest-MI tokens for **How do you feel when you watch this sport?** (exploratory; not causal):
     token  n_rows  Soccer_pct  Baseball_pct  Basketball_pct  mi_bits
-  excited     132      43.151         7.534          39.726    0.103
-    bored      55       9.589        25.342           2.740    0.061
-  relaxed      11       0.000         6.849           0.685    0.029
-energetic      17       4.110         0.000           7.534    0.026
-     fast       7       0.000         0.000           4.795    0.026
-   boring      11       1.370         6.164           0.000    0.023
- confused      11       0.685         6.164           0.685    0.019
-    paced       5       0.000         0.000           3.425    0.018
-       at       5       0.000         3.425           0.000    0.018
-sometimes       9       4.795         1.370           0.000    0.017
-energized      11       3.425         0.000           4.110    0.015
-    angry       4       2.740         0.000           0.000    0.015
+  excited     180      42.289         8.458          38.806    0.091
+    bored      76       7.463        24.876           5.473    0.047
+  relaxed      18       0.000         8.458           0.498    0.039
+     fast      14       0.000         0.000           6.965    0.038
+    paced       9       0.000         0.000           4.478    0.024
+ confused      17       0.498         6.965           0.995    0.022
+   boring      16       2.488         5.473           0.000    0.019
+     calm       6       0.000         2.985           0.000    0.016
+energetic      22       3.980         0.498           6.468    0.015
+energized      12       1.990         0.000           3.980    0.013
+     pace       5       0.000         0.000           2.488    0.013
+       at       9       0.995         3.483           0.000    0.012
 Free-response interpretation: exact-answer counts reveal recurring associations; token prevalence and mutual information reveal terms whose presence differs across labels. Rare terms can appear highly distinctive by chance, so inspect support counts and validate any selected text features using cross-validation grouped by respondent.
 
 ## 8. Relationships among numeric and ordinal features
 Spearman correlation matrix (monotonic associations; pooled across sports):
                                                                            ease_numeric  Success in this sport depends heavily on strategy and planning. [ordinal]  Players must be comfortable with a high risk of injury. [ordinal]  Individual brilliance can outweigh teamwork in this sport. [ordinal]  log_price
-ease_numeric                                                                       1.00                                                                       0.00                                                               0.11                                                                 -0.08       0.19
-Success in this sport depends heavily on strategy and planning. [ordinal]          0.00                                                                       1.00                                                               0.32                                                                 -0.18       0.21
-Players must be comfortable with a high risk of injury. [ordinal]                  0.11                                                                       0.32                                                               1.00                                                                 -0.14       0.22
-Individual brilliance can outweigh teamwork in this sport. [ordinal]              -0.08                                                                      -0.18                                                              -0.14                                                                  1.00      -0.10
-log_price                                                                          0.19                                                                       0.21                                                               0.22                                                                 -0.10       1.00
+ease_numeric                                                                       1.00                                                                       0.03                                                               0.11                                                                 -0.08       0.17
+Success in this sport depends heavily on strategy and planning. [ordinal]          0.03                                                                       1.00                                                               0.32                                                                 -0.21       0.23
+Players must be comfortable with a high risk of injury. [ordinal]                  0.11                                                                       0.32                                                               1.00                                                                 -0.09       0.24
+Individual brilliance can outweigh teamwork in this sport. [ordinal]              -0.08                                                                      -0.21                                                              -0.09                                                                  1.00      -0.05
+log_price                                                                          0.17                                                                       0.23                                                               0.24                                                                 -0.05       1.00
 Strongest absolute pooled Spearman association: Success in this sport depends heavily on strategy and planning. [ordinal] vs Players must be comfortable with a high risk of injury. [ordinal], rho=0.32. Pooled correlations can be driven by label differences; inspect within-sport correlations before claiming respondent-level relationships.
 
 ## 9. Exploratory feature-label association ranking

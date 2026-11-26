@@ -1,6 +1,6 @@
 """check_pred.py - check pred.py against the MarkUs rules and against scikit-learn.
 
-1. Fits the three final models (train_final.py: train+val respondents), writes a
+1. Fits the three final models (train_final.py: the 70% development set), writes a
    held-out test CSV without the label column, and runs pred.predict_all on it
    from a clean folder holding only the files we would submit.
 2. Checks the numpy predictions equal the scikit-learn ones, reports held-out
@@ -26,8 +26,8 @@ ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 sys.path.insert(0, str(HERE))                                   # train_final.py
 
-from features import (TEXT_COLS, blank_rows, design_matrix, load_survey,
-                      respondent_split, structured_features, tokenize)
+from features import (TEXT_COLS, blank_rows, clean_survey, design_matrix, dev_test_split,
+                      load_survey, structured_features, tokenize)
 from train_final import DATA, fit_and_export
 
 SUBMITTED = ["pred.py", "features.py", "model_params.npz", "model_meta.json"]
@@ -58,9 +58,14 @@ def main():
 
     raw = pd.read_csv(DATA, dtype=str, keep_default_na=False)
     short = load_survey(DATA)
+    # Same cleaning as clean_survey (blank rows, then respondents without one row per
+    # sport), kept as a mask over the raw rows so the raw CSV text can be written out.
     keep = ~blank_rows(short)
+    answered = short["id"].where(keep).map(short.loc[keep, "id"].value_counts())
+    full = keep & (answered == 3)
     split = pd.Series("dropped", index=short.index)
-    split[keep] = respondent_split(short.loc[keep, "id"])
+    split[full] = dev_test_split(short.loc[full, "id"])
+    assert full.sum() == len(clean_survey(short))
     test_mask = split == "test"
     test_csv = os.path.join(folder, "test.csv")
     raw.loc[test_mask].drop(columns=["label"]).to_csv(test_csv, index=False)

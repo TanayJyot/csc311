@@ -27,7 +27,7 @@ sys.path.insert(0, str(ROOT / "methodology"))                # baseline.py
 
 from baseline import DATA, design_matrix
 from features import (LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS, blank_rows, load_survey,
-                      parse_price, respondent_split, structured_features, tokenize)
+                      parse_price, clean_survey, dev_test_split, structured_features, tokenize)
 
 
 def section(title):
@@ -99,9 +99,9 @@ def variant_matrix(struct, tokens, fit_idx, likert="ordinal", scaling="z", scale
 
 def main():
     df = load_survey(DATA)
-    df = df.loc[~blank_rows(df)].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
-    tr = df[df["split"] == "train"].reset_index(drop=True)
+    df = clean_survey(df)
+    df["split"] = dev_test_split(df["id"])
+    tr = df[df["split"] == "dev"].reset_index(drop=True)
     y, groups = tr["label"].to_numpy(), tr["id"].to_numpy()
     raw = structured_features(tr)
     struct = raw.drop(columns=["price"])

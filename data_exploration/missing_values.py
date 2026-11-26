@@ -25,7 +25,7 @@ ROOT = HERE.parent
 sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 
 from features import (FEATURE_COLS, LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,
-                      _RANGE, _SINGLE, _ZERO, _word_number, blank_rows,
+                      _RANGE, _SINGLE, _ZERO, _word_number, blank_rows, clean_survey,
                       is_non_answer, load_survey, norm_text, parse_price,
                       structured_features)
 
@@ -141,9 +141,10 @@ def main():
           f"from {len(blank_ids)} respondents {blank_ids}")
     print("  blank rows per respondent:",
           {int(k): int(v) for k, v in raw.loc[blank].groupby("id").size().items()})
-    df = raw.loc[~blank].reset_index(drop=True)
-    print(f"cleaned rows: {len(raw)} - {int(blank.sum())} = {len(df)}; "
-          f"respondents: {df['id'].nunique()}")
+    df = clean_survey(raw)
+    print(f"cleaned rows: {len(raw)} - {int(blank.sum())} blank - "
+          f"{len(raw) - int(blank.sum()) - len(df)} from respondents without one row per sport "
+          f"= {len(df)}; respondents: {df['id'].nunique()}")
 
     split = pd.read_csv(SPLITS, dtype=str).set_index("id")["split"]
     df["split"] = df["id"].map(split)
@@ -151,12 +152,12 @@ def main():
         raise SystemExit(f"ids missing from {SPLITS}: {sorted(df.loc[df.split.isna(), 'id'])}")
     print(f"ids in data_exploration/split_ids.csv: {len(split)}")
     summary = (df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size"))
-               .loc[["train", "val", "test"]])
+               .loc[["dev", "test"]])
     summary.loc["total"] = summary.sum()
     print(summary)
 
-    tr = df[df["split"] == "train"].reset_index(drop=True)
-    print("\ntraining rows per sport:",
+    tr = df[df["split"] == "dev"].reset_index(drop=True)
+    print("\ndevelopment rows per sport:",
           {k: int(v) for k, v in tr["label"].value_counts().reindex(LABELS).items()})
 
     # ---- 2. Per-feature missing table (training split) -------------------------

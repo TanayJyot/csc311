@@ -1,8 +1,9 @@
 """eda.py - data exploration for the CSC311 sport-survey project.
 
-Everything is computed on the TRAINING split only. Respondents are assigned to
-train / validation / test by id first (50/20/30, seed 42, as in the instructors'
-project_baseline.py), and the validation and test rows are never inspected here.
+Everything is computed on the DEVELOPMENT split only. Blank rows and respondents
+without one row per sport are dropped first; the remaining respondents are then
+split by id into development (70%) and test (30%) with the instructors'
+split_by_student shuffle (seed 42). The test rows are never inspected here.
 
 Run:    python eda.py
 Needs:  csc311_project_training_202609.csv (repository root) and methodology/submission/features.py,
@@ -30,7 +31,7 @@ sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
 
 from features import (LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,  # noqa: E402
                       blank_rows, is_non_answer, load_survey, norm_text,
-                      respondent_split, structured_features, tokenize)
+                      clean_survey, dev_test_split, structured_features, tokenize)
 
 DATA = str(ROOT / "csc311_project_training_202609.csv")
 OUT_DIR, FIG_DIR = str(HERE / "eda_outputs"), str(HERE / "figures")
@@ -220,18 +221,21 @@ def main():
     blank = blank_rows(raw)
     print(f"all-blank rows dropped: {int(blank.sum())} "
           f"(respondents {sorted(raw.loc[blank, 'id'].astype(int).unique().tolist())})")
-    df = raw.loc[~blank].reset_index(drop=True)
-    df["split"] = respondent_split(df["id"])
+    df = clean_survey(raw)
+    print(f"respondents without one row per sport dropped: "
+          f"{sorted(set(raw.loc[~blank, 'id']) - set(df['id']), key=int)}; "
+          f"left: {len(df)} rows, {df['id'].nunique()} respondents")
+    df["split"] = dev_test_split(df["id"])
     df.drop_duplicates("id")[["id", "split"]].to_csv(HERE / "split_ids.csv", index=False)
     summary = df.groupby("split").agg(respondents=("id", "nunique"), rows=("id", "size"))
-    print(summary.loc[["train", "val", "test"]])
+    print(summary.loc[["dev", "test"]])
 
-    tr = df[df["split"] == "train"].reset_index(drop=True)      # <- the only data explored
+    tr = df[df["split"] == "dev"].reset_index(drop=True)        # <- the only data explored
     y = tr["label"]
     X = structured_features(tr)
 
     # ---- 2. Class balance ----------------------------------------------------
-    section("2. Class balance (training split)")
+    section("2. Class balance (development split)")
     print((y.value_counts().reindex(LABELS).to_frame("rows")
            .assign(pct=lambda d: (100 * d.rows / d.rows.sum()).round(1))))
 

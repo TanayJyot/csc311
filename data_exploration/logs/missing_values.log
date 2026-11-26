@@ -6,35 +6,34 @@ raw rows in the CSV (pandas, multi-line quoted fields handled): 870
 raw respondents: 290  (rows per respondent: [3])
 entirely blank rows (all 12 answers empty): 7 from 3 respondents [119, 258, 267]
   blank rows per respondent: {119: 2, 258: 3, 267: 2}
-cleaned rows: 870 - 7 = 863; respondents: 289
-ids in data_exploration/split_ids.csv: 289
+cleaned rows: 870 - 7 blank - 2 from respondents without one row per sport = 861; respondents: 287
+ids in data_exploration/split_ids.csv: 287
        respondents  rows
 split                   
-train          146   438
-val             57   171
-test            86   254
-total          289   863
+dev            201   603
+test            86   258
+total          287   861
 
-training rows per sport: {'Soccer': 146, 'Baseball': 146, 'Basketball': 146}
+development rows per sport: {'Soccer': 201, 'Baseball': 201, 'Basketball': 201}
 
 ==============================================================================
-2. Missing values per feature (TRAINING split, 146 respondents, 438 rows)
+2. Missing values per feature (TRAINING split, 201 respondents, 603 rows)
 ==============================================================================
    feature  rows  missing  missing_pct
-      ease   438        0          0.0
-  strategy   438        1          0.2
-    injury   438        0          0.0
-individual   438        1          0.2
-    places   438        0          0.0
-   seasons   438        0          0.0
-     music   438        0          0.0
-      food   438       23          5.3
-    colour   438        8          1.8
-      song   438       95         21.7
-   feeling   438        8          1.8
-     price   438       10          2.3
+      ease   603        0          0.0
+  strategy   603        1          0.2
+    injury   603        0          0.0
+individual   603        1          0.2
+    places   603        0          0.0
+   seasons   603        0          0.0
+     music   603        0          0.0
+      food   603       27          4.5
+    colour   603       10          1.7
+      song   603      121         20.1
+   feeling   603       12          2.0
+     price   603        8          1.3
 
-price breakdown: blank 0 + present-but-unparseable 10 = 10 missing (2.3% of 438)
+price breakdown: blank 0 + present-but-unparseable 8 = 8 missing (1.3% of 603)
 
 Raw forms counted as missing, per feature (repr of the raw cell; '' = blank):
   ease         0: -
@@ -44,18 +43,18 @@ Raw forms counted as missing, per feature (repr of the raw cell; '' = blank):
   places       0: -
   seasons      0: -
   music        0: -
-  food        23: 'None': 6, 'Unsure': 4, 'none': 2, 'None in particular': 2, '': 2, 'N/A, since I know nothing about it at all': 1, 'no': 1, 'No particular food': 1, 'nothing': 1, 'Nothing in particular.': 1, 'None, the sport is not popular': 1, 'nothing really': 1
-  colour       8: 'None': 4, 'N/A, since I know nothing about it at all': 1, '#NAME?': 1, 'Unsure': 1, 'none': 1
-  song        95: 'None': 17, 'none': 10, '': 10, 'N/A': 8, 'No particular song': 5, "Don't have": 3, 'Unsure': 3, 'no': 3, 'None in particular.': 3, 'No particular song comes to mind.': 2, 'n/a': 2, 'No idea': 2, 'Idk': 2, 'no particular song': 2, 'NIL': 2, 'None in particular': 2, 'NA': 2, 'no idea': 2, "I don't know.": 2, 'N/A, since I know nothing about it at all': 1, 'No song in particular': 1, '.': 1, 'N/a': 1, '#NAME?': 1, 'i do not associate a song with this sport': 1, 'Nothing Specific': 1, 'Nothing in particular, something with a good beat?': 1, "i don't know\xa0": 1, "i don't know": 1, 'Really No Idea': 1, 'None, I basically know nothing about the sport': 1, "I don't no": 1
-  feeling      8: 'nothing': 2, 'none': 2, 'N/A, since I know nothing about it at all': 1, 'not sure': 1, 'Nothing': 1, '': 1
-  price       10: 'not too much': 3, 'I am willing to do so': 1, '1 to 10 scale i will put a 2 as the ticket price is too high and i prefer to watch it online instead of in person.': 1, '1 to 10 scale i will choose 2 since im a person that enjoy watching sports online': 1, '1 to 10 scale probably 1': 1, 'not much if at all': 1, 'a bit more since it gives you higher chance to see the swing and maybe catch the ball': 1, 'A bit more than usual to see close ups and players technique': 1
+  food        27: 'None': 7, 'Unsure': 4, 'none': 2, 'Nothing': 1, 'N/A, since I know nothing about it at all': 1, '': 1, 'N/A': 1, 'None really': 1, 'no': 1, 'None in particular': 1, 'No food or drink in particular': 1, 'No food or drink': 1, 'No particular food': 1, 'nothing': 1, 'Nothing in particular.': 1, 'None, the sport is not popular': 1, 'none. maybe hotdogs': 1
+  colour      10: 'None': 4, 'N/A, since I know nothing about it at all': 1, '#NAME?': 1, 'No idea': 1, 'No particular color': 1, 'Unsure': 1, 'none': 1
+  song       121: 'None': 22, 'N/A': 9, 'none': 8, '': 6, 'no': 5, 'No idea': 4, 'NA': 4, 'Idk': 3, "Don't have": 3, 'No particular song': 3, 'Unsure': 3, "I don't know any songs.": 3, 'No song': 3, 'None in particular.': 3, 'Nothing': 2, 'No particular song comes to mind.': 2, 'n/a': 2, "I don't know\xa0": 2, 'nil': 2, 'no particular song': 2, 'NIL': 2, 'None in particular': 2, "I don't know.": 2, 'nothing really': 1, 'nothing': 1, 'N/A, since I know nothing about it at all': 1, 'No song in particular': 1, '.': 1, '\xa0No idea.\xa0': 1, 'N/a': 1, '#NAME?': 1, 'No song comes to mind': 1, 'I have no idea': 1, 'None I do not know of any.': 1, 'cant think of': 1, 'i do not associate a song with this sport': 1, 'Nothing Specific': 1, "I don't know": 1, 'No particular song\xa0': 1, 'Nothing in particular, something with a good beat?': 1, 'No perticular song': 1, 'idk': 1, 'No particular song.\xa0': 1, "i don't know\xa0": 1, 'None, I basically know nothing about the sport': 1, "I don't no": 1, 'I don’t know.': 1
+  feeling     12: 'Nothing': 4, 'nothing': 2, 'none': 2, 'N/A, since I know nothing about it at all': 1, 'not sure': 1, '': 1, 'idk\xa0': 1
+  price        8: 'Hundreds of dollars': 3, 'not too much': 3, 'I am willing to do so': 1, 'I would pay a couple hundreds depending on what kind of match it is and who is playing.': 1
 
 Placeholder categories across the four free-text questions (after norm_text, trailing ' .!' stripped):
          #NAME?  blank  idk  n/a  none  other  total
-food          0      2    0    1    11      9     23
-colour        1      0    0    1     5      1      8
-song          1     11    2   14    33     34     95
-feeling       0      1    0    1     2      4      8
+food          0      1    0    2    13     11     27
+colour        1      0    0    1     5      3     10
+song          1      7    4   17    37     55    121
+feeling       0      1    1    1     2      7     12
 ('other' = longer placeholders such as 'no particular song', 'i don't know')
 
 ==============================================================================
@@ -63,60 +62,58 @@ feeling       0      1    0    1     2      4      8
 ==============================================================================
    feature  Soccer_pct  Baseball_pct  Basketball_pct  chi2 p_value
       ease         0.0           0.0             0.0  0.00       1
-  strategy         0.0           0.0             0.7  2.00    0.37
+  strategy         0.0           0.0             0.5  2.00    0.37
     injury         0.0           0.0             0.0  0.00       1
-individual         0.0           0.0             0.7  2.00    0.37
+individual         0.0           0.0             0.5  2.00    0.37
     places         0.0           0.0             0.0  0.00       1
    seasons         0.0           0.0             0.0  0.00       1
      music         0.0           0.0             0.0  0.00       1
-      food         2.7           6.8             6.2  2.85    0.24
-    colour         1.4           3.4             0.7  3.31    0.19
-      song         8.2          32.9            24.0 26.80 1.5e-06
-   feeling         0.7           3.4             1.4  3.31    0.19
-     price         2.7           2.1             2.1  0.20     0.9
+      food         2.0           5.0             6.5  4.89   0.087
+    colour         1.0           3.0             1.0  3.25     0.2
+      song         7.5          30.8            21.9 34.88 2.7e-08
+   feeling         1.5           3.0             1.5  1.53    0.47
+     price         2.0           1.0             1.0  1.01     0.6
 
 counts behind the percentages (missing / rows):
-  ease       Soccer 0/146  Baseball 0/146  Basketball 0/146
-  strategy   Soccer 0/146  Baseball 0/146  Basketball 1/146
-  injury     Soccer 0/146  Baseball 0/146  Basketball 0/146
-  individual Soccer 0/146  Baseball 0/146  Basketball 1/146
-  places     Soccer 0/146  Baseball 0/146  Basketball 0/146
-  seasons    Soccer 0/146  Baseball 0/146  Basketball 0/146
-  music      Soccer 0/146  Baseball 0/146  Basketball 0/146
-  food       Soccer 4/146  Baseball 10/146  Basketball 9/146
-  colour     Soccer 2/146  Baseball 5/146  Basketball 1/146
-  song       Soccer 12/146  Baseball 48/146  Basketball 35/146
-  feeling    Soccer 1/146  Baseball 5/146  Basketball 2/146
-  price      Soccer 4/146  Baseball 3/146  Basketball 3/146
+  ease       Soccer 0/201  Baseball 0/201  Basketball 0/201
+  strategy   Soccer 0/201  Baseball 0/201  Basketball 1/201
+  injury     Soccer 0/201  Baseball 0/201  Basketball 0/201
+  individual Soccer 0/201  Baseball 0/201  Basketball 1/201
+  places     Soccer 0/201  Baseball 0/201  Basketball 0/201
+  seasons    Soccer 0/201  Baseball 0/201  Basketball 0/201
+  music      Soccer 0/201  Baseball 0/201  Basketball 0/201
+  food       Soccer 4/201  Baseball 10/201  Basketball 13/201
+  colour     Soccer 2/201  Baseball 6/201  Basketball 2/201
+  song       Soccer 15/201  Baseball 62/201  Basketball 44/201
+  feeling    Soccer 3/201  Baseball 6/201  Basketball 3/201
+  price      Soccer 4/201  Baseball 2/201  Basketball 2/201
 p = exp(-chi2/2); p = 1 with chi2 = 0 means nothing was missing (no test).
 
 ==============================================================================
 4. Willingness-to-pay parsing audit (training split)
 ==============================================================================
-parsed 428 / 438, missing 10 (blank 0, unparseable 10)
+parsed 595 / 603, missing 8 (blank 0, unparseable 8)
 
 rows per parse rule:
 price
-number with currency            244
-bare number                     136
-range -> midpoint                25
-refusal -> 0                     17
-unparseable                       7
-thousands separator               6
-unparseable ('scale' answer)      3
+number with currency    322
+bare number             196
+range -> midpoint        36
+refusal -> 0             29
+thousands separator       8
+unparseable               8
+spelled-out amount        4
 rule labels agree with parse_price NaN / non-NaN: True
 
 all present-but-unparseable raw strings:
+  'Hundreds of dollars'
+  'Hundreds of dollars'
+  'Hundreds of dollars'
   'I am willing to do so'
+  'I would pay a couple hundreds depending on what kind of match it is and who is playing.'
   'not too much'
   'not too much'
   'not too much'
-  '1 to 10 scale i will put a 2 as the ticket price is too high and i prefer to watch it online instead of in person.'
-  '1 to 10 scale i will choose 2 since im a person that enjoy watching sports online'
-  '1 to 10 scale probably 1'
-  'not much if at all'
-  'a bit more since it gives you higher chance to see the swing and maybe catch the ball'
-  'A bit more than usual to see close ups and players technique'
 
 examples of each parse rule (raw -> parsed $):
   number with currency:
@@ -126,9 +123,9 @@ examples of each parse rule (raw -> parsed $):
       '$200 '                                                      -> 200.00
       '400 CAD'                                                    -> 400.00
   bare number:
+      '0'                                                          -> 0.00
       '200'                                                        -> 200.00
       '500'                                                        -> 500.00
-      '0'                                                          -> 0.00
       '50'                                                         -> 50.00
       'around 60'                                                  -> 60.00
   range -> midpoint:
@@ -138,42 +135,47 @@ examples of each parse rule (raw -> parsed $):
       'around $70-$90'                                             -> 80.00
       'I would be willing to pay around CAD 400-500 for a decent seat.' -> 450.00
   refusal -> 0:
+      'not really willing to'                                      -> 0.00
       'No willing.'                                                -> 0.00
       'Not willing'                                                -> 0.00
       'Not willing.\xa0'                                           -> 0.00
-      'Unwilling'                                                  -> 0.00
-      'No I don’t\xa0'                                             -> 0.00
+      'I would not pay to watch in person'                         -> 0.00
   thousands separator:
       '$1,000 '                                                    -> 1,000.00
       '$2,000 '                                                    -> 2,000.00
+      '$10,000 '                                                   -> 10,000.00
       '$10 000'                                                    -> 10,000.00
       '$3,000 '                                                    -> 3,000.00
-      '$5,000 '                                                    -> 5,000.00
+  spelled-out amount:
+      'Couple hundred bucks\xa0'                                   -> 200.00
+      'Thirty dollars'                                             -> 30.00
+      'Twenty five dollars'                                        -> 25.00
+      'Forty five dollars'                                         -> 45.00
 
 summary of parsed prices ($):
-  n 428, zero 43 (10.0%)
-  median 100, mean 267, IQR 50-200, min 0, max 10,000
-  p95 1,000, p99 2,730 (99th-percentile clip)
+  n 595, zero 78 (13.1%)
+  median 100, mean 250, IQR 50-200, min 0, max 10,000
+  p95 1,000, p99 2,060 (99th-percentile clip)
   log1p scale: Q1 3.932, Q3 5.303, upper fence Q3 + 1.5 IQR = 7.361 -> $1,572
-  values above the fence: 10 [2000, 2000, 2000, 2000, 2000, 3000, 3000, 3000, 5000, 10000]
-  values above the p99 clip: 5
+  values above the fence: 11 [2000, 2000, 2000, 2000, 2000, 3000, 3000, 3000, 5000, 10000, 10000]
+  values above the p99 clip: 6
 
 ==============================================================================
-5. Missing values per feature, FULL cleaned data (289 respondents, 863 rows) - reference only
+5. Missing values per feature, FULL cleaned data (287 respondents, 861 rows) - reference only
 ==============================================================================
    feature  rows  missing  missing_pct  Soccer_pct  Baseball_pct  Basketball_pct  train_pct
-      ease   863        0          0.0         0.0           0.0             0.0        0.0
-  strategy   863        1          0.1         0.0           0.0             0.3        0.2
-    injury   863        0          0.0         0.0           0.0             0.0        0.0
-individual   863        1          0.1         0.0           0.0             0.3        0.2
-    places   863        0          0.0         0.0           0.0             0.0        0.0
-   seasons   863        0          0.0         0.0           0.0             0.0        0.0
-     music   863        0          0.0         0.0           0.0             0.0        0.0
-      food   863       40          4.6         2.4           4.2             7.3        5.3
-    colour   863       11          1.3         0.7           2.4             0.7        1.8
-      song   863      172         19.9         7.3          31.0            21.6       21.7
-   feeling   863       13          1.5         1.0           2.4             1.0        1.8
-     price   863       23          2.7         3.1           2.4             2.4        2.3
+      ease   861        0          0.0         0.0           0.0             0.0        0.0
+  strategy   861        1          0.1         0.0           0.0             0.3        0.2
+    injury   861        0          0.0         0.0           0.0             0.0        0.0
+individual   861        1          0.1         0.0           0.0             0.3        0.2
+    places   861        0          0.0         0.0           0.0             0.0        0.0
+   seasons   861        0          0.0         0.0           0.0             0.0        0.0
+     music   861        0          0.0         0.0           0.0             0.0        0.0
+      food   861       40          4.6         2.4           4.2             7.3        4.5
+    colour   861       11          1.3         0.7           2.4             0.7        1.7
+      song   861      172         20.0         7.3          31.0            21.6       20.1
+   feeling   861       13          1.5         1.0           2.4             1.0        2.0
+     price   861       23          2.7         3.1           2.4             2.4        1.3
 
 price: blank 0, present but unparseable 23
 

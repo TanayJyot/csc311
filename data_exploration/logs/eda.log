@@ -5,225 +5,227 @@
 raw rows: 870, respondents: 290, rows per respondent: [3]
 label order within respondents: {('Soccer', 'Baseball', 'Basketball'): np.int64(290)}
 all-blank rows dropped: 7 (respondents [119, 258, 267])
+respondents without one row per sport dropped: ['119', '267']; left: 861 rows, 287 respondents
        respondents  rows
 split                   
-train          146   438
-val             57   171
-test            86   254
+dev            201   603
+test            86   258
 
 ==============================================================================
-2. Class balance (training split)
+2. Class balance (development split)
 ==============================================================================
             rows   pct
 label                 
-Soccer       146  33.3
-Baseball     146  33.3
-Basketball   146  33.3
+Soccer       201  33.3
+Baseball     201  33.3
+Basketball   201  33.3
 
 ==============================================================================
 3. Missing values after normalising blanks / 'n/a' / 'none' / 'idk' ...
 ==============================================================================
    feature  missing_pct  Soccer_pct  Baseball_pct  Basketball_pct   chi2  p_value
       ease        0.000       0.000         0.000           0.000  0.000    1.000
-  strategy        0.228       0.000         0.000           0.685  2.005    0.367
+  strategy        0.166       0.000         0.000           0.498  2.003    0.367
     injury        0.000       0.000         0.000           0.000  0.000    1.000
-individual        0.228       0.000         0.000           0.685  2.005    0.367
+individual        0.166       0.000         0.000           0.498  2.003    0.367
     places        0.000       0.000         0.000           0.000  0.000    1.000
    seasons        0.000       0.000         0.000           0.000  0.000    1.000
      music        0.000       0.000         0.000           0.000  0.000    1.000
-      food        5.251       2.740         6.849           6.164  2.845    0.241
-    colour        1.826       1.370         3.425           0.685  3.310    0.191
-      song       21.689       8.219        32.877          23.973 26.803    0.000
-   feeling        1.826       0.685         3.425           1.370  3.310    0.191
-     price        2.283       2.740         2.055           2.055  0.205    0.903
-price: blank 0, present but unparseable 10
+      food        4.478       1.990         4.975           6.468  4.885    0.087
+    colour        1.658       0.995         2.985           0.995  3.254    0.197
+      song       20.066       7.463        30.846          21.891 34.884    0.000
+   feeling        1.990       1.493         2.985           1.493  1.530    0.465
+     price        1.327       1.990         0.995           0.995  1.013    0.602
+price: blank 0, present but unparseable 8
 Excel artefacts ('#NAME?'): 2
 
 ==============================================================================
 4. Numeric and Likert features by sport
 ==============================================================================
    feature  Soccer_mean  Soccer_sd  Baseball_mean  Baseball_sd  Basketball_mean  Basketball_sd  separation
-      ease         6.37       2.20           3.97         2.12             6.29           1.86        1.16
-  strategy         3.88       0.92           3.55         1.04             3.92           0.79        0.41
-    injury         3.78       0.96           2.88         0.92             3.82           0.93        0.99
-individual         2.94       1.06           3.82         1.04             3.53           1.03        0.85
- log_price         4.86       1.92           3.75         1.74             4.73           1.67        0.62
-ease: range 0-10, non-integer values 0
+      ease         6.36       2.21           4.11         2.14             6.15           2.05        1.05
+  strategy         3.94       0.84           3.57         1.04             3.88           0.79        0.41
+    injury         3.75       0.97           2.87         1.00             3.76           0.98        0.91
+individual         2.89       1.11           3.75         1.04             3.62           1.03        0.81
+ log_price         4.67       2.08           3.60         1.79             4.53           1.84        0.56
+ease: range 0.0-10.0, non-integer values 1
 
 strategy (% of rows, 1 = strongly disagree ... 5 = strongly agree)
 strategy    1.0   2.0   3.0   4.0   5.0
 label                                  
-Soccer      2.0   8.0  14.0  54.0  23.0
-Baseball    3.0  14.0  29.0  36.0  19.0
-Basketball  0.0   6.0  17.0  56.0  21.0
+Soccer      1.0   7.0  11.0  58.0  22.0
+Baseball    1.0  17.0  27.0  33.0  21.0
+Basketball  0.0   5.0  20.0  56.0  20.0
 
 injury (% of rows, 1 = strongly disagree ... 5 = strongly agree)
 injury      1.0   2.0   3.0   4.0   5.0
 label                                  
-Soccer      1.0  11.0  18.0  48.0  22.0
-Baseball    3.0  34.0  37.0  21.0   4.0
-Basketball  1.0   9.0  19.0  48.0  23.0
+Soccer      1.0  12.0  19.0  45.0  22.0
+Baseball    5.0  34.0  34.0  19.0   6.0
+Basketball  1.0  10.0  22.0  43.0  23.0
 
 individual (% of rows, 1 = strongly disagree ... 5 = strongly agree)
 individual  1.0   2.0   3.0   4.0   5.0
 label                                  
-Soccer      6.0  33.0  30.0  23.0   8.0
-Baseball    3.0  11.0  14.0  45.0  27.0
-Basketball  3.0  16.0  19.0  47.0  14.0
+Soccer      9.0  32.0  27.0  23.0   8.0
+Baseball    2.0  13.0  18.0  41.0  25.0
+Basketball  2.0  14.0  22.0  42.0  20.0
 
 ==============================================================================
 5. Willingness to pay (parsed from free text)
 ==============================================================================
-parsed 428 / 438; zero: 43 (10.0%)
-median 100, IQR 50-200, mean 267, p95 1000, p99 2730, max 10000
-skewness raw 9.5 vs log1p -1.07
-outliers above Q3 + 1.5 IQR on the log scale (> $1,572): 10; values >= $2,000: [2000, 2000, 2000, 2000, 2000, 3000, 3000, 3000, 5000, 10000]
+parsed 595 / 603; zero: 78 (13.1%)
+median 100, IQR 50-200, mean 250, p95 1000, p99 2060, max 10000
+skewness raw 10.5 vs log1p -1.01
+outliers above Q3 + 1.5 IQR on the log scale (> $1,572): 11; values >= $2,000: [2000, 2000, 2000, 2000, 2000, 3000, 3000, 3000, 5000, 10000, 10000]
 price quartiles by sport ($):
-                 q1  median     q3
-label                            
-Soccer       88.75   200.0  400.0
-Baseball     25.00    55.0  100.0
-Basketball  100.00   150.0  262.5
+               q1  median     q3
+label                          
+Soccer      75.0   200.0  400.0
+Baseball    22.5    50.0  100.0
+Basketball  80.0   150.0  200.0
 
 ==============================================================================
 6. How strongly a respondent's three rows resemble each other
 ==============================================================================
-{'ease': np.float64(0.21), 'strategy': np.float64(0.14), 'injury': np.float64(0.27), 'individual': np.float64(0.13), 'log_price': np.float64(0.77)}
-mean correlation of a person's answers across sport pairs: {'ease': np.float64(0.21), 'log_price': np.float64(0.78)}
+{'ease': np.float64(0.27), 'strategy': np.float64(0.14), 'injury': np.float64(0.28), 'individual': np.float64(0.13), 'log_price': np.float64(0.81)}
+mean correlation of a person's answers across sport pairs: {'ease': np.float64(0.26), 'log_price': np.float64(0.82)}
 
 ==============================================================================
 7. Multi-select options: % of each sport's rows selecting the option
 ==============================================================================
 sport                                   Soccer  Baseball  Basketball  overall
 question option                                                              
-Where    Indoor facility                  64.0      25.0        95.0     61.0
-         At home or nearby                44.0      12.0        65.0     40.0
-         Community recreation facility    75.0      47.0        88.0     70.0
-         Private sports facility          70.0      56.0        82.0     69.0
-         School or university facility    86.0      73.0        95.0     85.0
-         Others                           14.0       3.0         8.0      8.0
-         Outdoor public space             93.0      87.0        90.0     90.0
-Season   Winter                            6.0       6.0        58.0     23.0
-         Fall                             70.0      72.0        88.0     76.0
-         Spring                           73.0      77.0        85.0     78.0
-         Summer                           89.0      92.0        92.0     91.0
-Music    Hip-hop or rap                   41.0      28.0        84.0     51.0
-         Latin                            40.0       5.0         1.0     15.0
-         Country                           4.0      30.0         3.0     12.0
-         No particular type               18.0      32.0        10.0     20.0
-         Electronic or dance              34.0      15.0        18.0     22.0
-         Pop                              40.0      36.0        50.0     42.0
-         Folk or traditional               3.0      12.0         1.0      6.0
-         Rock                             22.0      23.0        30.0     25.0
-         Classical or jazz                 2.0       6.0         1.0      3.0
-         Other                             3.0       2.0         3.0      3.0
+Where    Indoor facility                  66.0      23.0        96.0     62.0
+         At home or nearby                47.0      12.0        68.0     42.0
+         Community recreation facility    78.0      49.0        90.0     72.0
+         Private sports facility          69.0      56.0        84.0     70.0
+         School or university facility    90.0      77.0        94.0     87.0
+         Others                           16.0       4.0        11.0     10.0
+         Outdoor public space             92.0      86.0        90.0     89.0
+Season   Winter                            6.0       5.0        59.0     24.0
+         Fall                             69.0      74.0        88.0     77.0
+         Spring                           70.0      75.0        84.0     76.0
+         Summer                           92.0      94.0        94.0     93.0
+Music    Hip-hop or rap                   42.0      25.0        85.0     51.0
+         Latin                            41.0       4.0         0.0     15.0
+         Country                           4.0      34.0         3.0     14.0
+         No particular type               17.0      31.0        10.0     19.0
+         Electronic or dance              36.0      14.0        20.0     24.0
+         Pop                              40.0      36.0        47.0     41.0
+         Folk or traditional               4.0       9.0         1.0      5.0
+         Classical or jazz                 0.0       6.0         0.0      2.0
+         Rock                             23.0      23.0        26.0     24.0
+         Other                             4.0       1.0         3.0      2.0
 
 near-constant options (chosen by > 85% or < 5% of rows):
-question  option              
-Where     Outdoor public space    90.2
-Season    Summer                  91.1
-Music     Classical or jazz        3.2
-          Other                    2.7
+question  option                       
+Where     School or university facility    86.9
+          Outdoor public space             89.4
+Season    Summer                           93.4
+Music     Folk or traditional               4.6
+          Classical or jazz                 2.3
+          Other                             2.5
 Name: overall, dtype: float64
-options selected per row (mean): {'places': np.float64(4.24), 'seasons': np.float64(2.69), 'music': np.float64(1.99)}
+options selected per row (mean): {'places': np.float64(4.33), 'seasons': np.float64(2.7), 'music': np.float64(1.97)}
 
 ==============================================================================
 8. Correlations
 ==============================================================================
 Spearman (pairwise complete):
              ease  strategy  injury  individual  log_price
-ease        1.00      0.00    0.11       -0.08       0.20
-strategy    0.00      1.00    0.32       -0.18       0.22
-injury      0.11      0.32    1.00       -0.14       0.23
-individual -0.08     -0.18   -0.14        1.00      -0.12
-log_price   0.20      0.22    0.23       -0.12       1.00
+ease        1.00      0.03    0.11       -0.08       0.18
+strategy    0.03      1.00    0.32       -0.21       0.22
+injury      0.11      0.32    1.00       -0.09       0.22
+individual -0.08     -0.21   -0.09        1.00      -0.06
+log_price   0.18      0.22    0.22       -0.06       1.00
 
 largest |r| among all structured features:
                               level_0                              level_1     r
-              places=Indoor facility             places=At home or nearby  0.48
-places=Community recreation facility       places=Private sports facility  0.48
-              places=Indoor facility places=Community recreation facility  0.46
+              places=Indoor facility             places=At home or nearby  0.47
                 music=Hip-hop or rap             music=No particular type -0.46
-places=School or university facility places=Community recreation facility  0.42
-places=Community recreation facility             places=At home or nearby  0.41
+places=Community recreation facility       places=Private sports facility  0.43
+              places=Indoor facility places=Community recreation facility  0.43
+places=School or university facility places=Community recreation facility  0.40
                       seasons=Spring                         seasons=Fall  0.40
-                           music=Pop             music=No particular type -0.37
+              places=Indoor facility       places=Private sports facility  0.39
+places=Community recreation facility             places=At home or nearby  0.37
               places=Indoor facility                       seasons=Winter  0.36
-              places=Indoor facility       places=Private sports facility  0.36
+                      seasons=Winter                 music=Hip-hop or rap  0.35
 
 ==============================================================================
 9. Free-text questions
 ==============================================================================
 question  distinct_answers  vocab_min_df_1  vocab_min_df_3  mean_tokens
-    food               307             251              56         3.43
-  colour                98              83              18         1.58
-    song               241             379              70         2.87
- feeling               252             424             101         3.01
+    food               428             323              78         3.47
+  colour               134              97              25         1.56
+    song               309             469              96         2.81
+ feeling               335             536             143         3.09
 
 most informative words (% of each sport's rows containing the word):
-sport                     Soccer  Baseball  Basketball
-question item                                         
-Food     hot dog            19.2      63.7        17.1
-         beer               51.4      26.7        16.4
-         pizza              19.2       3.4        19.2
-         wings               6.2       2.1        17.1
-         chips              21.2       6.2         8.9
-Colour   orange              0.7       1.4        56.2
-         green              51.4       4.1         0.0
-         blue               21.2      55.5         3.4
-         white              21.9      26.7         1.4
-         black              15.1       0.7        11.0
-Song     waka waka          48.6       0.0         0.0
-         out                 0.0      26.7         0.0
-         [a competition]     8.9       0.0         0.7
-         drake               0.0       2.1         8.9
-         [a team]            0.0       6.2         0.7
-Feeling  bored              11.0      32.2         2.7
-         excited            52.1      17.1        46.6
-         energetic           8.2       0.0        13.7
-         relaxed             0.0       8.2         0.7
-         confused            0.7       7.5         0.7
+sport                      Soccer  Baseball  Basketball
+question item                                          
+Food     hot dog             20.9      64.7        18.4
+         beer                51.2      32.3        20.4
+         wings                8.0       1.5        17.9
+         pizza               16.4       4.0        18.4
+         chips               17.9       6.5        10.0
+Colour   orange               0.5       1.5        57.2
+         green               55.2       3.5         0.0
+         blue                19.9      54.2         2.5
+         white               19.4      28.4         1.5
+         black               12.4       1.0         9.5
+Song     waka waka           49.8       0.0         0.0
+         take (me out...)     0.0      30.3         0.0
+         drake                0.0       0.5         7.5
+         [a competition]      7.0       0.0         0.5
+         flag                 5.0       0.0         0.0
+Feeling  excited             51.7      17.9        44.8
+         bored               10.0      30.8         5.5
+         relaxed              0.0       9.0         0.5
+         fast                 0.0       0.0         7.0
+         energetic            7.5       0.5        12.9
 
-unseen-word rate in a held-out fold: 20.6% of tokens; 61.2% of rows contain at least one unseen word
-feature count: 26 structured + 1137 words (min_df=1) = 1163; with min_df=3: 271; rows = 438
+unseen-word rate in a held-out fold: 18.1% of tokens; 57.9% of rows contain at least one unseen word
+feature count: 26 structured + 1425 words (min_df=1) = 1451; with min_df=3: 368; rows = 603
 
 ==============================================================================
 10. Mutual information with the label (bits; max = log2(3) = 1.585)
 ==============================================================================
-colour: 'orange'                        0.326
-song: 'wakawaka'                        0.306
-where: Indoor facility                  0.287
-colour: 'green'                         0.275
-season: Winter                          0.248
-colour: 'blue'                          0.186
-song: 'shakira'                         0.185
-ease (binned)                           0.184
-music: Latin                            0.176
-music: Hip-hop or rap                   0.174
-where: At home or nearby                0.159
-song: 'take'                            0.154
-song: 'out'                             0.154
-song: 'ballgame'                        0.150
-food: 'hotdog'                          0.148
-injury                                  0.147
-price (quartiles)                       0.134
-individual                              0.103
-where: Community recreation facility    0.102
-music: Country                          0.093
-feeling: 'bored'                        0.088
-song: 'time'                            0.084
-colour: 'white'                         0.083
+colour: 'orange'                        0.336
+song: 'wakawaka'                        0.315
+colour: 'green'                         0.310
+where: Indoor facility                  0.309
+season: Winter                          0.252
+music: Hip-hop or rap                   0.194
+colour: 'blue'                          0.192
+music: Latin                            0.191
+song: 'take'                            0.177
+song: 'ballgame'                        0.168
+where: At home or nearby                0.168
+song: 'out'                             0.165
+song: 'shakira'                         0.158
+food: 'hotdog'                          0.143
+ease (binned)                           0.141
+price (quartiles)                       0.125
+injury                                  0.122
+music: Country                          0.121
+where: Community recreation facility    0.106
+individual                              0.089
+colour: 'white'                         0.084
+song: 'time'                            0.083
 song: 'africa'                          0.080
-feeling: 'excited'                      0.077
+feeling: 'excited'                      0.069
+feeling: 'bored'                        0.065
 
 separation (largest gap between sport means / pooled within-sport SD) of binary features:
-places=Indoor facility                  1.79
-seasons=Winter                          1.55
-music=Hip-hop or rap                    1.26
-music=Latin                             1.25
-places=At home or nearby                1.21
-places=Community recreation facility    0.96
-music=Country                           0.85
-places=School or university facility    0.65
+places=Indoor facility                  1.89
+seasons=Winter                          1.59
+music=Hip-hop or rap                    1.36
+music=Latin                             1.31
+places=At home or nearby                1.26
+music=Country                           0.99
+places=Community recreation facility    0.98
+places=Private sports facility          0.62
 
 wrote data_exploration/eda_outputs/*.csv, data_exploration/figures/*.png and data_exploration/split_ids.csv

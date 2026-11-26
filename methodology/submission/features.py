@@ -253,6 +253,27 @@ def structured_features(df):
     return out
 
 
+def clean_survey(df):
+    """Drop rows with no answers, then respondents who no longer have one row per sport.
+
+    Done before any split: it looks at one respondent at a time and learns nothing
+    from the data. 870 rows / 290 respondents -> 861 rows / 287 respondents.
+    """
+    df = df.loc[~blank_rows(df)]
+    rows = df.groupby("id")["id"].transform("size")
+    return df.loc[rows == len(LABELS)].reset_index(drop=True)
+
+
+def dev_test_split(ids, test_frac=0.3, seed=42):
+    """'dev' (70%) or 'test' (30%) for each row; all rows of a respondent stay together.
+
+    The instructors' split_by_student shuffle (seed 42) with its training and
+    validation parts merged into one development set.
+    """
+    split = respondent_split(ids, val_frac=0.0, test_frac=test_frac, seed=seed)
+    return pd.Series(split).replace({"train": "dev"}).to_numpy()
+
+
 def respondent_split(ids, val_frac=0.2, test_frac=0.3, seed=42):
     """Assign each respondent id to train / val / test (all rows of an id together).
 
