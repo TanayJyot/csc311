@@ -2,7 +2,7 @@
 
 Used during development and in check_pred.py to show that numpy versions of naive
 Bayes, the random forest and kNN reproduce scikit-learn exactly. The script that is
-submitted is submission/pred.py, which contains only the final model (naive Bayes).
+submitted is prediction/pred.py, which contains only the final model (naive Bayes).
 
 Reads models/model_params.npz and models/model_meta.json (written by train_final.py)
 and the shared cleaning and feature code in features.py.

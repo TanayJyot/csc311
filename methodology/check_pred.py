@@ -2,7 +2,7 @@
 
 1. Retrains (train_final.py) into temporary folders: the three tuned models on the 70%
    development set, and the submitted naive Bayes on all 861 cleaned rows. Runs
-   submission/pred.py from a clean folder holding only pred.py and weights.json.
+   prediction/pred.py from a clean folder holding only pred.py and weights.json.
 2. Checks: pred.py imports only the standard library, numpy and pandas; its predictions
    equal scikit-learn's naive Bayes (trained on all rows) on every cleaned row; its own
    copy of the cleaning and feature code gives exactly the same design matrix as
@@ -36,7 +36,7 @@ from features import (TEXT_COLS, blank_rows, clean_survey, design_matrix, dev_te
 from train_final import DATA, fit_and_export, fit_submission
 
 SUBMITTED = ["pred.py", "weights.json"]
-SUB = ROOT / "methodology" / "submission"
+SUB = ROOT / "methodology" / "prediction"
 ALLOWED_IMPORTS = {"json", "os", "sys", "re", "numpy", "pandas"}
 
 
@@ -70,7 +70,7 @@ def main():
     assert sorted(os.listdir(sub_dir)) == sorted(SUBMITTED), os.listdir(sub_dir)
     with open(SUB / "weights.json") as f, open(os.path.join(sub_dir, "weights.json")) as g:
         assert json.load(f) == json.load(g), "committed weights.json differs from a fresh retrain"
-    print("committed submission/weights.json equals a fresh retrain")
+    print("committed prediction/weights.json equals a fresh retrain")
 
     raw = pd.read_csv(DATA, dtype=str, keep_default_na=False)
     short = load_survey(DATA)

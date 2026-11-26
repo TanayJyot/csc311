@@ -7,8 +7,8 @@ model_selection.py. Two fits:
                    models/model_meta.json (read by pred_all.py)
   fit_submission   the final model, naive Bayes, with the same hyperparameters refit on
                    all 861 cleaned rows (development + test), since the test set has done
-                   its job once the model is chosen -> submission/weights.json (read by
-                   submission/pred.py)
+                   its job once the model is chosen -> prediction/weights.json (read by
+                   prediction/pred.py)
 Run: python train_final.py   (needs scikit-learn)
 """
 import json
@@ -100,7 +100,7 @@ def fit_and_export(out_dir=str(HERE / "models")):
     return {"naive_bayes": nb, "random_forest": rf, "knn": knn}, preps
 
 
-def fit_submission(submission_dir=str(HERE / "submission")):
+def fit_submission(submission_dir=str(HERE / "prediction")):
     """Naive Bayes with its tuned settings, preprocessing and model refit on all cleaned rows."""
     df = clean_survey(load_survey(DATA)).reset_index(drop=True)
     y = df["label"].to_numpy()

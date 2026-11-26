@@ -1,17 +1,46 @@
-"""make_code_zip.py - build code.zip for the report submission.
+"""make_code_zip.py - refresh the submissions/ folder from the working files.
 
-code.zip holds every .py file used to develop the final model (data_exploration/ and
-methodology/), without the data, generated outputs or the saved model files (models/, weights.json).
-Run: python methodology/make_code_zip.py   (writes code.zip at the repository root)
+submissions/ holds exactly what is uploaded to MarkUs:
+  prediction/pred.py, prediction/weights.json   copies of methodology/prediction/
+  code/                                        the scripts behind the report
+  code.zip                                     code/ zipped (no data, no model files)
+
+Run: python methodology/make_code_zip.py   (from any folder)
 """
-import glob
 import os
+import shutil
 import zipfile
 
-os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # repository root
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, "submissions")
 
-files = sorted(glob.glob("**/*.py", recursive=True))
-with zipfile.ZipFile("code.zip", "w", zipfile.ZIP_DEFLATED) as z:
-    for name in files:
-        z.write(name)
-print(f"code.zip: {len(files)} files")
+# The scripts behind the report, in reading order.
+CODE = [
+    "methodology/features.py",
+    "data_exploration/missing_values.py",
+    "data_exploration/preprocessing_checks.py",
+    "methodology/baseline.py",              # imported by preprocessing_checks.py
+    "data_exploration/eda_with_figures.py",
+    "data_exploration/eda.py",
+    "methodology/model_selection.py",
+    "methodology/train_final.py",
+    "methodology/prediction/pred.py",
+    "methodology/pred_all.py",
+    "methodology/check_pred.py",
+]
+PREDICTION = ["methodology/prediction/pred.py", "methodology/prediction/weights.json"]
+
+shutil.rmtree(os.path.join(OUT, "code"), ignore_errors=True)
+for name in CODE:
+    dest = os.path.join(OUT, "code", name)
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    shutil.copy2(os.path.join(ROOT, name), dest)
+
+os.makedirs(os.path.join(OUT, "prediction"), exist_ok=True)
+for name in PREDICTION:
+    shutil.copy2(os.path.join(ROOT, name), os.path.join(OUT, "prediction", os.path.basename(name)))
+
+with zipfile.ZipFile(os.path.join(OUT, "code.zip"), "w", zipfile.ZIP_DEFLATED) as z:
+    for name in sorted(CODE):
+        z.write(os.path.join(OUT, "code", name), name)
+print(f"submissions/: code.zip with {len(CODE)} files, prediction/ with {len(PREDICTION)} files")
