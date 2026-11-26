@@ -62,8 +62,21 @@ TEXT_COLS = ["food", "colour", "song", "feeling"]
 # Loading
 # ----------------------------------------------------------------------------
 def load_survey(path):
-    """Read the CSV as strings (blank cells -> '') and shorten the column names."""
-    df = pd.read_csv(path, dtype=str, keep_default_na=False)
+    """Read the CSV as strings (blank cells -> '') and shorten the column names.
+
+    The file is read as UTF-8 (with or without a byte-order mark); if that fails,
+    for example for a CSV saved by Excel on Windows, it is read as cp1252, and as
+    latin-1 (which accepts any byte) as a last resort. A UTF-16 file is recognised by
+    its byte-order mark.
+    """
+    with open(path, "rb") as f:
+        utf16 = f.read(2) in (b"\xff\xfe", b"\xfe\xff")      # UTF-16 byte-order mark
+    for encoding in (("utf-16",) if utf16 else ("utf-8-sig", "cp1252", "latin-1")):
+        try:
+            df = pd.read_csv(path, dtype=str, keep_default_na=False, encoding=encoding)
+            break
+        except UnicodeDecodeError:
+            continue
     mapping = {}
     for col in df.columns:
         low = col.strip().lower()
