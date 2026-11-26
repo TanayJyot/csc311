@@ -1,7 +1,7 @@
 """make_code_zip.py - build code.zip for the report submission.
 
 code.zip holds every .py file used to develop the final model (data_exploration/ and
-methodology/), without the data, generated outputs or the saved model files.
+methodology/), without the data, generated outputs or the saved model files (models/, weights.json).
 Run: python methodology/make_code_zip.py   (writes code.zip at the repository root)
 """
 import glob

@@ -31,7 +31,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(ROOT / "methodology"))   # features.py
 
 from features import (LABELS, TEXT_COLS, clean_survey, design_matrix,  # noqa: E402
                       dev_test_split, fit_preprocessing, load_survey,

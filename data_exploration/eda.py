@@ -6,7 +6,7 @@ split by id into development (70%) and test (30%) with the instructors'
 split_by_student shuffle (seed 42). The test rows are never inspected here.
 
 Run:    python eda.py
-Needs:  csc311_project_training_202609.csv (repository root) and methodology/submission/features.py,
+Needs:  csc311_project_training_202609.csv (repository root) and methodology/features.py,
         plus numpy, pandas and matplotlib.
 Writes: split_ids.csv          respondent id -> split (shared by the whole team)
         eda_outputs/*.csv      every table quoted in the proposal
@@ -27,7 +27,7 @@ from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(ROOT / "methodology"))   # features.py
 
 from features import (LABELS, LIKERT_COLS, MULTI_OPTIONS, TEXT_COLS,  # noqa: E402
                       blank_rows, is_non_answer, load_survey, norm_text,
