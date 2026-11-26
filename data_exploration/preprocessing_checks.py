@@ -1,5 +1,5 @@
 """preprocessing_checks.py - evidence for the "Feature types, missing values and
-preprocessing" section (outliers, encoding, scaling), on the training split only.
+preprocessing" section (outliers, encoding, scaling), on the 70% development split only.
 
 Part A prints the descriptive numbers the section quotes (feature ranges, price
 outliers, words per answer, unseen words, feature counts). Part B re-runs the

@@ -409,7 +409,7 @@ def main():
     print(token_long.pivot_table(index=["question", "item"], columns="sport", values="pct",
                                  sort=False)[LABELS].round(1))
 
-    # Words never seen before: grouped 5-fold check inside the training split
+    # Words never seen before: grouped 5-fold check inside the development split
     ids = tr["id"].unique()
     rng = np.random.default_rng(SEED)
     fold_of = dict(zip(rng.permutation(ids), np.arange(len(ids)) % 5))

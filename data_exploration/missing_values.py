@@ -160,7 +160,7 @@ def main():
     print("\ndevelopment rows per sport:",
           {k: int(v) for k, v in tr["label"].value_counts().reindex(LABELS).items()})
 
-    # ---- 2. Per-feature missing table (training split) -------------------------
+    # ---- 2. Per-feature missing table (development split) -------------------------
     section("2. Missing values per feature (TRAINING split, "
             f"{tr['id'].nunique()} respondents, {len(tr)} rows)")
     miss = missing_mask(tr)
