@@ -2,7 +2,7 @@
 import itertools, sys
 from collections import Counter
 import numpy as np, pandas as pd
-sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent.parent / "submission"))
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent.parent))
 from features import (LIKERT_COLS, TEXT_COLS, blank_rows, load_survey,
                       respondent_split, structured_features, tokenize)
 

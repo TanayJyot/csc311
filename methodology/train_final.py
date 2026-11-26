@@ -1,12 +1,13 @@
-"""train_final.py - fit the three final models and export their parameters for pred.py.
+"""train_final.py - fit the three tuned models and export their parameters.
 
 The settings are read from model_selection_results/summary.csv, the tuned ones from
 model_selection.py. Following the report, each
 model is fit on the 70% development set; the test rows are kept out so the
 reported test accuracy is that of this exact model.
 
-Writes model_params.npz (arrays) and model_meta.json (preprocessing, vocabularies),
-which pred.py reads with numpy and pandas only.
+Writes
+  models/model_params.npz, models/model_meta.json  all three models, read by pred_all.py
+  submission/weights.json                          naive Bayes only, read by submission/pred.py
 Run: python train_final.py   (needs scikit-learn)
 """
 import json
@@ -22,7 +23,7 @@ from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(ROOT / "methodology"))   # features.py
 
 from features import (TEXT_COLS, clean_survey, design_matrix, dev_test_split,
                       fit_preprocessing, load_survey, structured_features, tokenize)
@@ -40,7 +41,7 @@ def tuned_settings():
             "knn": json.loads(S.loc["kNN", "params"])}
 
 
-def fit_and_export(out_dir=str(HERE.parent / "methodology" / "submission")):
+def fit_and_export(out_dir=str(HERE / "models"), submission_dir=str(HERE / "submission")):
     df = load_survey(DATA)
     df = clean_survey(df)
     df = df[dev_test_split(df["id"]) == "dev"].reset_index(drop=True)
@@ -94,6 +95,11 @@ def fit_and_export(out_dir=str(HERE.parent / "methodology" / "submission")):
     )
     with open(os.path.join(out_dir, "model_meta.json"), "w") as f:
         json.dump({"classes": classes, "knn_k": k["k"], "knn_weights": k["weights"], "preprocessing": preps}, f)
+    # The submitted pred.py needs only the naive Bayes preprocessing and parameters.
+    with open(os.path.join(submission_dir, "weights.json"), "w") as f:
+        json.dump({"classes": classes, "preprocessing": preps["naive_bayes"],
+                   "feature_log_prob": nb.feature_log_prob_.tolist(),
+                   "class_log_prior": nb.class_log_prior_.tolist()}, f)
     print(f"trained on {len(df)} rows; random forest has {offset} nodes")
     return {"naive_bayes": nb, "random_forest": rf, "knn": knn}, preps
 

@@ -1,6 +1,9 @@
 trained on 603 rows; random forest has 59966 nodes
-naive_bayes: matches sklearn on 258/258 rows; held-out accuracy 91.9% on 258 rows
-random_forest: matches sklearn on 258/258 rows; held-out accuracy 88.8% on 258 rows
-knn: matches sklearn on 258/258 rows; held-out accuracy 86.8% on 258 rows
-60 predictions in 0.03 s
-submitted files: 0.46 MB (limit 10 MB)
+committed submission/weights.json equals a fresh retrain
+pred.py (naive Bayes): matches sklearn on 258/258 test rows; accuracy 91.9% on 258 rows
+pred.py feature code equals features.py on all 870 raw rows
+60 predictions in 0.01 s
+submitted files (pred.py, weights.json): 0.025 MB (limit 10 MB)
+pred_all.py naive_bayes: matches sklearn on 258/258 rows; held-out accuracy 91.9% on 258 rows
+pred_all.py random_forest: matches sklearn on 258/258 rows; held-out accuracy 88.8% on 258 rows
+pred_all.py knn: matches sklearn on 258/258 rows; held-out accuracy 86.8% on 258 rows

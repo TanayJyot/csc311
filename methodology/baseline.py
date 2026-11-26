@@ -27,7 +27,7 @@ from pathlib import Path  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-sys.path.insert(0, str(ROOT / "methodology" / "submission"))   # features.py
+sys.path.insert(0, str(ROOT / "methodology"))   # features.py
 
 from features import (LABELS, LIKERT_COLS, TEXT_COLS, blank_rows, load_survey,
                       clean_survey, dev_test_split, structured_features, tokenize)
