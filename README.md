@@ -15,8 +15,9 @@ Proposal: https://docs.google.com/document/d/125V\_es4TMSLcpcNPxWSrk7r09S27686kT
    one-standard-error tie rule (Table 3), then one test-set evaluation (Table 4).
 5. `methodology/evaluation_checks.py`: checks that the ~92% is not leakage (shuffled
    labels, one question at a time, 200 other splits, nested CV).
-6. `methodology/train_final.py`: refits the tuned settings on the development set and
-   saves `models/` (all three models) and `submission/weights.json` (naive Bayes only).
+6. `methodology/train_final.py`: refits the tuned settings. All three models on the
+   development set go to `models/` (these give the reported test accuracy); naive Bayes
+   refit on all 861 cleaned rows goes to `submission/weights.json`.
 7. `methodology/submission/pred.py`: the submitted script. Self-contained (its own copy of
    the cleaning and feature code), naive Bayes only, numpy and pandas only.
 8. `methodology/pred_all.py`: numpy versions of all three families, used during testing.
@@ -46,10 +47,11 @@ Prediction (MarkUs project prediction assignment): upload the two files in
 | File | What it is |
 | --- | --- |
 | `pred.py` | `predict_all(filename)` for the final model, Bernoulli naive Bayes. Contains all cleaning and feature code; standard library, numpy and pandas only |
-| `weights.json` | What was learned from the 70% development set (201 respondents, 603 rows): preprocessing statistics, the 100 kept words, and the naive Bayes log-probabilities |
+| `weights.json` | What was learned from all 861 cleaned rows (development and test sets, with the hyperparameters chosen by cross-validation): preprocessing statistics, the 100 kept words, and the naive Bayes log-probabilities |
 
 `methodology/pred_all.py` (with `methodology/models/`) is the development version that also
-runs the random forest and kNN; it is not submitted.
+runs the random forest and kNN. Its models are fit on the 70% development set only, which is
+what the reported test accuracy (91.9%) measures; it is not submitted.
 
 Report (MarkUs project report assignment): `report.pdf` from the LaTeX template, and
 `code.zip`, built with `python methodology/make_code_zip.py`.

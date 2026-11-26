@@ -1,6 +1,7 @@
-trained on 603 rows; random forest has 59966 nodes
+development models: trained on 603 rows; random forest has 59966 nodes
+submission model (naive Bayes): trained on all 861 cleaned rows
 committed submission/weights.json equals a fresh retrain
-pred.py (naive Bayes): matches sklearn on 258/258 test rows; accuracy 91.9% on 258 rows
+pred.py (naive Bayes, trained on all 861 cleaned rows): matches sklearn on 861/861 rows; training accuracy 94.1%
 pred.py feature code equals features.py on all 870 raw rows
 60 predictions in 0.01 s
 submitted files (pred.py, weights.json): 0.025 MB (limit 10 MB)

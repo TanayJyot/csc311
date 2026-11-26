@@ -1,13 +1,14 @@
-"""train_final.py - fit the three tuned models and export their parameters.
+"""train_final.py - fit the tuned models and export their parameters.
 
 The settings are read from model_selection_results/summary.csv, the tuned ones from
-model_selection.py. Following the report, each
-model is fit on the 70% development set; the test rows are kept out so the
-reported test accuracy is that of this exact model.
-
-Writes
-  models/model_params.npz, models/model_meta.json  all three models, read by pred_all.py
-  submission/weights.json                          naive Bayes only, read by submission/pred.py
+model_selection.py. Two fits:
+  fit_and_export   all three families on the 70% development set, so the reported test
+                   accuracy is that of exactly these models -> models/model_params.npz,
+                   models/model_meta.json (read by pred_all.py)
+  fit_submission   the final model, naive Bayes, with the same hyperparameters refit on
+                   all 861 cleaned rows (development + test), since the test set has done
+                   its job once the model is chosen -> submission/weights.json (read by
+                   submission/pred.py)
 Run: python train_final.py   (needs scikit-learn)
 """
 import json
@@ -41,7 +42,7 @@ def tuned_settings():
             "knn": json.loads(S.loc["kNN", "params"])}
 
 
-def fit_and_export(out_dir=str(HERE / "models"), submission_dir=str(HERE / "submission")):
+def fit_and_export(out_dir=str(HERE / "models")):
     df = load_survey(DATA)
     df = clean_survey(df)
     df = df[dev_test_split(df["id"]) == "dev"].reset_index(drop=True)
@@ -95,14 +96,28 @@ def fit_and_export(out_dir=str(HERE / "models"), submission_dir=str(HERE / "subm
     )
     with open(os.path.join(out_dir, "model_meta.json"), "w") as f:
         json.dump({"classes": classes, "knn_k": k["k"], "knn_weights": k["weights"], "preprocessing": preps}, f)
-    # The submitted pred.py needs only the naive Bayes preprocessing and parameters.
+    print(f"development models: trained on {len(df)} rows; random forest has {offset} nodes")
+    return {"naive_bayes": nb, "random_forest": rf, "knn": knn}, preps
+
+
+def fit_submission(submission_dir=str(HERE / "submission")):
+    """Naive Bayes with its tuned settings, preprocessing and model refit on all cleaned rows."""
+    df = clean_survey(load_survey(DATA)).reset_index(drop=True)
+    y = df["label"].to_numpy()
+    struct = structured_features(df).drop(columns=["price"])
+    tokens = {c: df[c].map(tokenize) for c in TEXT_COLS}
+    p = tuned_settings()["naive_bayes"]
+    prep = fit_preprocessing(struct, tokens, y, scaling=p.get("scaling", "z-score"),
+                             words=p.get("words", "all"))
+    nb = BernoulliNB(alpha=p["alpha"], binarize=0.0).fit(design_matrix(struct, tokens, prep), y)
     with open(os.path.join(submission_dir, "weights.json"), "w") as f:
-        json.dump({"classes": classes, "preprocessing": preps["naive_bayes"],
+        json.dump({"classes": list(nb.classes_), "trained_on_rows": len(df), "preprocessing": prep,
                    "feature_log_prob": nb.feature_log_prob_.tolist(),
                    "class_log_prior": nb.class_log_prior_.tolist()}, f)
-    print(f"trained on {len(df)} rows; random forest has {offset} nodes")
-    return {"naive_bayes": nb, "random_forest": rf, "knn": knn}, preps
+    print(f"submission model (naive Bayes): trained on all {len(df)} cleaned rows")
+    return nb, prep
 
 
 if __name__ == "__main__":
     fit_and_export()
+    fit_submission()
