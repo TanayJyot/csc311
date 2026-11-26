@@ -4,7 +4,7 @@ Proposal: https://docs.google.com/document/d/125V\_es4TMSLcpcNPxWSrk7r09S27686kT
 
 | Folder | What is in it |
 | --- | --- |
-| `data_exploration/` | Exploration scripts, the train/val/test split (`split_ids.csv`), output tables in `eda_outputs/`, run logs in `logs/` |
+| `data_exploration/` | Exploration scripts, the 70/30 development/test split (`split_ids.csv`), output tables in `eda_outputs/`, run logs in `logs/` |
 | `methodology/` | Model selection, final training, checks, the earlier model sweep (`model_sweep/`), run logs in `logs/` |
 | `methodology/submission/` | Exactly the files uploaded to MarkUs for prediction |
 
@@ -51,7 +51,8 @@ exploration logs were run with `PYTHONHASHSEED=0`, which fixes the order of tied
 | Preprocessing (imputation, scaling, vocabulary, top words) | `methodology/submission/features.py` (`fit_preprocessing`, `design_matrix`) | |
 | Table 2: grouped 5-fold CV on the 70% development set over all 400 hyperparameter settings | `methodology/model_selection.py` | `methodology/logs/model_selection.log`, `methodology/model_selection_results/cv_all.csv` |
 | Table 3: tuned models compared on the CV results (accuracy, per-sport F1, confusion matrix) | `methodology/model_selection.py` | `methodology/logs/model_selection.log`, `methodology/model_selection_results/summary.csv`, `methodology/model_selection_results/cv_confusion.json` |
-| Table 4 and the test result (252 rows) | `methodology/model_selection.py` (`main`, step 4) | `methodology/logs/model_selection.log`, `methodology/model_selection_results/final_test.json` |
+| Table 4 and the test result (258 rows) | `methodology/model_selection.py` (`main`, step 4) | `methodology/logs/model_selection.log`, `methodology/model_selection_results/final_test.json` |
 | Final models and `pred.py` checks | `methodology/train_final.py`, `methodology/submission/pred.py`, `methodology/check_pred.py` | `methodology/logs/check_pred.log` |
+| Leakage checks on the evaluation (shuffled labels, one question at a time, 200 other splits, nested CV) | `methodology/evaluation_checks.py` | |
 | Pipeline check quoted in the proposal | `methodology/baseline.py` | |
 | Earlier sweep of every model in the course notes, split ratios, synthetic data | `methodology/model_sweep/` | CSVs in `methodology/model_sweep/` |
