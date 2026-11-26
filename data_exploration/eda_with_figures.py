@@ -1,7 +1,7 @@
 """
 eda.py — expanded, self-contained EDA for the CSC311 sport-survey project.
 
-Analyses only the training split. Respondents (IDs) are split as groups so all
+Analyses only the 70% development split. Respondents (IDs) are split as groups so all
 three sport rows from a respondent stay together. Default split: 50/20/30, seed 42.
 
 Input:

@@ -1,5 +1,29 @@
 Proposal: https://docs.google.com/document/d/125V\_es4TMSLcpcNPxWSrk7r09S27686kTpooYsT3vPo/edit?tab=t.0
 
+## How to read the code (in order)
+
+1. `methodology/submission/features.py`: everything shared. Loading, `clean_survey`
+   (drop blank rows and incomplete respondents), `dev_test_split` (70/30 by respondent),
+   answer parsing, `tokenize`, and `fit_preprocessing` / `design_matrix`, which learn
+   medians, scaling and the vocabulary from training rows only.
+2. `data_exploration/missing_values.py` and `data_exploration/preprocessing_checks.py`:
+   Table 1 (missing values, price parsing and outliers), on the development set only.
+3. `data_exploration/eda_with_figures.py` (Figure 1) and `data_exploration/eda.py`
+   (Figure 2, mutual information, `split_ids.csv`): Data Exploration.
+4. `methodology/model_selection.py`: Methodology and Results. Grids for kNN, random
+   forest and naive Bayes (Table 2), grouped 5-fold CV on the development set, the
+   one-standard-error tie rule (Table 3), then one test-set evaluation (Table 4).
+5. `methodology/evaluation_checks.py`: checks that the ~92% is not leakage (shuffled
+   labels, one question at a time, 200 other splits, nested CV).
+6. `methodology/train_final.py`: refits the chosen settings on the development set and
+   saves `model_params.npz` and `model_meta.json`.
+7. `methodology/submission/pred.py`: `predict_all`, numpy and pandas only.
+8. `methodology/check_pred.py`: confirms `pred.py` matches scikit-learn, the time limit
+   and the 10 MB limit.
+
+Background only (not used for the final choice): `methodology/baseline.py` (proposal
+sanity check) and `methodology/model_sweep/` (early exploration of more model families).
+
 ## Layout
 
 | Folder | What is in it |
